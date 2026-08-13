@@ -734,18 +734,19 @@ img {
 }
 
 .project-tag {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 800;
-    color: #38BDF8;
-    background: rgba(15, 23, 42, 0.9);
-    border: 1px solid rgba(56, 189, 248, 0.5);
-    padding: 4px 12px;
-    border-radius: var(--radius-full);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    display: inline-block !important;
+    font-size: 0.78rem !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
+    background-color: #4F46E5 !important;
+    border: 1px solid #818CF8 !important;
+    padding: 5px 14px !important;
+    border-radius: 9999px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 10px !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.7) !important;
+    z-index: 10 !important;
 }
 
 .project-title {
