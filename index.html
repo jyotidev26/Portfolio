@@ -1,699 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="images/favicon.png" rel="icon" />
-    <title>Jyoti Chakma - Personal Portfolio Template</title>
-    <meta name="description" content="Simone is responsive bootstrap 5 one page personal portfolio html template.">
-    <meta name="author" content="harnishdesign.net">
-
-    <!-- Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <!-- Stylesheet
-============================== -->
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
-    <!-- Font Awesome Icon -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" type="text/css" href="vendor/owl.carousel/assets/owl.carousel.min.css" />
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" type="text/css" href="vendor/magnific-popup/magnific-popup.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jyoti Prakash Chakma | Senior WordPress Developer & Zend Certified PHP Engineer</title>
+    <meta name="description" content="Official Portfolio of Jyoti Prakash Chakma (JyotiTech) - Senior WordPress Developer, Zend Certified PHP Engineer, and IT Infrastructure Specialist with 13+ years experience.">
+    <meta name="author" content="Jyoti Prakash Chakma - JyotiTech">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co.com/93m7J3vk/Lower-Case-logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
-    <!-- Colors Css -->
-    <link id="color-switcher" type="text/css" rel="stylesheet" href="#" />
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body data-bs-spy="scroll" data-bs-target="#header-nav" data-bs-offset="0">
+    <!-- Background Glow Elements -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
 
-    <!-- Preloader -->
-    <div class="preloader preloader-dark">
-        <div class="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    <!-- Preloader End -->
-
-    <!-- Document Wrapper   
-=============================== -->
-    <div id="main-wrapper">
-        <!-- Header
-  ============================ -->
-        <header id="header" class="sticky-top-slide">
-            <!-- Navbar -->
-            <nav class="primary-menu navbar navbar-expand-lg navbar-dark bg-transparent border-bottom-0">
-                <div class="container-fluid position-relative g-lg-4">
-                    <div class="col-auto col-lg-2">
-                        <!-- Logo -->
-                        <a class="logo" href="index.html" title="Jyoti Chakma"> <img src="https://i.ibb.co.com/93m7J3vk/Lower-Case-logo.png" alt="Jyoti"/> </a>
-                        <!-- Logo End -->
-                    </div>
-                    <div class="col col-lg-8 navbar-accordion">
-                        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#header-nav"><span></span><span></span><span></span></button>
-                        <div id="header-nav" class="collapse navbar-collapse justify-content-center">
-                            <ul class="navbar-nav">
-                                <li class="nav-item"><a class="nav-link smooth-scroll active" href="#home">Home</a></li>
-                                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
-                                <li class="nav-item"><a class="nav-link smooth-scroll" href="#services">What I Do</a></li>
-                                <li class="nav-item"><a class="nav-link smooth-scroll" href="#resume">Resume</a></li>
-                                <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a></li>
-                                <li class="nav-item"><a class="nav-link smooth-scroll" href="#testimonial">Client</a></li>
-                                <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-auto col-lg-2 d-flex justify-content-end">
-                        <ul class="social-icons social-icons-light">
-                            <li class="social-icons-twitter"><a data-bs-toggle="tooltip" href="http://www.twitter.com/" target="_blank" title="" data-bs-original-title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                            <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="http://www.facebook.com/" target="_blank" title="" data-bs-original-title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                            <li class="social-icons-dribbble"><a data-bs-toggle="tooltip" href="http://www.dribbble.com/" target="_blank" title="" data-bs-original-title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- Navigation Header -->
+    <header class="navbar-header" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-code"></i></span>
+                <span class="logo-text">Jyoti<span class="logo-accent">Tech</span></span>
+            </a>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="#home" class="nav-item active">Home</a>
+                <a href="#about" class="nav-item">About</a>
+                <a href="#certifications" class="nav-item">Certifications</a>
+                <a href="#services" class="nav-item">Services</a>
+                <a href="#portfolio" class="nav-item">Portfolio</a>
+                <a href="#contact" class="nav-item">Contact</a>
             </nav>
-            <!-- Navbar End -->
-        </header>
-        <!-- Header End -->
 
-        <!-- Content
-  ============================================= -->
-        <div id="content" role="main">
+            <div class="nav-cta">
+                <a href="#contact" class="btn btn-outline-glow"><i class="fa-regular fa-comments"></i> Let's Talk</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
-            <!-- Intro
-    ============================================= -->
-            <section id="home">
-                <div class="hero-wrap">
-                    <div class="hero-mask opacity-8 bg-dark"></div>
-                    <div class="hero-bg parallax" style="background-image:url('images/intro-bg.jpg');"></div>
-                    <div class="hero-content section d-flex min-vh-100">
-                        <div class="container my-auto">
-                            <div class="row">
-                                <div class="col-12 text-center">
-                                    <div class="typed-strings">
-                                        <p>I'm Jyoti Chakma</p>
-                                        <p>I'm a Designer.</p>
-                                        <p>I'm a Web Developer.</p>
-                                        <p>I'm a WordPress.</p>
-                                    </div>
-                                    <p class="text-7 fw-500 text-white mb-2 mb-md-3">Welcome To</p>
-                                    <h2 class="text-16 fw-600 text-white mb-2 mb-md-3"><span class="typed"></span></h2>
-                                    <p class="text-5 text-light mb-4">based in Dhaka, Bangladesh.</p>
-                                    <a href="#contact" class="btn btn-outline-primary rounded-pill shadow-none smooth-scroll mt-2">Hire Me</a>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#about" class="scroll-down-arrow text-white smooth-scroll"><span class="animated"><i class="fa fa-chevron-down"></i></span></a> </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge-pill">
+                    <span class="badge-dot"></span>
+                    <span class="badge-text"><i class="fa-solid fa-certificate text-gold"></i> Zend Certified PHP Engineer | B.Sc. CSE</span>
                 </div>
-            </section>
-            <!-- Intro end -->
+                
+                <h1 class="hero-title">
+                    Architecting High-Performance <span class="gradient-text">WordPress & Enterprise PHP</span> Solutions
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Hi, I'm <strong>Jyoti Prakash Chakma</strong> — Founder of <strong>JyotiTech</strong>. I bring 13+ years of IT & Infrastructure experience combined with deep PHP & WordPress mastery to build ultra-fast, secure, and high-converting web experiences for global clients.
+                </p>
+                
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn-primary-glow">
+                        <span>Explore My Work</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary-glass">
+                        <i class="fa-solid fa-shield-halved"></i> Request Free Audit
+                    </a>
+                </div>
 
-            <!-- About
-    ============================================= -->
-            <section id="about" class="section bg-dark-1">
-                <div class="container">
-                    <!-- Heading -->
-                    <div class="position-relative d-flex text-center mb-5">
-                        <h2 class="text-24 text-muted opacity-1 text-uppercase fw-600 w-100 mb-0">About Me</h2>
-                        <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">Know Me More<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
+                <div class="hero-metrics">
+                    <div class="metric-item">
+                        <span class="metric-number">13+</span>
+                        <span class="metric-label">Years IT Experience</span>
                     </div>
-                    <!-- Heading end-->
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <span class="metric-number">100%</span>
+                        <span class="metric-label">Client Satisfaction</span>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <span class="metric-number">Zend</span>
+                        <span class="metric-label">Certified Engineer</span>
+                    </div>
+                </div>
+            </div>
 
-                    <div class="row gy-5">
-                        <div class="col-lg-7 col-xl-8 text-center text-lg-start">
-                            <h2 class="text-7 text-white fw-600 mb-3">I'm <span class="text-primary">Jyoti Chakma,</span> a Web Developer</h2>
-                            <p class="text-white-50">My name is Jyoti Chakma. I’m 43 years old and have been working in WordPress, web design, and web development for the past three years.</p>
-                            <p class="text-white-50">I specialize in building WordPress websites that are visually clean, mobile-friendly, and easy for clients to manage. I enjoy turning ideas into functional websites and improving existing sites through better design, performance optimization, and structured layouts.
-
-                            I believe a good website should be clear, fast, and purposeful. My goal is always to deliver work that helps clients communicate better and grow their online presence.
-                        </div>
-                        <div class="col-lg-5 col-xl-4">
-                            <div class="ps-lg-4">
-                                <ul class="list-style-2 list-style-light text-light">
-                                    <li><span class="fw-600 me-2">Name:</span>Jyoti Chakma</li>
-                                    <li><span class="fw-600 me-2">Email:</span><a href="mailto:chat@simone.com">jyotitech26@gmail.com</a></li>
-                                    <li><span class="fw-600 me-2">Age:</span>43</li>
-                                    <li class="border-0"><span class="fw-600 me-2">From:</span>Dhaka, Bangladesh</li>
-                                </ul>
-                                <a href="https://drive.google.com/file/d/137DsTuXnSTFsIQauvCi8unHdZx1wZARY/view?usp=sharing" class="btn btn-primary rounded-pill">Download CV</a> </div>
+            <div class="hero-visual">
+                <div class="profile-card-glass">
+                    <div class="profile-image-wrapper">
+                        <img src="https://i.ibb.co.com/93m7J3vk/Lower-Case-logo.png" alt="Jyoti Prakash Chakma" class="profile-img">
+                        <div class="verified-badge" title="Zend Certified PHP Engineer">
+                            <i class="fa-solid fa-check"></i>
                         </div>
                     </div>
-                    <div class="brands-grid separator-border separator-border-light mt-5">
-                        <div class="row">
-                            <div class="col-6 col-md-3">
-                                <div class="featured-box text-center">
-                                    <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="3">3</span>+</h4>
-                                    <p class="text-light mb-0">Years Experiance</p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <div class="featured-box text-center">
-                                    <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="86">86</span>+</h4>
-                                    <p class="text-light mb-0">Happy Clients</p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <div class="featured-box text-center">
-                                    <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="86">86</span>+</h4>
-                                    <p class="text-light mb-0">Projects Done</p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <div class="featured-box text-center">
-                                    <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="20">20</span></h4>
-                                    <p class="text-light mb-0">Get Awards</p>
-                                </div>
-                            </div>
+                    <div class="profile-info">
+                        <h3>Jyoti Prakash Chakma</h3>
+                        <p class="profile-role">Lead WordPress Engineer & Founder @ JyotiTech</p>
+                        <div class="profile-tags">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">PHP 8+</span>
+                            <span class="tag">WooCommerce</span>
+                            <span class="tag">IT Security</span>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- About end -->
+            </div>
+        </div>
+    </section>
 
-            <!-- Services
-    ============================================= -->
-            <section id="services" class="section bg-dark-2">
-                <div class="container">
-                    <!-- Heading -->
-                    <div class="position-relative d-flex text-center mb-5">
-                        <h2 class="text-24 text-white-50 opacity-1 text-uppercase fw-600 w-100 mb-0">Services</h2>
-                        <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">What I Do?<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
+    <!-- Certifications & Trust Banner -->
+    <section id="certifications" class="cert-banner-section">
+        <div class="container">
+            <p class="cert-banner-title">TRUSTED CREDENTIALS & CERTIFICATIONS</p>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-details">
+                        <h4>Zend Certified PHP Engineer</h4>
+                        <p>Globally recognized gold standard in PHP expertise</p>
                     </div>
-                    <!-- Heading end-->
+                </div>
 
-                    <div class="row">
-                        <div class="col-lg-11 mx-auto">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="featured-box style-3 mb-5">
-                                        <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded"> <i class="fas fa-palette"></i> </div>
-                                        <h3 class="text-white">WordPress Development</h3>
-                                        <p class="text-white-50 mb-0">Build and customize WordPress websites using PHP, HTML, CSS, JavaScript, and MySQL. Focused on performance, security, and easy content management.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="featured-box style-3 mb-5">
-                                        <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded"> <i class="fas fa-desktop"></i></div>
-                                        <h3 class="text-white">Web Design</h3>
-                                        <p class="text-white-50 mb-0">Design clean, responsive, and user-friendly websites that work smoothly across all devices and browsers.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="featured-box style-3 mb-5">
-                                        <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded"> <i class="fas fa-pencil-ruler"></i> </div>
-                                        <h3 class="text-white">Custom Web Development</h3>
-                                        <p class="text-white-50 mb-0">Develop dynamic website features using JavaScript, jQuery, PHP, and Bootstrap to meet specific business requirements.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="featured-box style-3 mb-5">
-                                        <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded"> <i class="fas fa-paint-brush"></i> </div>
-                                        <h3 class="text-white">UI-Friendly Design &amp; Develop</h3>
-                                        <p class="text-white-50 mb-0">Create simple, modern layouts using Canva and best UI practices to ensure clarity and usability.</p>
-                                    </div>
-                                </div>
-                               <!--  <div class="col-md-6">
-                                    <div class="featured-box style-3 mb-5 mb-md-0">
-                                        <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded"> <i class="fas fa-chart-area"></i> </div>
-                                        <h3 class="text-white">Business Analysis</h3>
-                                        <p class="text-white-50 mb-0">Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</p>
-                                    </div>
-                                </div> -->
-                                 <div class="col-md-6">
-                                    <div class="featured-box style-3 mb-5 mb-md-0">
-                                        <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded"> <i class="fas fa-chart-area"></i> </div>
-                                        <h3 class="text-white">SEO Optimization</h3>
-                                        <p class="text-white-50 mb-0">Implement on-page SEO, optimize site structure, improve page speed, and ensure search engine visibility for WordPress websites..</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="featured-box style-3 mb-0">
-                                        <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded"> <i class="fas fa-bullhorn"></i> </div>
-                                        <h3 class="text-white">Website Maintenance & Support</h3>
-                                        <p class="text-white-50 mb-0">Provide regular updates, security monitoring, performance improvements, and technical support to keep websites stable and up to date.</p>
-                                    </div>
-                                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="cert-details">
+                        <h4>B.Sc. in Computer Science</h4>
+                        <p>Deep software engineering & algorithmic fundamentals</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <div class="cert-details">
+                        <h4>13+ Yrs IT Infrastructure</h4>
+                        <p>Enterprise server setup, hosting, DNS & security</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="cert-details">
+                        <h4>CCNA & CompTIA A+</h4>
+                        <p>Cisco Network & IT Systems Engineering Certified</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">EXPERT BACKGROUND</span>
+                <h2 class="section-title">Engineering Meets <span class="gradient-text">Technical Reliability</span></h2>
+                <p class="section-description">
+                    Unlike typical designers, I bridge the gap between high-level computer science, enterprise server security, and modern web UX.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-bio-glass">
+                    <h3 class="bio-heading">Why Global Clients Work With Me</h3>
+                    <p class="bio-text">
+                        With over <strong>13+ years in IT infrastructure</strong> and a formal <strong>B.Sc. in Computer Science & Engineering</strong>, I approach web development with an engineering mindset. 
+                    </p>
+                    <p class="bio-text">
+                        As a <strong>Zend Certified PHP Engineer</strong>, I don't just assemble websites—I build custom WordPress themes, high-converting WooCommerce platforms, and custom PHP plugins that are light-speed fast, highly secure, and built to scale.
+                    </p>
+
+                    <div class="bio-highlights">
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-bolt highlight-icon"></i>
+                            <div>
+                                <h5>Core Web Vitals & Speed</h5>
+                                <p>Optimizing load times under 1 second for higher Google rankings.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-shield-halved highlight-icon"></i>
+                            <div>
+                                <h5>Enterprise Security</h5>
+                                <p>Bank-grade hardening, malware prevention, and server protection.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- Services end -->
 
-            <!-- Resume
-    ============================================= -->
-            <section id="resume" class="section bg-dark-1">
-                <div class="container">
-                    <!-- Heading -->
-                    <div class="position-relative d-flex text-center mb-5">
-                        <h2 class="text-24 text-muted opacity-1 text-uppercase fw-600 w-100 mb-0">Summary</h2>
-                        <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">Resume<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
-                    </div>
-                    <!-- Heading end-->
+                <div class="skills-box-glass">
+                    <h3 class="bio-heading">Core Skills & Mastery</h3>
 
-                    <div class="row gx-5">
-                        <!-- My Education -->
-                        <div class="col-md-6">
-                            <h2 class="text-6 text-white fw-600 mb-4">My Education</h2>
-                            <div class="bg-dark rounded p-4 mb-4">
-                                <p class="badge bg-danger text-2 fw-400">2022</p>
-                                <h3 class="text-5 text-white">Computer Science & Engineering</h3>
-                                <p class="text-primary">People University of Bangladesh</p>
-                                <p class="text-white-50 mb-0">Completed Bachelor degree in CSE with focus on programming,databases, and computer networks.</p>
-                            </div>
-                            <!-- <div class="bg-dark rounded p-4 mb-4">
-                                <p class="badge bg-danger text-2 fw-400">2005 - 2008</p>
-                                <h3 class="text-5 text-white">Bachelor Degree</h3>
-                                <p class="text-primary">University of California</p>
-                                <p class="text-white-50 mb-0">Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</p>
-                            </div>
-                            <div class="bg-dark rounded p-4 mb-4">
-                                <p class="badge bg-danger text-2 fw-400">2009 - 2012</p>
-                                <h3 class="text-5 text-white">Master Degree</h3>
-                                <p class="text-primary">Harvard University</p>
-                                <p class="text-white-50 mb-0">Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</p>
-                            </div> -->
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span>WordPress & WooCommerce Engineering</span>
+                            <span class="skill-percent">98%</span>
                         </div>
+                        <div class="skill-progress"><div class="progress-fill" style="width: 98%;"></div></div>
+                    </div>
 
-                        <!-- My Experience -->
-                        <div class="col-md-6">
-                            <h2 class="text-6 text-white fw-600 mb-4">My Experience</h2>
-                            <div class="bg-dark rounded p-4 mb-4">
-                                <p class="badge bg-danger text-2 fw-400">2022 - Present</p>
-                                <h3 class="text-5 text-white">WordPress Developer</h3>
-                                <p class="text-primary">Themeforest</p>
-                                <p class="text-white-50 mb-0">L   Developed and maintained WordPress websites using PHP, HTML, CSS,
-                                JavaScript, and MySQL. Focused on performance, security, and SEO.</p>
-                            </div>
-                            <!-- <div class="bg-dark rounded p-4 mb-4">
-                                <p class="badge bg-danger text-2 fw-400">2014 - 2016</p>
-                                <h3 class="text-5 text-white">Jr. Product Designer</h3>
-                                <p class="text-primary">Dribbble</p>
-                                <p class="text-white-50 mb-0">Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</p>
-                            </div>
-                            <div class="bg-dark rounded p-4 mb-4">
-                                <p class="badge bg-danger text-2 fw-400">2017 - 2019</p>
-                                <h3 class="text-5 text-white">Product Designer</h3>
-                                <p class="text-primary">Adobe</p>
-                                <p class="text-white-50 mb-0">Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</p>
-                            </div> -->
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span>PHP 8+ / MySQL / Zend Architecture</span>
+                            <span class="skill-percent">95%</span>
                         </div>
+                        <div class="skill-progress"><div class="progress-fill" style="width: 95%;"></div></div>
                     </div>
-                    <!-- My Skills -->
-                    <h2 class="text-6 text-white fw-600 mt-4 mb-4">My Skills</h2>
-                    <div class="row gx-5">
-                        <div class="col-md-6">
-                            <p class="text-light fw-500 text-start mb-2">WordPress<span class="float-end">95%</span></p>
-                            <div class="progress progress-sm bg-dark mb-4">
-                                <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="text-light fw-500 text-start mb-2">HTML & CSS <span class="float-end">95%</span></p>
-                            <div class="progress progress-sm bg-dark mb-4">
-                                <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="text-light fw-500 text-start mb-2">JavaScript & jQuery <span class="float-end">85%</span></p>
-                            <div class="progress progress-sm bg-dark mb-4">
-                                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span>Frontend (HTML5, CSS3, JS, Bootstrap, Elementor)</span>
+                            <span class="skill-percent">94%</span>
                         </div>
-                        <div class="col-md-6">
-                            <p class="text-light fw-500 text-start mb-2">PHP & MySQL  <span class="float-end">85%</span></p>
-                            <div class="progress progress-sm bg-dark mb-4">
-                                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="text-light fw-500 text-start mb-2">Bootstrap <span class="float-end">99%</span></p>
-                            <div class="progress progress-sm bg-dark mb-4">
-                                <div class="progress-bar" role="progressbar" style="width: 99%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="text-light fw-500 text-start mb-2">SEO Optimization <span class="float-end">75%</span></p>
-                            <div class="progress progress-sm bg-dark mb-4">
-                                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            
-                        </div>
+                        <div class="skill-progress"><div class="progress-fill" style="width: 94%;"></div></div>
                     </div>
-                    <div class="text-center mt-5"><a href="https://drive.google.com/file/d/137DsTuXnSTFsIQauvCi8unHdZx1wZARY/view?usp=sharing" class="btn btn-outline-secondary rounded-pill shadow-none">Download CV <span class="ms-1"><i class="fas fa-download"></i></span></a></div>
+
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span>Server Hosting, DNS & Security Hardening</span>
+                            <span class="skill-percent">96%</span>
+                        </div>
+                        <div class="skill-progress"><div class="progress-fill" style="width: 96%;"></div></div>
+                    </div>
+
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span>UI/UX, Canva & Modern Web Aesthetics</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-progress"><div class="progress-fill" style="width: 90%;"></div></div>
+                    </div>
                 </div>
-            </section>
-            <!-- Resume end -->
+            </div>
+        </div>
+    </section>
 
-            <!-- Portfolio
-    ============================================= -->
-            <section id="portfolio" class="section bg-dark-2">
-                <div class="container">
-                    <!-- Heading -->
-                    <div class="position-relative d-flex text-center mb-5">
-                        <h2 class="text-24 text-white-50 opacity-1 text-uppercase fw-600 w-100 mb-0">Portfolio</h2>
-                        <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">My Work<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
-                    </div>
-                    <!-- Heading end-->
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-surface">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">WHAT I DO</span>
+                <h2 class="section-title">High-Value Services Designed For <span class="gradient-text">Growth</span></h2>
+                <p class="section-description">Tailored web solutions engineered to deliver bulletproof security, blazing performance, and seamless user experiences.</p>
+            </div>
 
-                    <!-- Filter Menu -->
-                    <ul class="portfolio-menu nav nav-tabs nav-light justify-content-center border-bottom-0 mb-5">
-                        <li class="nav-item"> <a data-filter="*" class="nav-link active" href="">All</a></li>
-                        <li class="nav-item"> <a data-filter=".design" href="" class="nav-link">Web Design</a></li>
-                        <li class="nav-item"> <a data-filter=".brand" href="" class="nav-link">Web Development</a></li>
-                        <li class="nav-item"> <a data-filter=".photos" href="" class="nav-link">WordPress Development</a></li>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-brands fa-wordpress-simple"></i></div>
+                    <h3 class="service-title">Custom WordPress & WooCommerce</h3>
+                    <p class="service-desc">Pixel-perfect custom themes, Elementor designs, and WooCommerce stores optimized for maximum conversions.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-check text-green"></i> Custom Theme & Plugin Dev</li>
+                        <li><i class="fa-solid fa-check text-green"></i> WooCommerce Payment Gateways</li>
+                        <li><i class="fa-solid fa-check text-green"></i> Elementor Pro Customization</li>
                     </ul>
-                    <!-- Filter Menu end -->
-                    <div class="portfolio popup-ajax-gallery">
-                        <div class="row portfolio-filter g-4">
-                            <div class="col-sm-6 col-lg-4 brand">
-                                <div class="portfolio-box rounded">
-                                    <div class="portfolio-img rounded"> <img class="img-fluid d-block" src="https://i.ibb.co.com/67g0KnkQ/Canva-01.png" alt="">
-                                        <div class="portfolio-overlay"> <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-dark-1.html"></a>
-                                            <div class="portfolio-overlay-details">
-                                                <h5 class="text-white fw-400">Project Title</h5>
-                                                <span class="text-light">Category</span> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4 design">
-                                <div class="portfolio-box rounded">
-                                    <div class="portfolio-img rounded"> <img class="img-fluid d-block" src="https://i.ibb.co.com/mrkBXwWw/Canva-03..jpg" alt="">
-                                        <div class="portfolio-overlay"> <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-dark-2.html"></a>
-                                            <div class="portfolio-overlay-details">
-                                                <h5 class="text-white fw-400">Project Title</h5>
-                                                <span class="text-light">Category</span> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4 artwork photos">
-                                <div class="portfolio-box rounded">
-                                    <div class="portfolio-img rounded"> <img class="img-fluid d-block" src="https://i.ibb.co.com/qF7YQzKg/Canva-02.jpg" alt="">
-                                        <div class="portfolio-overlay"> <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-dark-3.html"></a>
-                                            <div class="portfolio-overlay-details">
-                                                <h5 class="text-white fw-400">Project Title</h5>
-                                                <span class="text-light">Category</span> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4 artwork brand photos">
-                                <div class="portfolio-box rounded">
-                                    <div class="portfolio-img rounded"> <img class="img-fluid d-block" src="https://i.ibb.co.com/vxhSTNqr/E-Commerce-01.jpg" alt="">
-                                        <div class="portfolio-overlay"> <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-dark-4.html"></a>
-                                            <div class="portfolio-overlay-details">
-                                                <h5 class="text-white fw-400">Project Title</h5>
-                                                <span class="text-light">Category</span> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4 design">
-                                <div class="portfolio-box rounded">
-                                    <div class="portfolio-img rounded"> <img class="img-fluid d-block" src="https://i.ibb.co.com/G4Jkkc3V/E-Commerce-03.jpg" alt="">
-                                        <div class="portfolio-overlay"> <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-dark-5.html"></a>
-                                            <div class="portfolio-overlay-details">
-                                                <h5 class="text-white fw-400">Project Title</h5>
-                                                <span class="text-light">Category</span> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4 brand">
-                                <div class="portfolio-box rounded">
-                                    <div class="portfolio-img rounded"> <img class="img-fluid d-block" src="https://i.ibb.co.com/cXCs6hg3/E-Commerce-02.jpg" alt="">
-                                        <div class="portfolio-overlay"> <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-dark-6.html"></a>
-                                            <div class="portfolio-overlay-details">
-                                                <h5 class="text-white fw-400">Project Title</h5>
-                                                <span class="text-light">Category</span> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4 design photos">
-                                <div class="portfolio-box rounded">
-                                    <div class="portfolio-img rounded"> <img class="img-fluid d-block" src="https://i.ibb.co.com/C5ZzxGhZ/Word-Press-01.jpg" alt="">
-                                        <div class="portfolio-overlay"> <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-dark-7.html"></a>
-                                            <div class="portfolio-overlay-details">
-                                                <h5 class="text-white fw-400">Project Title</h5>
-                                                <span class="text-light">Category</span> </div>
-                                                <div class="portfolio-box rounded">
-                                    <div class="portfolio-img rounded"> <img class="img-fluid d-block" src="https://i.ibb.co.com/xxpLyv6/Landing-Page-02.jpg" alt="">
-                                        <div class="portfolio-overlay"> <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-dark-7.html"></a>
-                                            <div class="portfolio-overlay-details">
-                                                <h5 class="text-white fw-400">Project Title</h5>
-                                                <span class="text-light">Category</span> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </section>
-            <!-- Portfolio end -->
 
-            <!-- Testimonial
-    ============================================= -->
-            <section id="testimonial" class="section bg-dark-1">
-                <div class="container">
-                    <!-- Heading -->
-                    <div class="position-relative d-flex text-center mb-5">
-                        <h2 class="text-24 text-muted opacity-1 text-uppercase fw-600 w-100 mb-0">Testimonial</h2>
-                        <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">Client Speak<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
-                    </div>
-                    <!-- Heading end-->
-
-                    <div class="owl-carousel owl-light owl-theme" data-loop="true" data-nav="false" data-autoplay="false" data-margin="25" data-stagepadding="0" data-slideby="1" data-items-xs="1" data-items-sm="1" data-items-md="1" data-items-lg="2">
-                        <div class="item">
-                            <div class="bg-dark rounded p-5">
-                                <div class="d-flex align-items-center mt-auto mb-4"> <img class="img-fluid rounded-circle d-inline-block w-auto" src="images/testimonial/client-sm-3.jpg" alt="">
-                                    <p class="ms-3 mb-0"><strong class="d-block text-white fw-600">Dennis Jacques</strong> <span class="text-white-50 fw-500">User from USA</span></p>
-                                </div>
-                                <p class="text-light mb-4">“Only trying it out since a few days. But up to now excellent. Seems to work flawlessly. priced simply dummy text of the printing and typesetting industry.”</p>
-                                <span class="text-2"> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> </span>                                </div>
-                        </div>
-                        <div class="item">
-                            <div class="bg-dark rounded p-5">
-                                <div class="d-flex align-items-center mt-auto mb-4"> <img class="img-fluid rounded-circle d-inline-block w-auto" src="images/testimonial/client-sm-1.jpg" alt="">
-                                    <p class="ms-3 mb-0"><strong class="d-block text-white fw-600">Jay Shah</strong> <span class="text-white-50 fw-500">Founder at Icomatic Pvt Ltd</span></p>
-                                </div>
-                                <p class="text-light mb-4">"Easy to use, reasonably priced simply dummy text of the printing and typesetting industry. Quidam lisque persius interesset his et, in quot quidam possim iriure.”</p>
-                                <span class="text-2"> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> </span>                                </div>
-                        </div>
-                        <div class="item">
-                            <div class="bg-dark rounded p-5">
-                                <div class="d-flex align-items-center mt-auto mb-4"> <img class="img-fluid rounded-circle d-inline-block w-auto" src="images/testimonial/client-sm-2.jpg" alt="">
-                                    <p class="ms-3 mb-0"><strong class="d-block text-white fw-600">Patrick Cary</strong> <span class="text-white-50 fw-500">Freelancer from USA</span></p>
-                                </div>
-                                <p class="text-light mb-4">“I am happy Working with printing and typesetting industry. Quidam lisque persius interesset his et, in quot quidam persequeris essent possim iriure.”</p>
-                                <span class="text-2"> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> </span>                                </div>
-                        </div>
-                        <div class="item">
-                            <div class="bg-dark rounded p-5">
-                                <div class="d-flex align-items-center mt-auto mb-4"> <img class="img-fluid rounded-circle d-inline-block w-auto" src="images/testimonial/client-sm-4.jpg" alt="">
-                                    <p class="ms-3 mb-0"><strong class="d-block text-white fw-600">Chris Tom</strong> <span class="text-white-50 fw-500">User from UK</span></p>
-                                </div>
-                                <p class="text-light mb-4">“I have used them twice now. Good rates, very efficient service and priced simply dummy text of the printing and typesetting industry quidam interesset his et. Excellent.”</p>
-                                <span class="text-2"> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> </span>                                </div>
-                        </div>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                    <h3 class="service-title">Core Web Vitals & Speed Booster</h3>
+                    <p class="service-desc">Transform slow sites into lightning-fast platforms. Achieve 90+ PageSpeed Insights and sub-second loading speeds.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-check text-green"></i> Image & Asset Compression</li>
+                        <li><i class="fa-solid fa-check text-green"></i> Redis/Memcached & Database Optimization</li>
+                        <li><i class="fa-solid fa-check text-green"></i> CDN & Caching Architecture</li>
+                    </ul>
                 </div>
-            </section>
-            <!-- Testimonial end -->
 
-            <!-- Contact Me
-    ============================================= -->
-            <section id="contact" class="section bg-dark-2">
-                <div class="container">
-                    <!-- Heading -->
-                    <div class="position-relative d-flex text-center mb-5">
-                        <h2 class="text-24 text-white-50 opacity-1 text-uppercase fw-600 w-100 mb-0">Contact</h2>
-                        <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">Get in Touch<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
-                    </div>
-                    <!-- Heading end-->
-                    <div class="row gy-5">
-                        <div class="col-md-4 col-xl-3 order-1 order-md-0 text-center text-md-start">
-                            <h2 class="mb-3 text-5 text-white text-uppercase">Address</h2>
-                            <p class="text-3 text-light mb-4">9 Floor, Plot No.1001,<br> 448 Residetial Complex.<br> Agargoan, Dhaka-1207, Bangladesh </p>
-                            <p class="text-3 text-light mb-1"><span class="text-primary text-4 me-2"><i class="fas fa-phone"></i></span>(+880) 1516 186 725</p>
-                            <p class="text-3 text-light mb-1"><span class="text-primary text-4 me-2"><i class="fas fa-fax"></i></span>+880 2 1234 5678</p>
-                            <p class="text-3 text-light mb-4"><span class="text-primary text-4 me-2"><i class="fas fa-envelope"></i></span>jyotitech26@gmail.com.com</p>
-                            <h2 class="mb-3 text-5 text-white text-uppercase">Follow Me</h2>
-                            <ul class="social-icons social-icons-muted justify-content-center justify-content-md-start">
-                                <li class="social-icons-dribbble"><a data-bs-toggle="tooltip" href="http://www.dribbble.com/harnishdesign/" target="_blank" title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
-                                <li class="social-icons-twitter"><a data-bs-toggle="tooltip" href="https://twitter.com/harnishdesign/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="http://www.facebook.com/harnishdesign/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                <li class="social-icons-google"><a data-bs-toggle="tooltip" href="http://www.google.com/" target="_blank" title="Google"><i class="fab fa-google"></i></a></li>
-                                <li class="social-icons-github"><a data-bs-toggle="tooltip" href="http://www.github.com/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-8 col-xl-9 order-0 order-md-1">
-                            <h2 class="mb-3 text-5 text-white text-uppercase text-center text-md-start">Send us a note</h2>
-                            <form id="contact-form" class="form-dark" action="" method="post">
-                                <div class="row g-4">
-                                    <div class="col-xl-6">
-                                        <input name="name" type="text" class="form-control" required placeholder="Name">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <input name="email" type="email" class="form-control" required placeholder="Email">
-                                    </div>
-                                    <div class="col">
-                                        <textarea name="form-message" class="form-control" rows="5" required placeholder="Tell us more about your needs........"></textarea>
-                                    </div>
-                                </div>
-                                <p class="text-center mt-4 mb-0">
-                                    <button id="submit-btn" class="btn btn-primary rounded-pill d-inline-flex" type="submit">Send Message</button>
-                                </p>
-                            </form>
-                        </div>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-lock"></i></div>
+                    <h3 class="service-title">Security Hardening & Malware Cleanup</h3>
+                    <p class="service-desc">Enterprise-grade security implementations backed by 13+ years of IT infrastructure experience.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-check text-green"></i> Malware Removal & Vulnerability Patches</li>
+                        <li><i class="fa-solid fa-check text-green"></i> WAF & Firewall Integration</li>
+                        <li><i class="fa-solid fa-check text-green"></i> Automated Backup Systems</li>
+                    </ul>
                 </div>
-            </section>
-            <!-- Contact Me end -->
 
-        </div>
-        <!-- Content end -->
-
-        <!-- Footer
-  ============================================= -->
-        <footer id="footer" class="section footer-dark bg-dark-1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 text-center text-lg-start">
-                        <p class="mb-3 mb-lg-0">Copyright © 2026 <a href="#" class="fw-500">Jyoti Chakma</a>. All Rights Reserved.</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul class="nav nav-separator nav-separator-light justify-content-center justify-content-lg-end">
-                            <li class="nav-item"> <a class="nav-link" data-bs-toggle="modal" data-bs-target="#terms-policy" href="#">Terms & Policy</a></li>
-                            <li class="nav-item"> <a class="nav-link" data-bs-toggle="modal" data-bs-target="#disclaimer" href="#">Disclaimer</a></li>
-                        </ul>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-brands fa-php"></i></div>
+                    <h3 class="service-title">Enterprise PHP & MySQL Backend</h3>
+                    <p class="service-desc">Robust backend logic, REST API integrations, and database tuning built by a Zend Certified PHP Engineer.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-check text-green"></i> Custom PHP Scripting & APIs</li>
+                        <li><i class="fa-solid fa-check text-green"></i> MySQL Query Optimization</li>
+                        <li><i class="fa-solid fa-check text-green"></i> Third-Party API Integrations</li>
+                    </ul>
                 </div>
-            </div>
-        </footer>
-        <!-- Footer end -->
 
-    </div>
-    <!-- Document Wrapper end -->
-
-    <!-- Back to Top
-============================================= -->
-    <a id="back-to-top" class="rounded-circle" data-bs-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a>
-
-    <!-- Terms & Policy Modal
-================================== -->
-    <div id="terms-policy" class="modal fade" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content bg-dark-2 text-light">
-                <div class="modal-header border-secondary">
-                    <h5 class="modal-title text-white">Terms & Policy</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h3 class="service-title">UI/UX & Web Design</h3>
+                    <p class="service-desc">Modern, clean visual design, branding assets, and landing page layouts that captivate your international audience.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-check text-green"></i> Responsive Mobile-First Design</li>
+                        <li><i class="fa-solid fa-check text-green"></i> Figma & Canva Graphics</li>
+                        <li><i class="fa-solid fa-check text-green"></i> Brand System Development</li>
+                    </ul>
                 </div>
-                <div class="modal-body p-4">
-                    <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                    <h3 class="text-white mb-3 mt-4 mt-4">Terms of Use</h3>
-                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Simply dummy text of the printing and typesetting industry.</p>
-                    <h5 class="text-white text-4 mt-4">Part I – Information Simone collects and controls</h5>
-                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <h5 class="text-white text-4 mt-4">Part II – Information that Simone processes on your behalf</h5>
-                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <h5 class="text-white text-4 mt-4">Part III – General</h5>
-                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book.</p>
-                    <h3 class="text-white mb-3 mt-4">Privacy Policy</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. </p>
-                    <ol class="lh-lg">
-                        <li>Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-                        <li>Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-                        <li>In quot quidam persequeris vim, ad mea essent possim iriure. Quidam lisque persius interesset his et.</li>
-                        <li>Quidam lisque persius interesset his et, Lisque persius interesset his et.</li>
-                        <li>Interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-                        <li>Persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-                        <li>Quot quidam persequeris vim Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Terms & Policy Modal End -->
 
-    <!-- Disclaimer Modal
-================================== -->
-    <div id="disclaimer" class="modal fade" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content bg-dark-2 text-light">
-                <div class="modal-header border-secondary">
-                    <h5 class="modal-title text-white">Copyright & Disclaimer</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        </p>
-                    <ul class="lh-lg">
-                        <li>Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-                        <li>Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-                        <li>In quot quidam persequeris vim, ad mea essent possim iriure. Quidam lisque persius interesset his et.</li>
-                        <li>Quidam lisque persius interesset his et, Lisque persius interesset his et.</li>
-                        <li>Interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-                        <li>Persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-                        <li>Quot quidam persequeris vim Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3 class="service-title">Server Migration & IT Support</h3>
+                    <p class="service-desc">Zero-downtime server migrations, DNS configuration, SSL setup, and ongoing technical support.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-check text-green"></i> Zero-Downtime Server Transfer</li>
+                        <li><i class="fa-solid fa-check text-green"></i> DNS, SSL & Domain Setup</li>
+                        <li><i class="fa-solid fa-check text-green"></i> Ongoing Maintenance Retainers</li>
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Disclaimer Modal End -->
+    </section>
 
-    <!-- Styles Switcher -->
-    <!-- <div id="styles-switcher" class="right">
-        <h2 class="text-3">Color Switcher</h2>
-        <hr>
-        <ul>
-            <li class="indigo" data-bs-toggle="tooltip" title="Indigo" data-path="css/color-indigo.css"></li>
-            <li class="blue" data-bs-toggle="tooltip" title="Blue" data-path="css/color-blue.css"></li>
-            <li class="purple" data-bs-toggle="tooltip" title="Purple" data-path="css/color-purple.css"></li>
-            <li class="cyan" data-bs-toggle="tooltip" title="Cyan" data-path="css/color-cyan.css"></li>
-            <li class="red" data-bs-toggle="tooltip" title="Red" data-path="css/color-red.css"></li>
-            <li class="pink" data-bs-toggle="tooltip" title="Pink" data-path="css/color-pink.css"></li>
-            <li class="green" data-bs-toggle="tooltip" title="Green" data-path="css/color-green.css"></li>
-            <li class="yellow" data-bs-toggle="tooltip" title="Yellow" data-path="css/color-yellow.css"></li>
-            <li class="orange" data-bs-toggle="tooltip" title="Orange" data-path="css/color-orange.css"></li>
-            <li class="brown" data-bs-toggle="tooltip" title="Brown" data-path="css/color-brown.css"></li>
-        </ul>
-        <button class="btn btn-dark btn-sm w-100 border-0 fw-400 rounded-0 shadow-none" id="reset-color">Reset Default Teal</button>
-        <button class="btn switcher-toggle"><i class="fas fa-cog"></i></button>
-    </div> -->
-    <!-- Styles Switcher End -->
+    <!-- Portfolio Showcase Section -->
+    <section id="portfolio" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">PORTFOLIO</span>
+                <h2 class="section-title">Featured <span class="gradient-text">Projects & Case Studies</span></h2>
+                <p class="section-description">Explore a curated selection of WordPress, WooCommerce, and custom web applications built for performance.</p>
+            </div>
 
-    <!-- JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Easing -->
-    <script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-    <!-- Appear -->
-    <script src="vendor/jquery.appear/jquery.appear.min.js"></script>
-    <!-- Images Loaded -->
-    <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <!-- Counter -->
-    <script src="vendor/jquery.countTo/jquery.countTo.min.js"></script>
-    <!-- Parallax Bg -->
-    <script src="vendor/parallaxie/parallaxie.min.js"></script>
-    <!-- Typed -->
-    <script src="vendor/typed/typed.min.js"></script>
-    <!-- Owl Carousel -->
-    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-    <!-- isotope Portfolio Filter -->
-    <script src="vendor/isotope/isotope.pkgd.min.js"></script>
-    <!-- Magnific Popup -->
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <!-- Style Switcher -->
-    <script src="js/switcher.min.js"></script>
+            <!-- Filter Buttons -->
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="wordpress">WordPress & WooCommerce</button>
+                <button class="filter-btn" data-filter="php">Custom PHP & Security</button>
+                <button class="filter-btn" data-filter="ui">UI/UX & Web Design</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <div class="portfolio-card" data-category="wordpress">
+                    <div class="portfolio-thumb">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=800&auto=format&fit=crop" alt="E-Commerce WooCommerce Platform">
+                        <div class="portfolio-overlay">
+                            <span class="project-tag">WooCommerce</span>
+                            <h4 class="project-title">Global E-Commerce Store</h4>
+                            <p class="project-meta">+45% Speed Improvement | Custom Checkout</p>
+                            <a href="#contact" class="btn btn-sm-glow">View Case Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="php">
+                    <div class="portfolio-thumb">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Custom Enterprise PHP Dashboard">
+                        <div class="portfolio-overlay">
+                            <span class="project-tag">PHP & Security</span>
+                            <h4 class="project-title">Enterprise API & Security Hardening</h4>
+                            <p class="project-meta">Zend PHP Architecture | 100% Security Score</p>
+                            <a href="#contact" class="btn btn-sm-glow">View Case Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="wordpress">
+                    <div class="portfolio-thumb">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="WordPress Corporate Platform">
+                        <div class="portfolio-overlay">
+                            <span class="project-tag">WordPress Core</span>
+                            <h4 class="project-title">Corporate Portal & Elementor Hub</h4>
+                            <p class="project-meta">98 PageSpeed Score | Custom Post Types</p>
+                            <a href="#contact" class="btn btn-sm-glow">View Case Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="ui">
+                    <div class="portfolio-thumb">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop" alt="SaaS Web Design UI">
+                        <div class="portfolio-overlay">
+                            <span class="project-tag">UI/UX Design</span>
+                            <h4 class="project-title">Modern SaaS Landing Experience</h4>
+                            <p class="project-meta">Glassmorphism UI | Responsive Animations</p>
+                            <a href="#contact" class="btn btn-sm-glow">View Case Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding bg-surface">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">TESTIMONIALS</span>
+                <h2 class="section-title">What <span class="gradient-text">Clients Say</span></h2>
+                <p class="section-description">Delivering reliable, engineering-grade web solutions for clients worldwide.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="testimonial-text">"Jyoti overhauled our entire WooCommerce store. His Zend PHP background was obvious—the site speed jumped from 4 seconds to under 800ms!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                        <div>
+                            <h4>Marcus Vance</h4>
+                            <p>E-Commerce Director, UK</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="testimonial-text">"With his 13+ years IT background, Jyoti saved our corporate site after a malicious malware attack. Fast, highly professional, and extremely knowledgeable."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user-gear"></i></div>
+                        <div>
+                            <h4>David Miller</h4>
+                            <p>CTO, TechAgency US</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">GET IN TOUCH</span>
+                <h2 class="section-title">Let's Build Something <span class="gradient-text">Exceptional</span></h2>
+                <p class="section-description">Have a project in mind or need expert WordPress & PHP consultation? Drop a message below.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-card">
+                    <h3>Contact Information</h3>
+                    <p>Ready to start your next high-impact web project? Connect directly via email, social links, or schedule a strategy call.</p>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <span class="contact-label">Email Me</span>
+                            <a href="mailto:jyotidev26@gmail.com" class="contact-value">jyotidev26@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">Dhaka, Bangladesh (Serving Global Clients)</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <span class="contact-label">WhatsApp Direct</span>
+                            <a href="https://wa.me/8801700000000" target="_blank" class="contact-value">Chat on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="social-links-grid">
+                        <a href="https://github.com/jyotidev26" target="_blank" class="social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-card">
+                    <form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.');">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" required placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Needed</label>
+                            <select id="service" class="form-select">
+                                <option value="wordpress">Custom WordPress / WooCommerce</option>
+                                <option value="speed">Speed & Core Web Vitals Optimization</option>
+                                <option value="security">Security Hardening & Malware Cleanup</option>
+                                <option value="php">Enterprise PHP & API Development</option>
+                                <option value="ui">UI/UX & Web Design</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" rows="4" required placeholder="Tell me about your project goals..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary-glow btn-full">
+                            <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <span class="logo-icon"><i class="fa-solid fa-code"></i></span>
+                    <span class="logo-text">Jyoti<span class="logo-accent">Tech</span></span>
+                </a>
+                <p>© 2026 Jyoti Prakash Chakma (JyotiTech). All Rights Reserved.</p>
+            </div>
+            
+            <a href="#home" class="back-to-top" aria-label="Back to top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
     <!-- Custom Script -->
-    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>
