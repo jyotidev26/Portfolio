@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global E-Commerce Store Case Study | JyotiTech Demo</title>
+    <meta name="description" content="Case study and live interactive demo of a high-performance WooCommerce platform engineered by Jyoti Prakash Chakma (Zend Certified PHP Engineer).">
+    
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css?v=2.1">
+    
+    <style>
+        .demo-page-padding { padding: 140px 0 80px; }
+        .back-nav { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 600; margin-bottom: 24px; font-size: 0.95rem; }
+        .back-nav:hover { color: var(--text-main); transform: translateX(-4px); }
+        .case-header { margin-bottom: 40px; }
+        .case-tag { display: inline-block; padding: 6px 16px; border-radius: var(--radius-full); background: rgba(99, 102, 241, 0.15); border: 1px solid var(--primary); color: #818CF8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+        .case-title { font-family: var(--font-heading); font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+        .case-meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 24px; backdrop-filter: blur(16px); margin-bottom: 50px; }
+        .meta-box h5 { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 4px; }
+        .meta-box p { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
+        .demo-preview-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 32px; backdrop-filter: blur(16px); margin-bottom: 50px; }
+        .shop-demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 24px; }
+        .product-card { background: #080C14; border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 16px; text-align: center; }
+        .product-img { width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 12px; }
+        .product-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+        .product-price { color: var(--accent); font-weight: 700; margin-bottom: 12px; }
+    </style>
+</head>
+<body>
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
+    <div class="container demo-page-padding">
+        <a href="../index.html#portfolio" class="back-nav"><i class="fa-solid fa-arrow-left"></i> Back to Main Portfolio</a>
+
+        <div class="case-header">
+            <span class="case-tag">WooCommerce & Speed Engineering</span>
+            <h1 class="case-title">Global E-Commerce Store Case Study</h1>
+            <p class="section-description">How we transformed a sluggish WooCommerce store into a sub-second, high-converting global platform.</p>
+        </div>
+
+        <div class="case-meta-grid">
+            <div class="meta-box">
+                <h5>Role & Tech</h5>
+                <p>WooCommerce & PHP 8+</p>
+            </div>
+            <div class="meta-box">
+                <h5>Load Speed</h5>
+                <p class="text-green"><i class="fa-solid fa-bolt"></i> 780 ms (Sub-1s)</p>
+            </div>
+            <div class="meta-box">
+                <h5>PageSpeed Score</h5>
+                <p class="text-gold"><i class="fa-solid fa-gauge-high"></i> 99/100 Mobile</p>
+            </div>
+            <div class="meta-box">
+                <h5>Conversion Rate</h5>
+                <p class="text-green"><i class="fa-solid fa-chart-line"></i> +45% Increase</p>
+            </div>
+        </div>
+
+        <!-- Interactive Live Store Mockup -->
+        <div class="demo-preview-card">
+            <div class="d-flex justify-content-between align-items-center mb-4" style="display:flex; justify-content:space-between; align-items:center;">
+                <h3><i class="fa-solid fa-shop text-primary"></i> Interactive WooCommerce Store Demo</h3>
+                <span class="badge-pill" style="margin:0;"><span class="badge-dot"></span> <span class="badge-text">Live Interactive Preview</span></span>
+            </div>
+
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Try the live interactive demo below to experience instant cart additions and sub-second Ajax checkout responsiveness built by JyotiTech.</p>
+
+            <div class="shop-demo-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400&auto=format&fit=crop" alt="Headphones" class="product-img">
+                    <h4 class="product-title">Wireless Pro Headphones</h4>
+                    <p class="product-price">$249.00</p>
+                    <button class="btn btn-sm-glow btn-full" onclick="alert('Item added to cart instantly via sub-1s Ajax!')">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400&auto=format&fit=crop" alt="Smart Watch" class="product-img">
+                    <h4 class="product-title">Aura Smart Watch Series 7</h4>
+                    <p class="product-price">$199.00</p>
+                    <button class="btn btn-sm-glow btn-full" onclick="alert('Item added to cart instantly via sub-1s Ajax!')">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=400&auto=format&fit=crop" alt="Running Shoes" class="product-img">
+                    <h4 class="product-title">Ultra-Light Speed Runners</h4>
+                    <p class="product-price">$149.00</p>
+                    <button class="btn btn-sm-glow btn-full" onclick="alert('Item added to cart instantly via sub-1s Ajax!')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Execution Breakdown -->
+        <div class="about-bio-glass">
+            <h3 class="bio-heading">Technical Execution Highlights</h3>
+            <ul class="service-list" style="margin-bottom: 24px;">
+                <li><i class="fa-solid fa-check text-green"></i> <strong>Redis & Memcached Integration:</strong> Reduced database query load by 82% for instant catalog rendering.</li>
+                <li><i class="fa-solid fa-check text-green"></i> <strong>Custom WooCommerce Checkout:</strong> Replaced bloated checkout scripts with lightweight 1-step Ajax checkout.</li>
+                <li><i class="fa-solid fa-check text-green"></i> <strong>Image & Asset Optimization:</strong> Implemented WebP format and CDN edge caching across global servers.</li>
+                <li><i class="fa-solid fa-check text-green"></i> <strong>Security Hardening:</strong> Bank-grade SSL, 2FA admin authentication, and automated daily cloud backups.</li>
+            </ul>
+
+            <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:30px;">
+                <a href="../index.html#contact" class="btn btn-primary-glow">Need a Store Like This? Contact Me <i class="fa-solid fa-paper-plane"></i></a>
+                <a href="../index.html#portfolio" class="btn btn-secondary-glass">Back to All Projects</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

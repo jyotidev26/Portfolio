@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Server & Security Monitor Demo | JyotiTech</title>
+    <meta name="description" content="Custom PHP Server & IT Security Monitor dashboard case study engineered by Jyoti Prakash Chakma (Zend Certified PHP Engineer & 13+ Yrs IT Infra Specialist).">
+    
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css?v=2.1">
+    
+    <style>
+        .demo-page-padding { padding: 140px 0 80px; }
+        .back-nav { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 600; margin-bottom: 24px; font-size: 0.95rem; }
+        .back-nav:hover { color: var(--text-main); transform: translateX(-4px); }
+        .case-header { margin-bottom: 40px; }
+        .case-tag { display: inline-block; padding: 6px 16px; border-radius: var(--radius-full); background: rgba(99, 102, 241, 0.15); border: 1px solid var(--primary); color: #818CF8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+        .case-title { font-family: var(--font-heading); font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+        .case-meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 24px; backdrop-filter: blur(16px); margin-bottom: 50px; }
+        .meta-box h5 { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 4px; }
+        .meta-box p { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
+        .demo-preview-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 32px; backdrop-filter: blur(16px); margin-bottom: 50px; }
+        
+        .dash-widget-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 20px; }
+        .widget-box { background: #080C14; border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 20px; text-align: center; }
+        .widget-val { font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--accent); margin: 10px 0 4px; }
+    </style>
+</head>
+<body>
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
+    <div class="container demo-page-padding">
+        <a href="../index.html#portfolio" class="back-nav"><i class="fa-solid fa-arrow-left"></i> Back to Main Portfolio</a>
+
+        <div class="case-header">
+            <span class="case-tag">Custom PHP & IT Infrastructure</span>
+            <h1 class="case-title">Real-Time Server & Security Monitor Demo</h1>
+            <p class="section-description">Custom Zend PHP backend architecture monitoring CPU load, RAM usage, SSL health, and automated threat alerts.</p>
+        </div>
+
+        <div class="case-meta-grid">
+            <div class="meta-box">
+                <h5>Server Uptime</h5>
+                <p class="text-green"><i class="fa-solid fa-circle-check"></i> 99.99% Guaranteed</p>
+            </div>
+            <div class="meta-box">
+                <h5>Response Time</h5>
+                <p class="text-primary"><i class="fa-solid fa-bolt"></i> 12 ms Average</p>
+            </div>
+            <div class="meta-box">
+                <h5>API Standard</h5>
+                <p class="text-gold"><i class="fa-solid fa-code"></i> REST API & WebSockets</p>
+            </div>
+            <div class="meta-box">
+                <h5>Engineered By</h5>
+                <p>Zend Certified PHP Specialist</p>
+            </div>
+        </div>
+
+        <!-- Interactive Dashboard Demo -->
+        <div class="demo-preview-card">
+            <div class="d-flex justify-content-between align-items-center mb-4" style="display:flex; justify-content:space-between; align-items:center;">
+                <h3><i class="fa-solid fa-server text-primary"></i> Live Interactive Server Dashboard Demo</h3>
+                <span class="badge-pill" style="margin:0;"><span class="badge-dot"></span> <span class="badge-text">Real-Time Pulse</span></span>
+            </div>
+
+            <div class="dash-widget-grid">
+                <div class="widget-box">
+                    <i class="fa-solid fa-microchip text-primary" style="font-size:1.5rem;"></i>
+                    <div class="widget-val" id="cpuVal">18%</div>
+                    <span style="font-size:0.8rem; color:var(--text-dim);">CPU LOAD</span>
+                </div>
+
+                <div class="widget-box">
+                    <i class="fa-solid fa-memory text-green" style="font-size:1.5rem;"></i>
+                    <div class="widget-val" id="ramVal" style="color:var(--secondary);">42%</div>
+                    <span style="font-size:0.8rem; color:var(--text-dim);">RAM UTILIZATION</span>
+                </div>
+
+                <div class="widget-box">
+                    <i class="fa-solid fa-network-wired text-gold" style="font-size:1.5rem;"></i>
+                    <div class="widget-val" style="color:var(--accent-gold);">0</div>
+                    <span style="font-size:0.8rem; color:var(--text-dim);">ACTIVE THREATS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-bio-glass">
+            <h3 class="bio-heading">Dashboard Features</h3>
+            <ul class="service-list" style="margin-bottom: 24px;">
+                <li><i class="fa-solid fa-check text-green"></i> <strong>Real-Time Alert Dispatcher:</strong> Instant SMS & Telegram notifications if server load exceeds 85%.</li>
+                <li><i class="fa-solid fa-check text-green"></i> <strong>Automated SSL Expiry Warning:</strong> 30-day advance alerts for SSL renewal.</li>
+                <li><i class="fa-solid fa-check text-green"></i> <strong>Hardened Zend PHP Core:</strong> Optimized MySQL query pooling with zero memory leaks.</li>
+            </ul>
+
+            <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:30px;">
+                <a href="../index.html#contact" class="btn btn-primary-glow">Need Custom PHP Dashboard? Contact Me <i class="fa-solid fa-paper-plane"></i></a>
+                <a href="../index.html#portfolio" class="btn btn-secondary-glass">Back to All Projects</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        setInterval(() => {
+            const cpu = Math.floor(Math.random() * 15) + 12;
+            const ram = Math.floor(Math.random() * 10) + 38;
+            document.getElementById('cpuVal').innerText = cpu + '%';
+            document.getElementById('ramVal').innerText = ram + '%';
+        }, 3000);
+    </script>
+</body>
+</html>

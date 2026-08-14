@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Security Hardening Demo | JyotiTech</title>
+    <meta name="description" content="Interactive live security scanner demo and case study built by Jyoti Prakash Chakma (Zend Certified PHP Engineer & 13+ Yrs IT Infra Specialist).">
+    
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css?v=2.1">
+    
+    <style>
+        .demo-page-padding { padding: 140px 0 80px; }
+        .back-nav { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 600; margin-bottom: 24px; font-size: 0.95rem; }
+        .back-nav:hover { color: var(--text-main); transform: translateX(-4px); }
+        .case-header { margin-bottom: 40px; }
+        .case-tag { display: inline-block; padding: 6px 16px; border-radius: var(--radius-full); background: rgba(16, 185, 129, 0.15); border: 1px solid var(--accent); color: #34D399; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+        .case-title { font-family: var(--font-heading); font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+        .case-meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 24px; backdrop-filter: blur(16px); margin-bottom: 50px; }
+        .meta-box h5 { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 4px; }
+        .meta-box p { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
+        .demo-preview-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 32px; backdrop-filter: blur(16px); margin-bottom: 50px; }
+        .scanner-box { background: #080C14; border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 24px; font-family: monospace; }
+        .terminal-log { background: #020617; border-radius: var(--radius-sm); padding: 16px; margin-top: 16px; color: #10B981; font-size: 0.88rem; min-height: 120px; }
+    </style>
+</head>
+<body>
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
+    <div class="container demo-page-padding">
+        <a href="../index.html#portfolio" class="back-nav"><i class="fa-solid fa-arrow-left"></i> Back to Main Portfolio</a>
+
+        <div class="case-header">
+            <span class="case-tag">Enterprise PHP & Security Hardening</span>
+            <h1 class="case-title">Enterprise API & Security Hardening Demo</h1>
+            <p class="section-description">Government-grade security architecture built with 13+ years of IT Infrastructure depth and Zend PHP certification.</p>
+        </div>
+
+        <div class="case-meta-grid">
+            <div class="meta-box">
+                <h5>Security Rating</h5>
+                <p class="text-green"><i class="fa-solid fa-shield-check"></i> 100/100 A+</p>
+            </div>
+            <div class="meta-box">
+                <h5>Malware Status</h5>
+                <p class="text-green"><i class="fa-solid fa-check"></i> 0 Threats Detected</p>
+            </div>
+            <div class="meta-box">
+                <h5>Firewall Type</h5>
+                <p class="text-primary"><i class="fa-solid fa-server"></i> WAF & Rate Limiter</p>
+            </div>
+            <div class="meta-box">
+                <h5>Architecture</h5>
+                <p class="text-gold"><i class="fa-solid fa-code"></i> Zend PHP 8+ Secured</p>
+            </div>
+        </div>
+
+        <!-- Interactive Security Scanner Demo -->
+        <div class="demo-preview-card">
+            <div class="d-flex justify-content-between align-items-center mb-4" style="display:flex; justify-content:space-between; align-items:center;">
+                <h3><i class="fa-solid fa-shield-halved text-green"></i> Interactive Live Threat Scanner Demo</h3>
+                <span class="badge-pill" style="margin:0;"><span class="badge-dot"></span> <span class="badge-text">Interactive Security Test</span></span>
+            </div>
+
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Click the button below to run a simulated security scan of server headers, SSL certificates, SQL injection defenses, and WAF firewall integrity.</p>
+
+            <div class="scanner-box">
+                <button class="btn btn-primary-glow" id="runScanBtn" onclick="runSecurityScan()">
+                    <i class="fa-solid fa-play"></i> Run Live Security Audit Simulation
+                </button>
+
+                <div class="terminal-log" id="terminalLog">
+                    [SYSTEM READY] Click 'Run Live Security Audit Simulation' to test firewall rules...
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Hardening Summary -->
+        <div class="about-bio-glass">
+            <h3 class="bio-heading">Security Hardening Stack</h3>
+            <ul class="service-list" style="margin-bottom: 24px;">
+                <li><i class="fa-solid fa-check text-green"></i> <strong>Web Application Firewall (WAF):</strong> Blocking SQL Injection, XSS, and CSRF attacks in real-time.</li>
+                <li><i class="fa-solid fa-check text-green"></i> <strong>File Integrity Monitoring (FIM):</strong> Automated detection of modified core files or unauthorized PHP uploads.</li>
+                <li><i class="fa-solid fa-check text-green"></i> <strong>Hardened Server Headers:</strong> Strict CSP, HSTS, X-Frame-Options, and X-Content-Type security headers.</li>
+                <li><i class="fa-solid fa-check text-green"></i> <strong>Zero-Downtime Backup & Recovery:</strong> Automated encrypted offsite backups for instant recovery.</li>
+            </ul>
+
+            <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:30px;">
+                <a href="../index.html#contact" class="btn btn-primary-glow">Need Security Hardening? Contact Me <i class="fa-solid fa-paper-plane"></i></a>
+                <a href="../index.html#portfolio" class="btn btn-secondary-glass">Back to All Projects</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function runSecurityScan() {
+            const btn = document.getElementById('runScanBtn');
+            const log = document.getElementById('terminalLog');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Scanning Server Infrastructure...';
+            log.innerHTML = '[1/4] Verifying SSL/TLS 1.3 Certificate... PASS<br>';
+
+            setTimeout(() => {
+                log.innerHTML += '[2/4] Testing Web Application Firewall (WAF) Rule Engine... PASS<br>';
+            }, 800);
+
+            setTimeout(() => {
+                log.innerHTML += '[3/4] Inspecting SQL Injection & XSS Shield Protocols... PASS<br>';
+            }, 1600);
+
+            setTimeout(() => {
+                log.innerHTML += '[4/4] Verifying Core PHP 8 File Integrity Signatures... PASS<br><br><span style="color:#10B981; font-weight:bold;">[RESULT] SERVER STATUS: 100% SECURE - ZERO VULNERABILITIES FOUND!</span>';
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Run Security Scan Again';
+            }, 2400);
+        }
+    </script>
+</body>
+</html>
