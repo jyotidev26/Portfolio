@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justis | Elite Legal & Law Firm Portal by JyotiTech</title>
+    <meta name="description" content="Justis - Premium Legal Counsel & Law Firm Portal engineered by Jyoti Prakash Chakma (Zend Certified PHP Specialist). Practice area management & consultation scheduling.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root { --bg:#090D16; --card:#101726; --border:rgba(212,175,55,0.2); --gold:#D4AF37; --gold-glow:rgba(212,175,55,0.4); --text:#F8FAFC; }
+        body { background:var(--bg); color:var(--text); font-family:'Plus Jakarta Sans', sans-serif; margin:0; padding:40px 20px; }
+        .container { max-width:1100px; margin:0 auto; }
+        .header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:24px; margin-bottom:40px; }
+        .brand { font-family:'Cinzel', serif; font-size:1.8rem; font-weight:800; color:var(--gold); display:flex; align-items:center; gap:12px; }
+        
+        .hero-banner { background:linear-gradient(135deg, rgba(16,23,38,0.9), rgba(9,13,22,0.95)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200') center/cover; border:1px solid var(--border); border-radius:20px; padding:60px 40px; text-align:center; margin-bottom:40px; }
+        .hero-title { font-family:'Cinzel', serif; font-size:2.8rem; color:var(--gold); margin:0 0 16px; text-shadow:0 0 20px var(--gold-glow); }
+        .hero-sub { color:#94A3B8; font-size:1.1rem; max-width:700px; margin:0 auto 30px; }
+        
+        .grid-3 { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; margin-bottom:40px; }
+        .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:28px; transition:0.3s ease; }
+        .card:hover { border-color:var(--gold); transform:translateY(-4px); }
+        .card-icon { font-size:2.2rem; color:var(--gold); margin-bottom:16px; }
+        .card-title { font-family:'Cinzel', serif; font-size:1.3rem; margin:0 0 10px; color:var(--gold); }
+        .card-desc { color:#94A3B8; font-size:0.9rem; line-height:1.6; }
+        
+        .btn-gold { display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg, #D4AF37, #AA7C11); color:#000; padding:14px 32px; border-radius:12px; font-weight:800; text-decoration:none; text-transform:uppercase; letter-spacing:1px; transition:0.3s ease; }
+        .btn-gold:hover { box-shadow:0 0 25px var(--gold-glow); transform:translateY(-2px); }
+        
+        .footer-note { text-align:center; margin-top:60px; color:#94A3B8; font-size:0.9rem; }
+        .footer-note a { color:var(--gold); text-decoration:none; font-weight:700; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="brand">
+                <i class="fa-solid fa-scale-balanced"></i> JUSTIS LEGAL COUNSEL
+            </div>
+            <div style="color:var(--gold); font-size:0.9rem; font-weight:700;">
+                <i class="fa-solid fa-award"></i> Premier Corporate & Civil Law Firm
+            </div>
+        </div>
+
+        <div class="hero-banner">
+            <h1 class="hero-title">JUSTICE & UNCOMPROMISING ADVOCACY</h1>
+            <p class="hero-sub">Providing strategic legal representation in Corporate Law, Intellectual Property, and Civil Litigation with unmatched integrity.</p>
+            <a href="#consultation" class="btn-gold"><i class="fa-solid fa-calendar-check"></i> Book Confidential Consultation</a>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+                <h3 class="card-title">Corporate & Commercial Law</h3>
+                <p class="card-desc">Mergers, acquisitions, cross-border contract negotiation, and enterprise compliance management.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-gavel"></i></div>
+                <h3 class="card-title">Civil & High-Court Litigation</h3>
+                <p class="card-desc">Formidable courtroom representation, dispute resolution, and arbitration services.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-copyright"></i></div>
+                <h3 class="card-title">Intellectual Property & IP</h3>
+                <p class="card-desc">Patent filings, trademark defense, copyright registration, and IP licensing strategy.</p>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p>Engineered by <a href="https://jyotidev26.github.io/Portfolio/" target="_blank">Jyoti Prakash Chakma (Zend Certified PHP Specialist)</a> | Built in OOP PHP 8+ & Responsive Web Architecture.</p>
+        </div>
+    </div>
+</body>
+</html>
