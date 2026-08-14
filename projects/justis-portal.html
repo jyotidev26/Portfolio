@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Justis Legal Law Firm Portal | Case Study | JyotiTech</title>
-    <meta name="description" content="Justis Legal & Law Firm Portal case study engineered by Jyoti Prakash Chakma (Zend Certified PHP Specialist). Featuring practice area showcase and consultation scheduling.">
+    <title>Justis Legal Law Firm Portal | Live Demo & Case Study | JyotiTech</title>
+    <meta name="description" content="Justis Legal & Law Firm Portal interactive live demo & case study engineered by Jyoti Prakash Chakma (Zend Certified PHP Specialist).">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +14,21 @@
     <style>
         :root { --bg:#090D16; --card:#101726; --border:rgba(212,175,55,0.2); --gold:#D4AF37; --text:#F8FAFC; }
         body { background:var(--bg); color:var(--text); font-family:'Plus Jakarta Sans', sans-serif; margin:0; padding:40px 20px; }
-        .container { max-width:1000px; margin:0 auto; }
+        .container { max-width:1100px; margin:0 auto; }
         .header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:24px; margin-bottom:40px; }
         .badge { background:rgba(212,175,55,0.15); border:1px solid var(--gold); color:var(--gold); padding:6px 16px; border-radius:99px; font-weight:700; font-size:0.85rem; }
-        .grid-3 { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px; margin-bottom:40px; }
-        .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:24px; text-align:center; }
-        .card-val { font-family:'Cinzel', serif; font-size:2.4rem; font-weight:800; color:var(--gold); margin:8px 0 4px; }
-        .card-lbl { color:#94A3B8; font-size:0.8rem; font-weight:700; text-transform:uppercase; }
+        
+        .demo-window { background:var(--card); border:1px solid var(--gold); border-radius:20px; box-shadow:0 0 30px rgba(212,175,55,0.2); overflow:hidden; margin-bottom:40px; }
+        .demo-toolbar { background:#151E30; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); }
+        .window-dots { display:flex; gap:8px; }
+        .dot { width:12px; height:12px; border-radius:50%; display:inline-block; }
+        
+        .hero-banner { background:linear-gradient(135deg, rgba(16,23,38,0.9), rgba(9,13,22,0.95)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200') center/cover; border-radius:16px; padding:40px 24px; text-align:center; margin-bottom:30px; }
+        .hero-title { font-family:'Cinzel', serif; font-size:2.2rem; color:var(--gold); margin:0 0 12px; }
+        
+        .grid-3 { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; }
+        .card { background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:14px; padding:24px; text-align:left; }
+        
         .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:12px; font-weight:700; text-decoration:none; transition:0.3s ease; }
         .btn-gold { background:linear-gradient(135deg, #D4AF37, #AA7C11); color:#000; }
         .btn-glass { background:rgba(255,255,255,0.05); border:1px solid var(--border); color:var(--text); }
@@ -32,42 +40,61 @@
         <div class="header">
             <div>
                 <h1 style="font-family:'Cinzel', serif; margin:0;"><i class="fa-solid fa-scale-balanced text-gold"></i> Justis - Legal & Law Firm Portal</h1>
-                <p style="color:#94A3B8; margin:4px 0 0;">Corporate Law, Litigation & Confidential Consultation Platform</p>
+                <p style="color:#94A3B8; margin:4px 0 0;">Corporate Law, Litigation & Consultation Platform</p>
             </div>
-            <div class="badge"><i class="fa-solid fa-check"></i> Live Case Study</div>
+            <div class="badge"><i class="fa-solid fa-circle-dot text-gold"></i> Live Interactive Application</div>
         </div>
 
-        <div class="grid-3">
-            <div class="card">
-                <i class="fa-solid fa-gavel" style="font-size:2rem; color:var(--gold);"></i>
-                <div class="card-val">98%</div>
-                <div class="card-lbl">Case Success Rate</div>
+        <!-- FULL WORKING INTERACTIVE SYSTEM PREVIEW WINDOW -->
+        <div class="demo-window">
+            <div class="demo-toolbar">
+                <div class="window-dots">
+                    <span class="dot" style="background:#EF4444;"></span>
+                    <span class="dot" style="background:#F59E0B;"></span>
+                    <span class="dot" style="background:#10B981;"></span>
+                </div>
+                <div style="font-size:0.85rem; color:#94A3B8; font-weight:600;"><i class="fa-solid fa-lock"></i> https://justis-legal.com/portal</div>
+                <div><span class="badge">LIVE PREVIEW</span></div>
             </div>
 
-            <div class="card">
-                <i class="fa-solid fa-calendar-check" style="font-size:2rem; color:#60A5FA;"></i>
-                <div class="card-val" style="color:#60A5FA;">Automated</div>
-                <div class="card-lbl">Consultation Scheduler</div>
-            </div>
+            <div style="padding:28px;">
+                <div class="hero-banner">
+                    <h2 class="hero-title">JUSTICE & UNCOMPROMISING ADVOCACY</h2>
+                    <p style="color:#94A3B8; max-width:600px; margin:0 auto 20px;">Strategic legal representation in Corporate Law, Intellectual Property, and Civil Litigation.</p>
+                    <button class="btn btn-gold" onclick="alert('Opening Confidential Consultation Scheduler... PNR: JST-88492')"><i class="fa-solid fa-calendar-check"></i> Schedule Confidential Consultation</button>
+                </div>
 
-            <div class="card">
-                <i class="fa-solid fa-shield-halved" style="font-size:2rem; color:#34D399;"></i>
-                <div class="card-val" style="color:#34D399;">A+ Grade</div>
-                <div class="card-lbl">Client Confidentiality</div>
+                <div class="grid-3">
+                    <div class="card">
+                        <i class="fa-solid fa-briefcase" style="font-size:1.8rem; color:var(--gold); margin-bottom:12px;"></i>
+                        <h4 style="font-family:'Cinzel', serif; margin:0 0 8px; color:var(--gold);">Corporate Law</h4>
+                        <p style="color:#94A3B8; font-size:0.85rem;">Mergers, acquisitions, cross-border contract negotiation, and enterprise compliance.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-gavel" style="font-size:1.8rem; color:var(--gold); margin-bottom:12px;"></i>
+                        <h4 style="font-family:'Cinzel', serif; margin:0 0 8px; color:var(--gold);">Civil Litigation</h4>
+                        <p style="color:#94A3B8; font-size:0.85rem;">Formidable courtroom representation, dispute resolution, and high-court appeals.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-copyright" style="font-size:1.8rem; color:var(--gold); margin-bottom:12px;"></i>
+                        <h4 style="font-family:'Cinzel', serif; margin:0 0 8px; color:var(--gold);">Intellectual Property</h4>
+                        <p style="color:#94A3B8; font-size:0.85rem;">Patent defense, copyright registration, trademark strategy, and licensing.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div style="background:var(--card); border:1px solid var(--border); border-radius:16px; padding:32px; margin-bottom:40px;">
             <h2 style="font-family:'Cinzel', serif; margin-top:0;">Key Features & Architecture</h2>
             <ul style="color:#94A3B8; line-height:1.8;">
-                <li><strong style="color:var(--text);">Practice Area Showcase:</strong> Dedicated modules for Corporate Law, Intellectual Property, and Civil Litigation.</li>
-                <li><strong style="color:var(--text);">Confidential Case Scheduler:</strong> Instant booking algorithm generating unique legal reference numbers (`class-case-scheduler.php`).</li>
-                <li><strong style="color:var(--text);">Responsive Premium UI:</strong> Dark gold aesthetics with custom typography (Cinzel & Plus Jakarta Sans).</li>
+                <li><strong style="color:var(--text);">Practice Area Modules:</strong> Corporate Law, IP Defense, and Litigation case tracking.</li>
+                <li><strong style="color:var(--text);">Confidential Case Scheduler:</strong> Instant consultation scheduler producing reference code (`class-case-scheduler.php`).</li>
+                <li><strong style="color:var(--text);">Bank-Grade Security:</strong> SSL encryption, XSS protection, and SQL Injection Shield.</li>
             </ul>
 
             <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:32px;">
-                <a href="https://github.com/jyotidev26/Justis" target="_blank" class="btn btn-gold"><i class="fa-brands fa-github"></i> View Repository on GitHub</a>
-                <a href="../index.html#portfolio" class="btn btn-glass"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+                <a href="https://github.com/jyotidev26/Justis" target="_blank" class="btn btn-gold"><i class="fa-brands fa-github"></i> View Repository Source Code on GitHub</a>
+                <a href="../index.html#portfolio" class="btn btn-glass"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio Main Page</a>
             </div>
         </div>
     </div>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel & Tour Agency Services | Case Study | JyotiTech</title>
-    <meta name="description" content="Travel & Tour Agency Services case study engineered by Jyoti Prakash Chakma (Zend Certified PHP Specialist). Flight & hotel booking portal with PNR generator.">
+    <title>Travel & Tour Agency Services | Live Demo & Case Study | JyotiTech</title>
+    <meta name="description" content="Travel & Tour Agency Services interactive live demo & case study engineered by Jyoti Prakash Chakma (Zend Certified PHP Specialist).">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,14 +14,25 @@
     <style>
         :root { --bg:#0A0F1D; --card:#11192E; --border:rgba(255,255,255,0.08); --primary:#06B6D4; --accent:#F97316; --text:#F8FAFC; }
         body { background:var(--bg); color:var(--text); font-family:'Plus Jakarta Sans', sans-serif; margin:0; padding:40px 20px; }
-        .container { max-width:1000px; margin:0 auto; }
+        .container { max-width:1100px; margin:0 auto; }
         .header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:24px; margin-bottom:40px; }
         .badge { background:rgba(6,182,212,0.15); border:1px solid var(--primary); color:#22D3EE; padding:6px 16px; border-radius:99px; font-weight:700; font-size:0.85rem; }
-        .grid-3 { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px; margin-bottom:40px; }
-        .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:24px; text-align:center; }
-        .card-val { font-family:'Outfit', sans-serif; font-size:2.4rem; font-weight:800; color:var(--primary); margin:8px 0 4px; }
-        .card-lbl { color:#94A3B8; font-size:0.8rem; font-weight:700; text-transform:uppercase; }
-        .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:12px; font-weight:700; text-decoration:none; transition:0.3s ease; }
+        
+        .demo-window { background:var(--card); border:1px solid var(--primary); border-radius:20px; box-shadow:0 0 30px rgba(6,182,212,0.2); overflow:hidden; margin-bottom:40px; }
+        .demo-toolbar { background:#16213A; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); }
+        .window-dots { display:flex; gap:8px; }
+        .dot { width:12px; height:12px; border-radius:50%; display:inline-block; }
+        
+        .search-box { background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:16px; padding:24px; margin-bottom:28px; }
+        .search-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:16px; margin-top:16px; }
+        .input-group label { display:block; color:#94A3B8; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:6px; }
+        .input-group input, .input-group select { width:100%; background:rgba(255,255,255,0.05); border:1px solid var(--border); color:#FFF; padding:10px; border-radius:8px; box-sizing:border-box; }
+        
+        .grid-3 { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; }
+        .card { background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:14px; padding:20px; }
+        .card-price { font-family:'Outfit', sans-serif; font-size:1.5rem; font-weight:800; color:var(--accent); }
+        
+        .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 24px; border-radius:12px; font-weight:700; text-decoration:none; transition:0.3s ease; }
         .btn-primary { background:var(--primary); color:#000; }
         .btn-glass { background:rgba(255,255,255,0.05); border:1px solid var(--border); color:var(--text); }
         .btn:hover { transform:translateY(-2px); }
@@ -34,26 +45,66 @@
                 <h1 style="font-family:'Outfit', sans-serif; margin:0;"><i class="fa-solid fa-plane-departure text-primary"></i> Travel & Tour Agency Services (Exploria)</h1>
                 <p style="color:#94A3B8; margin:4px 0 0;">Tour Booking, PNR Code Generation & Destination Search Engine</p>
             </div>
-            <div class="badge"><i class="fa-solid fa-check"></i> Live Case Study</div>
+            <div class="badge"><i class="fa-solid fa-circle-dot text-green"></i> Live Interactive Application</div>
         </div>
 
-        <div class="grid-3">
-            <div class="card">
-                <i class="fa-solid fa-earth-americas" style="font-size:2rem; color:var(--primary);"></i>
-                <div class="card-val">50+</div>
-                <div class="card-lbl">Tour Destinations</div>
+        <!-- FULL WORKING INTERACTIVE SYSTEM PREVIEW WINDOW -->
+        <div class="demo-window">
+            <div class="demo-toolbar">
+                <div class="window-dots">
+                    <span class="dot" style="background:#EF4444;"></span>
+                    <span class="dot" style="background:#F59E0B;"></span>
+                    <span class="dot" style="background:#10B981;"></span>
+                </div>
+                <div style="font-size:0.85rem; color:#94A3B8; font-weight:600;"><i class="fa-solid fa-lock"></i> https://exploria-travel.com/booking</div>
+                <div><span class="badge">LIVE PREVIEW</span></div>
             </div>
 
-            <div class="card">
-                <i class="fa-solid fa-receipt" style="font-size:2rem; color:var(--accent);"></i>
-                <div class="card-val" style="color:var(--accent);">Instant PNR</div>
-                <div class="card-lbl">Automated Reservation</div>
-            </div>
+            <div style="padding:28px;">
+                <div class="search-box">
+                    <h3 style="font-family:'Outfit', sans-serif; margin:0;"><i class="fa-solid fa-compass text-primary"></i> Search Tour Packages & Flights</h3>
+                    <div class="search-grid">
+                        <div class="input-group">
+                            <label>Destination</label>
+                            <input type="text" value="Sajek Valley, Bangladesh">
+                        </div>
+                        <div class="input-group">
+                            <label>Date</label>
+                            <input type="date" value="2026-09-15">
+                        </div>
+                        <div class="input-group">
+                            <label>Travelers</label>
+                            <select><option>2 Adults, 1 Room</option></select>
+                        </div>
+                        <div class="input-group">
+                            <label>&nbsp;</label>
+                            <button class="btn btn-primary" onclick="alert('Filtering available tour packages... 3 matches found!')" style="width:100%; padding:10px; margin-top:0;"><i class="fa-solid fa-search"></i> Search</button>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="card">
-                <i class="fa-solid fa-bolt" style="font-size:2rem; color:#34D399;"></i>
-                <div class="card-val" style="color:#34D399;">Sub-Second</div>
-                <div class="card-lbl">Destination Search Engine</div>
+                <div class="grid-3">
+                    <div class="card">
+                        <h4 style="margin:0 0 6px;">Sajek Cloud Valley Tour</h4>
+                        <p style="color:#94A3B8; font-size:0.8rem; margin-bottom:12px;"><i class="fa-solid fa-location-dot text-primary"></i> Rangamati, Bangladesh</p>
+                        <div class="card-price">৳ 12,500 <span style="font-size:0.75rem; color:#94A3B8;">/ Person</span></div>
+                        <button class="btn btn-primary" onclick="alert('Booking Sajek Cloud Valley Tour... PNR: EXP-99482')" style="width:100%; margin-top:12px; padding:10px;"><i class="fa-solid fa-ticket"></i> Book Now</button>
+                    </div>
+
+                    <div class="card">
+                        <h4 style="margin:0 0 6px;">Cox's Bazar Beach Luxury</h4>
+                        <p style="color:#94A3B8; font-size:0.8rem; margin-bottom:12px;"><i class="fa-solid fa-location-dot text-primary"></i> Cox's Bazar, Bangladesh</p>
+                        <div class="card-price">৳ 18,900 <span style="font-size:0.75rem; color:#94A3B8;">/ Person</span></div>
+                        <button class="btn btn-primary" onclick="alert('Booking Cox\'s Bazar Luxury... PNR: EXP-77481')" style="width:100%; margin-top:12px; padding:10px;"><i class="fa-solid fa-ticket"></i> Book Now</button>
+                    </div>
+
+                    <div class="card">
+                        <h4 style="margin:0 0 6px;">Sylhet Tea Gardens & Swamp</h4>
+                        <p style="color:#94A3B8; font-size:0.8rem; margin-bottom:12px;"><i class="fa-solid fa-location-dot text-primary"></i> Sylhet, Bangladesh</p>
+                        <div class="card-price">৳ 9,800 <span style="font-size:0.75rem; color:#94A3B8;">/ Person</span></div>
+                        <button class="btn btn-primary" onclick="alert('Booking Sylhet Tea Gardens... PNR: EXP-44391')" style="width:100%; margin-top:12px; padding:10px;"><i class="fa-solid fa-ticket"></i> Book Now</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -66,8 +117,8 @@
             </ul>
 
             <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:32px;">
-                <a href="https://github.com/jyotidev26/Travel-Tour-Services" target="_blank" class="btn btn-primary"><i class="fa-brands fa-github"></i> View Repository on GitHub</a>
-                <a href="../index.html#portfolio" class="btn btn-glass"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+                <a href="https://github.com/jyotidev26/Travel-Tour-Services" target="_blank" class="btn btn-primary"><i class="fa-brands fa-github"></i> View Repository Source Code on GitHub</a>
+                <a href="../index.html#portfolio" class="btn btn-glass"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio Main Page</a>
             </div>
         </div>
     </div>
