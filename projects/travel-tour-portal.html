@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel & Tour Agency Services | Case Study | JyotiTech</title>
+    <meta name="description" content="Travel & Tour Agency Services case study engineered by Jyoti Prakash Chakma (Zend Certified PHP Specialist). Flight & hotel booking portal with PNR generator.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root { --bg:#0A0F1D; --card:#11192E; --border:rgba(255,255,255,0.08); --primary:#06B6D4; --accent:#F97316; --text:#F8FAFC; }
+        body { background:var(--bg); color:var(--text); font-family:'Plus Jakarta Sans', sans-serif; margin:0; padding:40px 20px; }
+        .container { max-width:1000px; margin:0 auto; }
+        .header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:24px; margin-bottom:40px; }
+        .badge { background:rgba(6,182,212,0.15); border:1px solid var(--primary); color:#22D3EE; padding:6px 16px; border-radius:99px; font-weight:700; font-size:0.85rem; }
+        .grid-3 { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px; margin-bottom:40px; }
+        .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:24px; text-align:center; }
+        .card-val { font-family:'Outfit', sans-serif; font-size:2.4rem; font-weight:800; color:var(--primary); margin:8px 0 4px; }
+        .card-lbl { color:#94A3B8; font-size:0.8rem; font-weight:700; text-transform:uppercase; }
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:12px; font-weight:700; text-decoration:none; transition:0.3s ease; }
+        .btn-primary { background:var(--primary); color:#000; }
+        .btn-glass { background:rgba(255,255,255,0.05); border:1px solid var(--border); color:var(--text); }
+        .btn:hover { transform:translateY(-2px); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1 style="font-family:'Outfit', sans-serif; margin:0;"><i class="fa-solid fa-plane-departure text-primary"></i> Travel & Tour Agency Services (Exploria)</h1>
+                <p style="color:#94A3B8; margin:4px 0 0;">Tour Booking, PNR Code Generation & Destination Search Engine</p>
+            </div>
+            <div class="badge"><i class="fa-solid fa-check"></i> Live Case Study</div>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <i class="fa-solid fa-earth-americas" style="font-size:2rem; color:var(--primary);"></i>
+                <div class="card-val">50+</div>
+                <div class="card-lbl">Tour Destinations</div>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-receipt" style="font-size:2rem; color:var(--accent);"></i>
+                <div class="card-val" style="color:var(--accent);">Instant PNR</div>
+                <div class="card-lbl">Automated Reservation</div>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-bolt" style="font-size:2rem; color:#34D399;"></i>
+                <div class="card-val" style="color:#34D399;">Sub-Second</div>
+                <div class="card-lbl">Destination Search Engine</div>
+            </div>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:16px; padding:32px; margin-bottom:40px;">
+            <h2 style="font-family:'Outfit', sans-serif; margin-top:0;">Features & Technical Overview</h2>
+            <ul style="color:#94A3B8; line-height:1.8;">
+                <li><strong style="color:var(--text);">Tour Booking Engine:</strong> Automated price, VAT calculation, and unique PNR booking reference creation (`class-booking-engine.php`).</li>
+                <li><strong style="color:var(--text);">Interactive Search:</strong> Real-time filtering by travel dates, destination, budget, and passenger count.</li>
+                <li><strong style="color:var(--text);">Mobile Optimization:</strong> Fluid cyan dark-theme layout with zero layout shifts.</li>
+            </ul>
+
+            <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:32px;">
+                <a href="https://github.com/jyotidev26/Travel-Tour-Services" target="_blank" class="btn btn-primary"><i class="fa-brands fa-github"></i> View Repository on GitHub</a>
+                <a href="../index.html#portfolio" class="btn btn-glass"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
