@@ -522,31 +522,35 @@
                 </div>
 
                 <div class="contact-form-card">
-                    <form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.');">
+                    <form id="contactForm" action="https://formsubmit.co/jyotitech26@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Inquiry from JyotiTech Portfolio">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" required placeholder="John Doe">
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
                         </div>
 
                         <div class="form-group">
                             <label for="email">Your Email</label>
-                            <input type="email" id="email" required placeholder="john@example.com">
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
                         </div>
 
                         <div class="form-group">
                             <label for="service">Service Needed</label>
-                            <select id="service" class="form-select">
-                                <option value="wordpress">Custom WordPress / WooCommerce</option>
-                                <option value="speed">Speed & Core Web Vitals Optimization</option>
-                                <option value="security">Security Hardening & Malware Cleanup</option>
-                                <option value="php">Enterprise PHP & API Development</option>
-                                <option value="ui">UI/UX & Web Design</option>
+                            <select id="service" name="service" class="form-select">
+                                <option value="Custom WordPress / WooCommerce">Custom WordPress / WooCommerce</option>
+                                <option value="Speed & Core Web Vitals Optimization">Speed & Core Web Vitals Optimization</option>
+                                <option value="Security Hardening & Malware Cleanup">Security Hardening & Malware Cleanup</option>
+                                <option value="Enterprise PHP & API Development">Enterprise PHP & API Development</option>
+                                <option value="UI/UX & Web Design">UI/UX & Web Design</option>
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label for="message">Project Details</label>
-                            <textarea id="message" rows="4" required placeholder="Tell me about your project goals..."></textarea>
+                            <textarea id="message" name="message" rows="4" required placeholder="Tell me about your project goals..."></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary-glow btn-full">
@@ -576,6 +580,6 @@
     </footer>
 
     <!-- Custom Script -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=2.1"></script>
 </body>
 </html>
