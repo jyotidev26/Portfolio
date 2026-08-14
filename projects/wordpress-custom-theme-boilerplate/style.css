@@ -1,0 +1,28 @@
+/*
+Theme Name: JyotiTech Corporate Theme Architecture
+Theme URI: https://github.com/jyotidev26/wordpress-custom-theme-boilerplate
+Author: Jyoti Prakash Chakma (Zend Certified PHP Engineer)
+Author URI: https://jyotidev26.github.io/Portfolio/
+Description: High-performance, lightweight WordPress corporate theme architecture built in OOP PHP 8+. Designed for sub-second load times, Elementor Pro compatibility, custom post types, and mobile-first responsiveness.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+Text Domain: jyotitech-theme
+*/
+
+/* Reset & CSS Custom Properties */
+:root {
+    --bg-main: #080C14;
+    --bg-card: #0F172A;
+    --primary: #6366F1;
+    --accent: #10B981;
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
