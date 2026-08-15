@@ -17,7 +17,8 @@
             roseGoldDark: '#B87B67',
             nudeBg: '#FDFBF7',
             nudeCard: '#F7F3EE',
-            darkCharcoal: '#1A1A1A'
+            darkCharcoal: '#1A1A1A',
+            promoRed: '#DC2626'
           }
         }
       }
@@ -43,7 +44,7 @@
     .animate-marquee {
       display: flex;
       width: max-content;
-      animation: marquee 25s linear infinite;
+      animation: marquee 22s linear infinite;
     }
     .marquee-box:hover .animate-marquee { animation-play-state: paused; }
 
@@ -55,24 +56,24 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
 
-  <!-- TOP PROMO TICKER (SCROLLING ANNOUNCEMENT BAR) -->
-  <div class="bg-[#F7F3EE] text-slate-800 py-2 border-b border-stone-200 text-xs font-semibold tracking-widest uppercase overflow-hidden marquee-box">
+  <!-- TOP PROMO TICKER (RED BACKGROUND WITH WHITE SCROLLING TEXT) -->
+  <div class="bg-[#DC2626] text-white py-2.5 shadow-md text-xs font-bold tracking-widest uppercase overflow-hidden marquee-box">
     <div class="animate-marquee flex items-center gap-12">
       <div class="flex items-center gap-8">
         <span>✨ FREE EXPRESS WORLDWIDE SHIPPING ON ORDERS OVER $150</span>
-        <span>•</span>
-        <span>🛍️ USE CODE <strong class="text-roseGold">"LUXE20"</strong> FOR 20% OFF YOUR FIRST ORDER</span>
-        <span>•</span>
+        <span class="text-amber-300">•</span>
+        <span>🛍️ USE CODE <strong class="text-amber-300">"LUXE20"</strong> FOR 20% OFF YOUR FIRST ORDER</span>
+        <span class="text-amber-300">•</span>
         <span>💎 NEW HIGH-SUMMER COUTURE COLLECTION JUST ARRIVED</span>
-        <span>•</span>
+        <span class="text-amber-300">•</span>
       </div>
       <div class="flex items-center gap-8">
         <span>✨ FREE EXPRESS WORLDWIDE SHIPPING ON ORDERS OVER $150</span>
-        <span>•</span>
-        <span>🛍️ USE CODE <strong class="text-roseGold">"LUXE20"</strong> FOR 20% OFF YOUR FIRST ORDER</span>
-        <span>•</span>
+        <span class="text-amber-300">•</span>
+        <span>🛍️ USE CODE <strong class="text-amber-300">"LUXE20"</strong> FOR 20% OFF YOUR FIRST ORDER</span>
+        <span class="text-amber-300">•</span>
         <span>💎 NEW HIGH-SUMMER COUTURE COLLECTION JUST ARRIVED</span>
-        <span>•</span>
+        <span class="text-amber-300">•</span>
       </div>
     </div>
   </div>
