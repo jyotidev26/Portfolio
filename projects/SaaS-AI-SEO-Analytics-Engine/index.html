@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Pulse AI - Realtime SaaS Audit & Core Web Vitals Engine | JyotiTech</title>
+  
+  <meta name="description" content="Next-Generation SaaS AI & SEO Audit Engine built by Jyoti Prakash Chakma (Zend Certified PHP Engineer). Real-time Core Web Vitals, speed monitoring, and AI recommendations.">
+  <meta name="keywords" content="SaaS SEO Audit, AI Analytics Engine, Core Web Vitals, PageSpeed Monitor, Zend PHP, JyotiTech">
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Glassmorphism CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><i class="fa-solid fa-bolt"></i></div>
+        <span>SEO Pulse <span class="gradient-text">AI</span></span>
+      </a>
+      
+      <ul class="nav-menu">
+        <li><a href="#dashboard" class="nav-link active"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+        <li><a href="#audit" class="nav-link"><i class="fa-solid fa-magnifying-glass-chart"></i> Live Audit</a></li>
+        <li><a href="#vitals" class="nav-link"><i class="fa-solid fa-gauge-high"></i> Web Vitals</a></li>
+        <li><a href="#insights" class="nav-link"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Insights</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="index.php?api=true" target="_blank" class="btn btn-outline"><i class="fa-solid fa-code"></i> REST API</a>
+        <button id="exportPdfBtn" class="btn btn-primary"><i class="fa-solid fa-file-pdf"></i> Export Audit PDF</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="badge-pill">
+        <i class="fa-solid fa-shield-halved"></i> Powered by Zend Certified PHP 8+ Architecture & AI Engine
+      </div>
+      <h1 class="hero-title">Realtime <span class="gradient-text">AI SEO Audit</span> & Core Web Vitals Engine</h1>
+      <p class="hero-desc">Instant deep-tech diagnostic analysis for e-commerce platforms, WordPress sites, and SaaS web apps. Benchmark speed, security, and ranking potential in seconds.</p>
+      
+      <!-- Live Audit Search Box -->
+      <div class="search-box-wrap">
+        <div class="search-input-group">
+          <i class="fa-solid fa-globe"></i>
+          <input type="text" id="urlInput" class="search-input" value="https://jyotidev26.github.io/Portfolio/" placeholder="Enter website URL (e.g. https://yourstore.com)...">
+          <button id="runAuditBtn" class="btn btn-primary"><i class="fa-solid fa-bolt"></i> Run AI Audit</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- Top KPI Stat Cards Grid -->
+    <div class="dashboard-grid">
+      <div class="glass-card kpi-card">
+        <div class="kpi-icon cyan"><i class="fa-solid fa-award"></i></div>
+        <div class="kpi-info">
+          <h3 id="seoScoreVal">96<span style="font-size: 1rem; color: var(--accent-green);">/100 A+</span></h3>
+          <p>Overall Health Score</p>
+        </div>
+      </div>
+
+      <div class="glass-card kpi-card">
+        <div class="kpi-icon green"><i class="fa-solid fa-gauge-simple-high"></i></div>
+        <div class="kpi-info">
+          <h3 id="speedVal">420ms</h3>
+          <p>Page Loading Speed</p>
+        </div>
+      </div>
+
+      <div class="glass-card kpi-card">
+        <div class="kpi-icon purple"><i class="fa-solid fa-link"></i></div>
+        <div class="kpi-info">
+          <h3 id="backlinkVal">1,420</h3>
+          <p>Authority Backlinks</p>
+        </div>
+      </div>
+
+      <div class="glass-card kpi-card">
+        <div class="kpi-icon orange"><i class="fa-solid fa-shield-check"></i></div>
+        <div class="kpi-info">
+          <h3>100%</h3>
+          <p>Security & HSTS Pass</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts & Breakdown Split Grid -->
+    <div class="split-grid">
+      <!-- Left: Interactive Charts -->
+      <div class="glass-card">
+        <div class="chart-header">
+          <div class="chart-title">
+            <i class="fa-solid fa-chart-line" style="color: var(--primary);"></i>
+            <span>Performance & Organic Visibility Index</span>
+          </div>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Real-time Telemetry</span>
+        </div>
+        <div style="height: 320px; position: relative;">
+          <canvas id="perfChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Right: Keyword Distribution -->
+      <div class="glass-card">
+        <div class="chart-header">
+          <div class="chart-title">
+            <i class="fa-solid fa-pie-chart" style="color: #7f00ff;"></i>
+            <span>Keyword Ranking</span>
+          </div>
+        </div>
+        <div style="height: 280px; position: relative;">
+          <canvas id="kwChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Technical Audit Table & AI Insights -->
+    <div class="split-grid">
+      <!-- Audit Table -->
+      <div class="glass-card">
+        <div class="chart-header">
+          <div class="chart-title">
+            <i class="fa-solid fa-list-check" style="color: var(--primary);"></i>
+            <span>Technical SEO Checklist & Audit Findings</span>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Diagnostic Parameter</th>
+                <th>Measured Value</th>
+                <th>Benchmark</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Largest Contentful Paint (LCP)</strong></td>
+                <td>620 ms</td>
+                <td>&lt; 2.5s</td>
+                <td><span class="status-tag status-pass">Pass 🟢</span></td>
+              </tr>
+              <tr>
+                <td><strong>First Input Delay (FID)</strong></td>
+                <td>8 ms</td>
+                <td>&lt; 100ms</td>
+                <td><span class="status-tag status-pass">Pass 🟢</span></td>
+              </tr>
+              <tr>
+                <td><strong>Cumulative Layout Shift (CLS)</strong></td>
+                <td>0.01</td>
+                <td>&lt; 0.1</td>
+                <td><span class="status-tag status-pass">Pass 🟢</span></td>
+              </tr>
+              <tr>
+                <td><strong>Server Response Time (TTFB)</strong></td>
+                <td>85 ms</td>
+                <td>&lt; 200ms</td>
+                <td><span class="status-tag status-pass">Pass 🟢</span></td>
+              </tr>
+              <tr>
+                <td><strong>Database Query Optimization</strong></td>
+                <td>18 Queries</td>
+                <td>&lt; 50 Queries</td>
+                <td><span class="status-tag status-pass">Pass 🟢</span></td>
+              </tr>
+              <tr>
+                <td><strong>WebP Asset Compression</strong></td>
+                <td>84% Assets WebP</td>
+                <td>100% Recommended</td>
+                <td><span class="status-tag status-warn">Warning 🟡</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- AI Actionable Recommendations -->
+      <div class="glass-card">
+        <div class="chart-header">
+          <div class="chart-title">
+            <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-orange);"></i>
+            <span>AI Actionable Recommendations</span>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="background: rgba(0, 242, 254, 0.05); border-left: 4px solid var(--primary); padding: 14px; border-radius: 6px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <strong style="color: var(--primary); font-size: 0.9rem;">Enable Redis Object Cache</strong>
+              <span class="status-tag status-pass">High Priority</span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">Implement Redis persistent object caching to reduce PHP database SQL query latency by up to 80% on high-traffic WooCommerce stores.</p>
+          </div>
+
+          <div style="background: rgba(127, 0, 255, 0.05); border-left: 4px solid var(--secondary); padding: 14px; border-radius: 6px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <strong style="color: #b870ff; font-size: 0.9rem;">Convert Assets to WebP</strong>
+              <span class="status-tag status-warn">Medium Priority</span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">Convert remaining PNG banner images to next-gen WebP format for 40% additional payload savings.</p>
+          </div>
+
+          <div style="background: rgba(0, 230, 118, 0.05); border-left: 4px solid var(--accent-green); padding: 14px; border-radius: 6px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <strong style="color: var(--accent-green); font-size: 0.9rem;">HSTS & Security Headers</strong>
+              <span class="status-tag status-pass">Completed</span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">Strict Transport Security and X-Frame-Options headers verified 100% compliant with OWASP security benchmarks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 <strong>SEO Pulse AI</strong> by <strong>JyotiTech</strong> (Jyoti Prakash Chakma - Zend Certified PHP Engineer). All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Custom Script -->
+  <script src="js/app.js"></script>
+</body>
+</html>
