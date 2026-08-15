@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
+    html { scroll-behavior: smooth; }
     body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background-color: #F8FAF9; color: #1E293B; }
     .hero-banner {
       background: linear-gradient(90deg, rgba(16, 92, 107, 0.95) 0%, rgba(21, 117, 136, 0.85) 50%, rgba(16, 92, 107, 0.95) 100%),
@@ -42,7 +43,7 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
-  <!-- TOP EMERGENCY RED BAR (PIXEL-PERFECT TO IMAGE 2) -->
+  <!-- TOP EMERGENCY RED BAR -->
   <div class="bg-emergency text-white py-2 px-4 shadow-md sticky top-0 z-50 text-center text-xs md:text-sm font-bold tracking-wide">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="w-full text-center flex items-center justify-center gap-2">
@@ -55,7 +56,7 @@
     </div>
   </div>
 
-  <!-- HEADER NAVBAR (PIXEL-PERFECT TO IMAGE 2) -->
+  <!-- HEADER NAVBAR -->
   <header class="bg-white border-b border-slate-200 sticky top-[36px] z-40">
     <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
       
@@ -72,7 +73,7 @@
 
       <!-- Center Nav Links -->
       <nav class="hidden md:flex items-center gap-7 text-xs font-bold text-slate-600">
-        <a href="#hero" class="text-teal-700 hover:text-teal-900 transition-colors">Home</a>
+        <a href="#hero" class="hover:text-teal-700 transition-colors">Home</a>
         <a href="#doctors" class="hover:text-teal-700 transition-colors">Doctors</a>
         <a href="#services" class="hover:text-teal-700 transition-colors">Services</a>
         <a href="#booking" class="hover:text-teal-700 transition-colors">Appointments</a>
@@ -88,7 +89,7 @@
   </header>
 
   <main>
-    <!-- HERO BANNER (PIXEL-PERFECT TO IMAGE 2) -->
+    <!-- HERO BANNER -->
     <section id="hero" class="hero-banner text-white py-20 md:py-28 relative">
       <div class="max-w-7xl mx-auto px-4 text-left">
         <div class="max-w-2xl">
@@ -100,13 +101,13 @@
           </p>
 
           <button onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})" class="bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs px-6 py-3.5 rounded-xl shadow-lg inline-flex items-center gap-2">
-            Explore Services
+            <i class="fa-solid fa-stethoscope"></i> Explore Services
           </button>
         </div>
       </div>
     </section>
 
-    <!-- TRUST METRICS BAR (PIXEL-PERFECT TO IMAGE 2) -->
+    <!-- TRUST METRICS BAR -->
     <div class="bg-slate-100 border-b border-slate-200 py-4 text-center text-xs font-bold text-slate-700">
       <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-center gap-6">
         <span>50,000+ Happy Patients</span>
@@ -121,7 +122,78 @@
       </div>
     </div>
 
-    <!-- OUR LEADING SPECIALISTS GRID (PIXEL-PERFECT TO IMAGE 2) -->
+    <!-- SERVICES SECTION (FIXED BUG - RICH DEPARTMENT GRID) -->
+    <section id="services" class="py-16 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-teal-700 bg-teal-50 px-3.5 py-1.5 rounded-full border border-teal-100">
+            Medical Departments
+          </span>
+          <h2 class="text-3xl font-black text-slate-900 mt-3 mb-2">Specialized Clinical Services</h2>
+          <p class="text-xs text-slate-500 font-medium">Comprehensive diagnostic units and expert outpatient consultations equipped with modern medical technology.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Cardiology -->
+          <div class="bg-[#F0F8F8] p-6 rounded-2xl border border-teal-100 hover:shadow-lg transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-teal-700 text-white flex items-center justify-center text-xl mb-4 shadow-sm">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+              <h3 class="font-bold text-slate-900 text-base mb-1">Cardiology & Heart Care</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">Complete cardiovascular screenings, ECG, echocardiograms, and preventive heart consultations.</p>
+            </div>
+            <button onclick="selectDoc('Dr. Farhan Ahmed', 'Cardiology', '$120')" class="text-xs font-bold text-teal-700 hover:text-teal-900 flex items-center gap-1.5">
+              <span>Book Cardiology</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Gynecology -->
+          <div class="bg-[#F0F8F8] p-6 rounded-2xl border border-teal-100 hover:shadow-lg transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-teal-700 text-white flex items-center justify-center text-xl mb-4 shadow-sm">
+                <i class="fa-solid fa-person-breastfeeding"></i>
+              </div>
+              <h3 class="font-bold text-slate-900 text-base mb-1">Gynecology & Obstetrics</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">Comprehensive women's health, maternity care, prenatal checkups, and laparoscopic guidance.</p>
+            </div>
+            <button onclick="selectDoc('Dr. Nusrat Jahan', 'Gynecology', '$110')" class="text-xs font-bold text-teal-700 hover:text-teal-900 flex items-center gap-1.5">
+              <span>Book Gynecology</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Orthopedics -->
+          <div class="bg-[#F0F8F8] p-6 rounded-2xl border border-teal-100 hover:shadow-lg transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-teal-700 text-white flex items-center justify-center text-xl mb-4 shadow-sm">
+                <i class="fa-solid fa-bone"></i>
+              </div>
+              <h3 class="font-bold text-slate-900 text-base mb-1">Orthopedics & Spine</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">Joint replacements, bone density scans, sports injury rehabilitation, and spinal trauma care.</p>
+            </div>
+            <button onclick="selectDoc('Dr. Salim Khan', 'Orthopedics', '$130')" class="text-xs font-bold text-teal-700 hover:text-teal-900 flex items-center gap-1.5">
+              <span>Book Orthopedics</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Pediatrics -->
+          <div class="bg-[#F0F8F8] p-6 rounded-2xl border border-teal-100 hover:shadow-lg transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-teal-700 text-white flex items-center justify-center text-xl mb-4 shadow-sm">
+                <i class="fa-solid fa-baby"></i>
+              </div>
+              <h3 class="font-bold text-slate-900 text-base mb-1">Pediatrics & Child Care</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">Newborn screening, child immunization programs, growth monitoring, and pediatric emergency care.</p>
+            </div>
+            <button onclick="selectDoc('Dr. Anjali Das', 'Pediatrics', '$100')" class="text-xs font-bold text-teal-700 hover:text-teal-900 flex items-center gap-1.5">
+              <span>Book Pediatrics</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR LEADING SPECIALISTS GRID -->
     <section id="doctors" class="py-16 max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-1">Our Leading Specialists</h2>
@@ -240,14 +312,14 @@
       </div>
     </section>
 
-    <!-- SIMPLE 5-STEP APPOINTMENT BOOKING (PIXEL-PERFECT TO IMAGE 2) -->
+    <!-- SIMPLE 5-STEP APPOINTMENT BOOKING -->
     <section id="booking" class="py-16 bg-[#E8F5F5] border-y border-teal-100">
       <div class="max-w-4xl mx-auto px-4">
         <div class="text-center mb-8">
           <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-1">Simple 5-Step Appointment Booking</h2>
         </div>
 
-        {/* Step Connector Circles (Matching Image 2 Step Bar) */}
+        {/* Step Connector Circles */}
         <div class="grid grid-cols-5 gap-2 text-center text-[11px] font-bold mb-8">
           <div>
             <div class="w-7 h-7 rounded-full bg-teal-700 text-white font-bold mx-auto flex items-center justify-center mb-1">1</div>
@@ -340,7 +412,47 @@
       </div>
     </section>
 
-    <!-- PATIENT TESTIMONIALS (PIXEL-PERFECT TO IMAGE 2) -->
+    <!-- ABOUT US SECTION (FIXED BUG - ACCREDITATIONS & CLINICAL MISSION) -->
+    <section id="about" class="py-16 max-w-7xl mx-auto px-4">
+      <div class="bg-gradient-to-r from-slate-900 to-teal-950 text-white rounded-3xl p-8 md:p-12 shadow-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-teal-400 bg-teal-950 px-3.5 py-1.5 rounded-full border border-teal-800 mb-4 inline-block">
+              About Nirvaya Health
+            </span>
+            <h2 class="text-3xl font-black mb-4">15+ Years of International Healthcare Excellence</h2>
+            <p class="text-xs text-slate-300 leading-relaxed font-medium mb-6">
+              Nirvaya Health Care Center is a world-renowned multi-specialty medical center providing high-precision clinical diagnosis, board-certified specialist consultations, and seamless 24/7 global telehealth.
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 text-xs font-bold">
+              <div class="p-3.5 bg-slate-800/80 rounded-xl border border-slate-700/80 flex items-center gap-2">
+                <i class="fa-solid fa-award text-amber-400 text-base"></i>
+                <span>JCI International Accredited</span>
+              </div>
+              <div class="p-3.5 bg-slate-800/80 rounded-xl border border-slate-700/80 flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-emerald-400 text-base"></i>
+                <span>ISO 9001:2015 Diagnostic Lab</span>
+              </div>
+              <div class="p-3.5 bg-slate-800/80 rounded-xl border border-slate-700/80 flex items-center gap-2">
+                <i class="fa-solid fa-lock text-sky-400 text-base"></i>
+                <span>HIPAA Compliant Patient Privacy</span>
+              </div>
+              <div class="p-3.5 bg-slate-800/80 rounded-xl border border-slate-700/80 flex items-center gap-2">
+                <i class="fa-solid fa-user-doctor text-teal-400 text-base"></i>
+                <span>Harvard & UK Trained Faculty</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop&q=80" alt="Nirvaya Medical Center Facility" class="w-full h-72 object-cover rounded-2xl border-2 border-white/10 shadow-lg" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PATIENT TESTIMONIALS -->
     <section class="py-16 max-w-5xl mx-auto px-4 text-center">
       <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-1">Patient Testimonials</h2>
       <p class="text-xs text-slate-500 mb-8 font-medium">3 reviews</p>
@@ -367,7 +479,7 @@
     </section>
   </main>
 
-  <!-- FOOTER (PIXEL-PERFECT TO IMAGE 2 LIGHT BACKGROUND FOOTER) -->
+  <!-- FOOTER -->
   <footer id="contact" class="bg-[#F0F7F7] text-slate-700 py-12 text-xs border-t border-teal-100">
     <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-6 mb-8 text-left">
       <div>
@@ -383,27 +495,27 @@
 
       <div>
         <h4 class="font-bold text-slate-900 mb-3">Phone</h4>
-        <p class="text-slate-600">Doctors</p>
-        <p class="text-slate-600">Appointments</p>
-        <p class="text-slate-600">About</p>
-        <p class="text-slate-600">Contact</p>
+        <p class="text-slate-600"><a href="#doctors">Doctors</a></p>
+        <p class="text-slate-600"><a href="#booking">Appointments</a></p>
+        <p class="text-slate-600"><a href="#about">About</a></p>
+        <p class="text-slate-600"><a href="#contact">Contact</a></p>
       </div>
 
       <div>
         <h4 class="font-bold text-slate-900 mb-3">Quick Links</h4>
-        <p class="text-slate-600"><a href="#hero">About</a></p>
+        <p class="text-slate-600"><a href="#about">About Us</a></p>
         <p class="text-slate-600"><a href="#doctors">Doctors</a></p>
         <p class="text-slate-600"><a href="#services">Services</a></p>
-        <p class="text-slate-600"><a href="#services">Terms</a></p>
+        <p class="text-slate-600"><a href="#booking">Appointments</a></p>
         <p class="text-slate-600"><a href="#contact">Contact Us</a></p>
       </div>
 
       <div>
         <h4 class="font-bold text-slate-900 mb-3">Services</h4>
-        <p class="text-slate-600">Cardiology</p>
-        <p class="text-slate-600">Consultations</p>
-        <p class="text-slate-600">Service Service</p>
-        <p class="text-slate-600">Medical Media</p>
+        <p class="text-slate-600"><a href="#services">Cardiology</a></p>
+        <p class="text-slate-600"><a href="#services">Gynecology</a></p>
+        <p class="text-slate-600"><a href="#services">Orthopedics</a></p>
+        <p class="text-slate-600"><a href="#services">Pediatrics</a></p>
       </div>
 
       <div>
