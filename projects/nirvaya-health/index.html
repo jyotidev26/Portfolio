@@ -12,8 +12,8 @@
       theme: {
         extend: {
           colors: {
-            teal: { 700: '#0F766E', 800: '#115e59' },
-            sky: { 400: '#38BDF8' },
+            teal: { 700: '#0F766E', 800: '#115e59', 900: '#134e4a' },
+            sky: { 400: '#38BDF8', 500: '#0ea5e9' },
             emergency: '#DC2626'
           }
         }
@@ -23,28 +23,26 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    body { font-family: 'Inter', 'Noto Sans Bengali', sans-serif; background-color: #FAFAF9; color: #1E293B; }
+    body { font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', sans-serif; background-color: #FAFAF9; color: #1E293B; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
   <!-- Sticky 24/7 Emergency Bar -->
   <div class="bg-emergency text-white py-2 px-4 shadow-md sticky top-0 z-50">
-    <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs md:text-sm font-semibold">
-      <div class="max-w-7xl mx-auto flex items-center justify-between w-full">
-        <div class="flex items-center gap-2">
-          <i class="fa-solid fa-shield-halved animate-pulse text-amber-300"></i>
-          <span>24/7 Emergency Helpline:</span>
-          <span class="bg-white/20 px-2 py-0.5 rounded text-white font-mono font-bold">+880 1700-000000</span>
-        </div>
-        <a href="tel:+8801700000000" class="bg-white text-emergency hover:bg-amber-100 px-3 py-1 rounded-full text-xs font-bold transition-all shadow flex items-center gap-1.5">
-          <i class="fa-solid fa-phone"></i> Call Now
-        </a>
+    <div class="max-w-7xl mx-auto flex items-center justify-between w-full text-xs md:text-sm font-semibold">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-shield-halved animate-pulse text-amber-300"></i>
+        <span>24/7 Emergency Helpline:</span>
+        <span class="bg-white/20 px-2 py-0.5 rounded text-white font-mono font-bold">+880 1700-000000</span>
       </div>
+      <a href="tel:+8801700000000" class="bg-white text-emergency hover:bg-amber-100 px-3.5 py-1 rounded-full text-xs font-bold transition-all shadow flex items-center gap-1.5">
+        <i class="fa-solid fa-phone"></i> Call Now
+      </a>
     </div>
   </div>
 
@@ -62,8 +60,10 @@
       </a>
 
       <div class="flex items-center gap-3">
-        <span class="bg-emerald-100 text-emerald-800 text-xs font-extrabold px-3 py-1 rounded-full border border-emerald-200">Next.js 14 App Router</span>
-        <button onclick="alert('5-Step Appointment Booking Engine System Ready!')" class="bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md flex items-center gap-2">
+        <button onclick="toggleLang()" id="langBtn" class="bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+          <i class="fa-solid fa-globe text-teal-700"></i> <span id="langText">EN / বাং</span>
+        </button>
+        <button onclick="document.getElementById('bookingSection').scrollIntoView({behavior: 'smooth'})" class="bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md flex items-center gap-2">
           <i class="fa-solid fa-calendar-check"></i> Book Appointment
         </button>
       </div>
@@ -71,22 +71,22 @@
   </header>
 
   <!-- Hero Section -->
-  <main class="max-w-7xl mx-auto px-4 py-12 flex-1">
-    <div class="bg-gradient-to-br from-teal-900 via-slate-900 to-teal-950 text-white rounded-3xl p-8 md:p-14 shadow-2xl relative overflow-hidden mb-12">
+  <main class="max-w-7xl mx-auto px-4 py-10 flex-1">
+    <div class="bg-gradient-to-br from-teal-900 via-slate-900 to-teal-950 text-white rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden mb-12">
       <div class="max-w-2xl relative z-10">
         <span class="bg-teal-500/20 text-teal-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full border border-teal-500/30 uppercase tracking-widest mb-4 inline-block">
           Modern Medical Center in Banani, Dhaka
         </span>
-        <h1 class="text-3xl md:text-5xl font-black mb-4 leading-tight">World-Class Healthcare, Close to Home in Dhaka</h1>
-        <p className="text-sm text-slate-300 leading-relaxed mb-8 font-medium">
+        <h1 id="heroTitle" class="text-3xl md:text-5xl font-black mb-4 leading-tight">World-Class Healthcare, Close to Home in Dhaka</h1>
+        <p id="heroSub" class="text-sm text-slate-300 leading-relaxed mb-8 font-medium">
           Multi-specialty outpatient medical clinic built with Next.js 14, Supabase PostgreSQL database, TypeScript, Tailwind CSS, dual EN/BN i18n support, and ready-to-wire bKash & Nagad MFS payment gateway stubs.
         </p>
 
         <div class="flex flex-wrap gap-4">
-          <button onclick="document.getElementById('bookingWizard').scrollIntoView({behavior: 'smooth'})" class="bg-teal-700 hover:bg-teal-800 text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg flex items-center gap-2">
+          <button onclick="document.getElementById('bookingSection').scrollIntoView({behavior: 'smooth'})" class="bg-teal-700 hover:bg-teal-800 text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg flex items-center gap-2">
             <i class="fa-solid fa-calendar-check"></i> Start 5-Step Appointment Booking
           </button>
-          <a href="#doctors" class="bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-6 py-3.5 rounded-xl border border-white/20 flex items-center gap-2">
+          <a href="#doctorsSection" class="bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-6 py-3.5 rounded-xl border border-white/20 flex items-center gap-2">
             <i class="fa-solid fa-user-doctor"></i> Explore 6 Specialist Doctors
           </a>
         </div>
@@ -114,73 +114,131 @@
     </div>
 
     <!-- Doctors Grid -->
-    <div id="doctors" class="mb-16">
-      <h2 class="text-2xl font-black text-slate-900 mb-6">Our Specialist Doctors</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div id="doctorsSection" class="mb-16">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-teal-700 bg-teal-50 px-3.5 py-1.5 rounded-full border border-teal-100">
+            Medical Faculty
+          </span>
+          <h2 class="text-2xl font-black text-slate-900 mt-2">Our Specialist Doctors</h2>
+        </div>
         
-        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden p-5">
-          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&auto=format&fit=crop&q=80" alt="Dr Tariq" class="w-full h-48 object-cover rounded-xl mb-4" />
-          <h3 class="font-bold text-slate-900 text-lg">Dr. Tariq Rahman (ড. তারিক রহমান)</h3>
-          <p class="text-xs font-bold text-teal-700 mb-1">Cardiology (হৃদরোগ)</p>
-          <p class="text-xs text-slate-500 mb-3">MBBS, FCPS (Cardiology), MD (USA) • 16 Yrs Exp</p>
+        <!-- Category Filter -->
+        <div class="flex flex-wrap gap-2">
+          <button onclick="filterDocs('all')" class="doc-filter active bg-teal-700 text-white text-xs font-bold px-3 py-1.5 rounded-xl">All</button>
+          <button onclick="filterDocs('cardiology')" class="doc-filter bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-bold px-3 py-1.5 rounded-xl">Cardiology</button>
+          <button onclick="filterDocs('dermatology')" class="doc-filter bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-bold px-3 py-1.5 rounded-xl">Dermatology</button>
+          <button onclick="filterDocs('pediatrics')" class="doc-filter bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-bold px-3 py-1.5 rounded-xl">Pediatrics</button>
+          <button onclick="filterDocs('gynecology')" class="doc-filter bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-bold px-3 py-1.5 rounded-xl">Gynecology</button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="doctorsGrid">
+        
+        <!-- Doctor Card 1 -->
+        <div class="doc-card cardiology bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden p-5 flex flex-col justify-between">
+          <div>
+            <div class="h-52 w-full rounded-xl overflow-hidden mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&auto=format&fit=crop&q=80" alt="Dr Tariq Rahman" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg">Dr. Tariq Rahman (ড. তারিক রহমান)</h3>
+            <p class="text-xs font-bold text-teal-700 mb-1">Cardiology (হৃদরোগ)</p>
+            <p class="text-xs text-slate-500 mb-3">MBBS, FCPS (Cardiology), MD (USA) • 16 Yrs Exp</p>
+          </div>
           <div class="flex justify-between items-center pt-3 border-t">
             <span class="font-bold text-teal-800 text-sm">Fee: ৳1500</span>
-            <button onclick="alert('Booking Dr. Tariq Rahman')" class="bg-teal-700 text-white text-xs font-bold px-3.5 py-2 rounded-xl">Book Now</button>
+            <button onclick="selectDoctorForBooking('Dr. Tariq Rahman', 'Cardiology', 1500)" class="bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold px-4 py-2 rounded-xl">Book Now</button>
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden p-5">
-          <img src="https://images.unsplash.com/photo-1594824813566-78a1ed67053e?w=600&auto=format&fit=crop&q=80" alt="Dr Nusrat" class="w-full h-48 object-cover rounded-xl mb-4" />
-          <h3 class="font-bold text-slate-900 text-lg">Dr. Nusrat Jahan (ড. নুসরাত জাহান)</h3>
-          <p class="text-xs font-bold text-teal-700 mb-1">Dermatology (চর্ম ও যৌনরোগ)</p>
-          <p class="text-xs text-slate-500 mb-3">MBBS, DDV (London), FCPS • 12 Yrs Exp</p>
+        <!-- Doctor Card 2 -->
+        <div class="doc-card dermatology bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden p-5 flex flex-col justify-between">
+          <div>
+            <div class="h-52 w-full rounded-xl overflow-hidden mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&auto=format&fit=crop&q=80" alt="Dr Nusrat Jahan" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg">Dr. Nusrat Jahan (ড. নুসরাত জাহান)</h3>
+            <p class="text-xs font-bold text-teal-700 mb-1">Dermatology (চর্ম ও যৌনরোগ)</p>
+            <p class="text-xs text-slate-500 mb-3">MBBS, DDV (London), FCPS • 12 Yrs Exp</p>
+          </div>
           <div class="flex justify-between items-center pt-3 border-t">
             <span class="font-bold text-teal-800 text-sm">Fee: ৳1200</span>
-            <button onclick="alert('Booking Dr. Nusrat Jahan')" class="bg-teal-700 text-white text-xs font-bold px-3.5 py-2 rounded-xl">Book Now</button>
+            <button onclick="selectDoctorForBooking('Dr. Nusrat Jahan', 'Dermatology', 1200)" class="bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold px-4 py-2 rounded-xl">Book Now</button>
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden p-5">
-          <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&auto=format&fit=crop&q=80" alt="Dr Mahmudul" class="w-full h-48 object-cover rounded-xl mb-4" />
-          <h3 class="font-bold text-slate-900 text-lg">Dr. Mahmudul Hasan (ড. মাহমুদুল হাসান)</h3>
-          <p class="text-xs font-bold text-teal-700 mb-1">Pediatrics (শিশু রোগ)</p>
-          <p class="text-xs text-slate-500 mb-3">MBBS, DCH, MD (Pediatrics) • 14 Yrs Exp</p>
+        <!-- Doctor Card 3 -->
+        <div class="doc-card pediatrics bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden p-5 flex flex-col justify-between">
+          <div>
+            <div class="h-52 w-full rounded-xl overflow-hidden mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&auto=format&fit=crop&q=80" alt="Dr Mahmudul Hasan" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg">Dr. Mahmudul Hasan (ড. মাহমুদুল হাসান)</h3>
+            <p class="text-xs font-bold text-teal-700 mb-1">Pediatrics (শিশু রোগ)</p>
+            <p class="text-xs text-slate-500 mb-3">MBBS, DCH, MD (Pediatrics) • 14 Yrs Exp</p>
+          </div>
           <div class="flex justify-between items-center pt-3 border-t">
             <span class="font-bold text-teal-800 text-sm">Fee: ৳1200</span>
-            <button onclick="alert('Booking Dr. Mahmudul Hasan')" class="bg-teal-700 text-white text-xs font-bold px-3.5 py-2 rounded-xl">Book Now</button>
+            <button onclick="selectDoctorForBooking('Dr. Mahmudul Hasan', 'Pediatrics', 1200)" class="bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold px-4 py-2 rounded-xl">Book Now</button>
+          </div>
+        </div>
+
+        <!-- Doctor Card 4 -->
+        <div class="doc-card gynecology bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden p-5 flex flex-col justify-between">
+          <div>
+            <div class="h-52 w-full rounded-xl overflow-hidden mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1594824813566-78a1ed67053e?w=600&auto=format&fit=crop&q=80" alt="Dr Sharmin Akter" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg">Dr. Sharmin Akter (ড. শারমিন আক্তার)</h3>
+            <p class="text-xs font-bold text-teal-700 mb-1">Gynecology (স্ত্রী রোগ ও প্রসূতি)</p>
+            <p class="text-xs text-slate-500 mb-3">MBBS, FCPS (OBGYN), MS • 15 Yrs Exp</p>
+          </div>
+          <div class="flex justify-between items-center pt-3 border-t">
+            <span class="font-bold text-teal-800 text-sm">Fee: ৳1400</span>
+            <button onclick="selectDoctorForBooking('Dr. Sharmin Akter', 'Gynecology', 1400)" class="bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold px-4 py-2 rounded-xl">Book Now</button>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Booking Wizard Container -->
-    <div id="bookingWizard" class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl max-w-3xl mx-auto text-center mb-16">
-      <h2 class="text-2xl font-black text-slate-900 mb-2">Instant Appointment & Payment Engine</h2>
-      <p class="text-xs text-slate-500 mb-6">Select doctor, date slot, enter Bangladesh phone format (+880), and choose bKash, Nagad, or Pay at Clinic</p>
-      
-      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 text-left space-y-4">
+    <!-- 5-Step Booking Wizard Section -->
+    <div id="bookingSection" class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl max-w-3xl mx-auto mb-16">
+      <div class="text-center mb-6">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-teal-700 bg-teal-50 px-3.5 py-1.5 rounded-full border border-teal-100">
+          5-Step Online Booking Engine
+        </span>
+        <h2 class="text-2xl font-black text-slate-900 mt-2 mb-1">Book Appointment & Choose Payment Method</h2>
+        <p class="text-xs text-slate-500">Supports bKash, Nagad mobile financial services & Pay at Clinic</p>
+      </div>
+
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 space-y-4">
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Patient Full Name</label>
-          <input type="text" id="pname" class="w-full p-2.5 border rounded-xl text-xs font-medium" value="Mohammad Ali" />
+          <label class="block text-xs font-bold text-slate-700 mb-1">Selected Specialist Doctor</label>
+          <input type="text" id="docNameInput" class="w-full p-2.5 border rounded-xl text-xs font-bold text-slate-800 bg-white" value="Dr. Tariq Rahman (Cardiology)" readonly />
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Bangladesh Phone Number (+880)</label>
-          <input type="text" id="pphone" class="w-full p-2.5 border rounded-xl text-xs font-medium" value="+880 1711223344" />
+          <label class="block text-xs font-bold text-slate-700 mb-1">Patient Full Name *</label>
+          <input type="text" id="pname" class="w-full p-2.5 border rounded-xl text-xs font-medium bg-white" value="Mohammad Ali" />
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Payment Method</label>
-          <select id="pmethod" class="w-full p-2.5 border rounded-xl text-xs font-bold text-slate-800">
+          <label class="block text-xs font-bold text-slate-700 mb-1">Bangladesh Phone Number (+880) *</label>
+          <input type="text" id="pphone" class="w-full p-2.5 border rounded-xl text-xs font-medium bg-white" value="+880 1711223344" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Payment Method Selection *</label>
+          <select id="pmethod" class="w-full p-2.5 border rounded-xl text-xs font-bold text-slate-800 bg-white">
             <option value="bkash">bKash Mobile Payment (৳1500)</option>
             <option value="nagad">Nagad Mobile Payment (৳1500)</option>
             <option value="clinic" selected>Pay at Clinic (Cash on Arrival)</option>
           </select>
         </div>
 
-        <button onclick="alert('✅ Appointment Confirmed! ID: NH-948201. A confirmation SMS has been sent to +880 1711223344.')" class="w-full bg-teal-700 hover:bg-teal-800 text-white font-bold text-sm py-3 rounded-xl shadow-md">
-          Confirm Appointment Now
+        <button onclick="confirmBooking()" class="w-full bg-teal-700 hover:bg-teal-800 text-white font-bold text-sm py-3.5 rounded-xl shadow-md flex items-center justify-center gap-2">
+          <i class="fa-solid fa-circle-check"></i> Confirm Appointment & Generate Receipt
         </button>
       </div>
     </div>
@@ -193,5 +251,41 @@
     </div>
   </footer>
 
+  <script>
+    let isBn = false;
+
+    function toggleLang() {
+      isBn = !isBn;
+      document.getElementById('langText').innerText = isBn ? 'বাং / EN' : 'EN / বাং';
+      document.getElementById('heroTitle').innerText = isBn 
+        ? 'আধুনিক চিকিৎসা ও বিশ্বস্ত স্বাস্থ্যসেবা এখন ঢাকায়' 
+        : 'World-Class Healthcare, Close to Home in Dhaka';
+    }
+
+    function filterDocs(category) {
+      const cards = document.querySelectorAll('.doc-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function selectDoctorForBooking(name, specialty, fee) {
+      document.getElementById('docNameInput').value = `${name} (${specialty}) - ৳${fee}`;
+      document.getElementById('bookingSection').scrollIntoView({behavior: 'smooth'});
+    }
+
+    function confirmBooking() {
+      const name = document.getElementById('pname').value;
+      const phone = document.getElementById('pphone').value;
+      const doc = document.getElementById('docNameInput').value;
+      const method = document.getElementById('pmethod').value;
+
+      alert(`✅ APPOINTMENT CONFIRMED!\n\nPatient Name: ${name}\nPhone: ${phone}\nDoctor: ${doc}\nPayment Mode: ${method.toUpperCase()}\nAppointment ID: NH-${Math.floor(100000 + Math.random()*900000)}\n\nA confirmation SMS has been dispatched.`);
+    }
+  </script>
 </body>
 </html>
