@@ -52,11 +52,17 @@
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #F1F1F1; }
     ::-webkit-scrollbar-thumb { background: #C88D79; border-radius: 3px; }
+
+    .category-tab.active {
+      background-color: #C88D79;
+      color: #FFFFFF;
+      border-color: #C88D79;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
 
-  <!-- TOP PROMO TICKER (RED BACKGROUND WITH WHITE SCROLLING TEXT) -->
+  <!-- TOP PROMO TICKER (RED SCROLLING ANNOUNCEMENT BAR) -->
   <div class="bg-[#DC2626] text-white py-2.5 shadow-md text-xs font-bold tracking-widest uppercase overflow-hidden marquee-box">
     <div class="animate-marquee flex items-center gap-12">
       <div class="flex items-center gap-8">
@@ -93,9 +99,10 @@
       <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-widest uppercase text-slate-700">
         <a href="#hero" class="hover:text-roseGold transition-colors">Now In</a>
         <a href="#categories" class="hover:text-roseGold transition-colors">Collections</a>
-        <a href="#trending" class="hover:text-roseGold transition-colors">Dresses</a>
-        <a href="#sale" class="text-roseGold font-bold hover:text-slate-900 transition-colors">Sale</a>
-        <a href="#reviews" class="hover:text-roseGold transition-colors">Reviews</a>
+        <a href="#trending" onclick="filterProducts('all')" class="hover:text-roseGold transition-colors">All Products</a>
+        <a href="#trending" onclick="filterProducts('bags')" class="hover:text-roseGold transition-colors">Bags</a>
+        <a href="#trending" onclick="filterProducts('shoes')" class="hover:text-roseGold transition-colors">Shoes</a>
+        <a href="#trending" onclick="filterProducts('jewelry')" class="hover:text-roseGold transition-colors">Jewelry</a>
       </nav>
 
       <!-- Right Header Actions (Search, Wishlist, Cart Drawer) -->
@@ -135,11 +142,11 @@
           </h1>
 
           <p class="text-xs sm:text-sm text-slate-600 font-normal max-w-md leading-relaxed tracking-wide">
-            Discover our new arrival collection of handcrafted silk dresses, tailored linen blouses, and luxury designer accessories crafted for timeless elegance.
+            Discover our new arrival collection of handcrafted silk dresses, tailored linen blouses, designer handbags, heels, and luxury accessories.
           </p>
 
           <div>
-            <a href="#trending" class="inline-block bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-full shadow-lg shadow-roseGold/20 transition-all hover:scale-105">
+            <a href="#trending" onclick="filterProducts('all')" class="inline-block bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-full shadow-lg shadow-roseGold/20 transition-all hover:scale-105">
               SHOP NOW
             </a>
           </div>
@@ -154,79 +161,79 @@
       </div>
     </section>
 
-    <!-- PRODUCT CATEGORY GRID (6 CARDS MATCHING REFERENCE LAYOUT) -->
+    <!-- PRODUCT CATEGORY GRID (6 CLICKABLE INTERACTIVE CARDS) -->
     <section id="categories" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="font-serif-luxury text-3xl sm:text-4xl font-normal text-slate-900">Product Category Grid</h2>
-        <p class="text-xs font-medium text-slate-500 uppercase tracking-widest mt-1">Explore Collections</p>
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-widest mt-1">Click Any Category To Filter Collection</p>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
         
         <!-- Category 1: Dresses -->
-        <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
+        <button onclick="filterProducts('dresses')" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white text-left block w-full">
           <div class="h-64 sm:h-80 w-full overflow-hidden">
             <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80'" alt="Dresses" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div class="p-4 text-center bg-white">
             <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">DRESSES</h3>
           </div>
-        </a>
+        </button>
 
         <!-- Category 2: Tops -->
-        <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
+        <button onclick="filterProducts('tops')" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white text-left block w-full">
           <div class="h-64 sm:h-80 w-full overflow-hidden">
             <img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80'" alt="Tops" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div class="p-4 text-center bg-white">
             <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">TOPS</h3>
           </div>
-        </a>
+        </button>
 
         <!-- Category 3: Bags -->
-        <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
+        <button onclick="filterProducts('bags')" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white text-left block w-full">
           <div class="h-64 sm:h-80 w-full overflow-hidden">
             <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&auto=format&fit=crop&q=80'" alt="Bags" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div class="p-4 text-center bg-white">
             <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">BAGS</h3>
           </div>
-        </a>
+        </button>
 
         <!-- Category 4: Shoes -->
-        <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
+        <button onclick="filterProducts('shoes')" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white text-left block w-full">
           <div class="h-64 sm:h-80 w-full overflow-hidden">
             <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1560343090-f0409e92791a?w=600&auto=format&fit=crop&q=80'" alt="Shoes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div class="p-4 text-center bg-white">
             <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">SHOES</h3>
           </div>
-        </a>
+        </button>
 
         <!-- Category 5: Accessories -->
-        <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
+        <button onclick="filterProducts('accessories')" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white text-left block w-full">
           <div class="h-64 sm:h-80 w-full overflow-hidden">
             <img src="https://images.unsplash.com/photo-1606760227091-3dd858d9721d?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&auto=format&fit=crop&q=80'" alt="Accessories" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div class="p-4 text-center bg-white">
             <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">ACCESSORIES</h3>
           </div>
-        </a>
+        </button>
 
         <!-- Category 6: Jewelry -->
-        <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
+        <button onclick="filterProducts('jewelry')" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white text-left block w-full">
           <div class="h-64 sm:h-80 w-full overflow-hidden">
             <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&auto=format&fit=crop&q=80'" alt="Jewelry" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div class="p-4 text-center bg-white">
             <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">JEWELRY</h3>
           </div>
-        </a>
+        </button>
 
       </div>
     </section>
 
-    <!-- SUMMER SALE BANNER (MATCHING REFERENCE DESIGN) -->
+    <!-- SUMMER SALE BANNER -->
     <section id="sale" class="py-12 bg-[#FAF4F0] border-y border-stone-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         
@@ -242,7 +249,7 @@
           </h2>
           <p class="text-xs text-slate-600 tracking-wider uppercase font-semibold">Limited Time Offer</p>
           <div>
-            <button onclick="document.getElementById('trending').scrollIntoView({behavior: 'smooth'})" class="bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-full shadow-md transition-all">
+            <button onclick="filterProducts('all')" class="bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-full shadow-md transition-all">
               SHOP THE SALE
             </button>
           </div>
@@ -251,115 +258,27 @@
       </div>
     </section>
 
-    <!-- TRENDING CLOTHING COLLECTION (PRODUCT CARDS MATCHING REFERENCE) -->
+    <!-- TRENDING CLOTHING & ACCESSORIES CATALOG (DYNAMIC CATEGORY FILTERING) -->
     <section id="trending" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="font-serif-luxury text-3xl sm:text-4xl font-normal text-slate-900">Trending Clothing Collection</h2>
-        <p class="text-xs font-medium text-slate-500 uppercase tracking-widest mt-1">Handpicked Best Sellers</p>
+      <div class="text-center mb-8">
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl font-normal text-slate-900 mb-2">Curated Fashion Collection</h2>
+        <p id="catalogSubtitle" class="text-xs font-medium text-slate-500 uppercase tracking-widest">Showing All Products</p>
       </div>
 
+      <!-- Interactive Category Filter Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 text-xs font-bold">
+        <button onclick="filterProducts('all')" data-cat="all" class="category-tab active px-5 py-2.5 rounded-full border border-stone-300 hover:border-roseGold transition-all">All Products</button>
+        <button onclick="filterProducts('dresses')" data-cat="dresses" class="category-tab px-5 py-2.5 rounded-full border border-stone-300 hover:border-roseGold transition-all">Dresses</button>
+        <button onclick="filterProducts('tops')" data-cat="tops" class="category-tab px-5 py-2.5 rounded-full border border-stone-300 hover:border-roseGold transition-all">Tops</button>
+        <button onclick="filterProducts('bags')" data-cat="bags" class="category-tab px-5 py-2.5 rounded-full border border-stone-300 hover:border-roseGold transition-all">Bags</button>
+        <button onclick="filterProducts('shoes')" data-cat="shoes" class="category-tab px-5 py-2.5 rounded-full border border-stone-300 hover:border-roseGold transition-all">Shoes / Sandals</button>
+        <button onclick="filterProducts('accessories')" data-cat="accessories" class="category-tab px-5 py-2.5 rounded-full border border-stone-300 hover:border-roseGold transition-all">Accessories</button>
+        <button onclick="filterProducts('jewelry')" data-cat="jewelry" class="category-tab px-5 py-2.5 rounded-full border border-stone-300 hover:border-roseGold transition-all">Jewelry</button>
+      </div>
+
+      <!-- Dynamic Product Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="productGrid">
-        
-        <!-- Product 1 -->
-        <div class="product-item bg-white rounded-2xl border border-stone-200 overflow-hidden p-4 flex flex-col justify-between group shadow-sm hover:shadow-xl transition-all">
-          <div class="relative">
-            <span class="absolute top-2 left-2 bg-roseGold text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider z-10">Best Seller</span>
-            <button onclick="toggleWishlist(this)" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-roseGold flex items-center justify-center shadow z-10 transition-colors">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
-              <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop&q=80'" alt="Aria Floral Midi Dress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <button onclick="openQuickView('Aria Floral Midi Dress', '$130.00', 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&auto=format&fit=crop&q=80')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
-                Quick View
-              </button>
-            </div>
-
-            <h3 class="font-semibold text-sm text-slate-900 mb-1">Aria Floral Midi Dress</h3>
-            <p class="text-xs font-bold text-slate-800 mb-3">$130.00</p>
-          </div>
-
-          <button onclick="addToBag('Aria Floral Midi Dress', 130, 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&auto=format&fit=crop&q=80')" class="w-full bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl shadow transition-all">
-            ADD TO CART
-          </button>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-item bg-white rounded-2xl border border-stone-200 overflow-hidden p-4 flex flex-col justify-between group shadow-sm hover:shadow-xl transition-all">
-          <div class="relative">
-            <button onclick="toggleWishlist(this)" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-roseGold flex items-center justify-center shadow z-10 transition-colors">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
-              <img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80'" alt="Luna Silk Blouse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <button onclick="openQuickView('Luna Silk Blouse', '$85.00', 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
-                Quick View
-              </button>
-            </div>
-
-            <h3 class="font-semibold text-sm text-slate-900 mb-1">Luna Silk Blouse</h3>
-            <p class="text-xs font-bold text-slate-800 mb-3">$85.00</p>
-          </div>
-
-          <button onclick="addToBag('Luna Silk Blouse', 85, 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80')" class="w-full bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl shadow transition-all">
-            ADD TO CART
-          </button>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product-item bg-white rounded-2xl border border-stone-200 overflow-hidden p-4 flex flex-col justify-between group shadow-sm hover:shadow-xl transition-all">
-          <div class="relative">
-            <span class="absolute top-2 left-2 bg-emerald-700 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider z-10">New Arrival</span>
-            <button onclick="toggleWishlist(this)" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-roseGold flex items-center justify-center shadow z-10 transition-colors">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
-              <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80'" alt="Luna Floral Midi Dress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <button onclick="openQuickView('Luna Floral Midi Dress', '$85.00', 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
-                Quick View
-              </button>
-            </div>
-
-            <h3 class="font-semibold text-sm text-slate-900 mb-1">Luna Floral Midi Dress</h3>
-            <p class="text-xs font-bold text-slate-800 mb-3">$85.00</p>
-          </div>
-
-          <button onclick="addToBag('Luna Floral Midi Dress', 85, 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80')" class="w-full bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl shadow transition-all">
-            ADD TO CART
-          </button>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="product-item bg-white rounded-2xl border border-stone-200 overflow-hidden p-4 flex flex-col justify-between group shadow-sm hover:shadow-xl transition-all">
-          <div class="relative">
-            <button onclick="toggleWishlist(this)" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-roseGold flex items-center justify-center shadow z-10 transition-colors">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
-              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&auto=format&fit=crop&q=80'" alt="Aria Floral Midi Dress White" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <button onclick="openQuickView('Aria Floral Midi Dress White', '$85.00', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
-                Quick View
-              </button>
-            </div>
-
-            <h3 class="font-semibold text-sm text-slate-900 mb-1">Aria Floral Midi Dress White</h3>
-            <p class="text-xs font-bold text-slate-800 mb-3">$85.00</p>
-          </div>
-
-          <button onclick="addToBag('Aria Floral Midi Dress White', 85, 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80')" class="w-full bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl shadow transition-all">
-            ADD TO CART
-          </button>
-        </div>
-
-      </div>
-
-      <div class="text-center mt-10">
-        <button onclick="loadMoreProducts()" id="loadMoreBtn" class="bg-[#F7F3EE] hover:bg-stone-200 text-slate-900 text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-full border border-stone-300 transition-all">
-          Shop All Trending
-        </button>
+        <!-- Products rendered via JavaScript -->
       </div>
     </section>
 
@@ -369,7 +288,6 @@
         <h2 class="font-serif-luxury text-3xl sm:text-4xl font-normal text-slate-900 mb-10">Customer Reviews</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
           <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 text-center space-y-3">
             <div class="text-amber-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
             <h3 class="font-semibold text-sm text-slate-900">Amazing quality!</h3>
@@ -381,16 +299,15 @@
             <div class="text-amber-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
             <h3 class="font-semibold text-sm text-slate-900">Perfect fit.</h3>
             <p class="text-xs text-slate-500 font-medium">Kenria</p>
-            <p class="text-[11px] text-slate-400 uppercase tracking-widest">Name</p>
+            <p class="text-[11px] text-slate-400 uppercase tracking-widest">Customer</p>
           </div>
 
           <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 text-center space-y-3">
             <div class="text-amber-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <h3 class="font-semibold text-sm text-slate-900">Perfect fit.</h3>
+            <h3 class="font-semibold text-sm text-slate-900">Beautiful jewelry & bags!</h3>
             <p class="text-xs text-slate-500 font-medium">Katah</p>
             <p class="text-[11px] text-slate-400 uppercase tracking-widest">Customer</p>
           </div>
-
         </div>
       </div>
     </section>
@@ -399,31 +316,27 @@
   <!-- DARK MINIMAL FOOTER -->
   <footer class="bg-darkCharcoal text-stone-300 pt-16 pb-8 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-      
-      <!-- Column 1: SHOP -->
       <div>
         <h4 class="font-bold text-white uppercase tracking-widest mb-4">SHOP</h4>
         <ul class="space-y-2 text-stone-400">
-          <li><a href="#hero" class="hover:text-white transition-colors">New Arrivals</a></li>
-          <li><a href="#trending" class="hover:text-white transition-colors">Dresses</a></li>
-          <li><a href="#categories" class="hover:text-white transition-colors">Tops</a></li>
-          <li><a href="#trending" class="hover:text-white transition-colors">Wear Wing</a></li>
+          <li><a href="#trending" onclick="filterProducts('dresses')" class="hover:text-white transition-colors">Dresses</a></li>
+          <li><a href="#trending" onclick="filterProducts('tops')" class="hover:text-white transition-colors">Tops</a></li>
+          <li><a href="#trending" onclick="filterProducts('bags')" class="hover:text-white transition-colors">Bags</a></li>
+          <li><a href="#trending" onclick="filterProducts('shoes')" class="hover:text-white transition-colors">Shoes & Sandals</a></li>
+          <li><a href="#trending" onclick="filterProducts('jewelry')" class="hover:text-white transition-colors">Jewelry</a></li>
         </ul>
       </div>
 
-      <!-- Column 2: HELP -->
       <div>
         <h4 class="font-bold text-white uppercase tracking-widest mb-4">HELP</h4>
         <ul class="space-y-2 text-stone-400">
           <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
           <li><a href="#" class="hover:text-white transition-colors">Shipping</a></li>
           <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">Accessories</a></li>
           <li><a href="#" class="hover:text-white transition-colors">Returns</a></li>
         </ul>
       </div>
 
-      <!-- Column 3: ACCOUNT -->
       <div>
         <h4 class="font-bold text-white uppercase tracking-widest mb-4">ACCOUNT</h4>
         <ul class="space-y-2 text-stone-400">
@@ -432,11 +345,10 @@
         </ul>
       </div>
 
-      <!-- Column 4: Stay in Style Newsletter & Socials -->
       <div>
         <h4 class="font-bold text-white uppercase tracking-widest mb-4">Stay in Style</h4>
         <form onsubmit="subscribeNewsletter(event)" class="flex mb-6">
-          <input type="email" required placeholder="Stay in Style (Email)" class="px-4 py-2.5 bg-stone-800 text-white border border-stone-700 rounded-l-lg text-xs w-full focus:outline-none focus:border-roseGold" />
+          <input type="email" required placeholder="Email Address" class="px-4 py-2.5 bg-stone-800 text-white border border-stone-700 rounded-l-lg text-xs w-full focus:outline-none focus:border-roseGold" />
           <button type="submit" class="bg-roseGold hover:bg-roseGoldDark text-white px-4 py-2.5 rounded-r-lg font-bold transition-colors">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
@@ -448,10 +360,8 @@
           <a href="#" class="hover:text-roseGold transition-colors"><i class="fa-brands fa-facebook"></i></a>
         </div>
       </div>
-
     </div>
 
-    <!-- Bottom Payment Badges & Copyright -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500">
       <div class="flex items-center gap-3 text-xl">
         <i class="fa-brands fa-cc-visa text-white"></i>
@@ -475,7 +385,7 @@
         <button onclick="toggleSearchModal()" class="text-slate-400 hover:text-slate-900"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div class="pt-4">
-        <input type="text" placeholder="Search dresses, tops, bags, shoes..." class="w-full p-3 border rounded-xl text-xs focus:outline-none focus:border-roseGold" />
+        <input type="text" placeholder="Search dresses, tops, bags, shoes, jewelry..." class="w-full p-3 border rounded-xl text-xs focus:outline-none focus:border-roseGold" />
       </div>
     </div>
   </div>
@@ -490,7 +400,6 @@
           <button onclick="toggleCartDrawer()" class="text-slate-500 hover:text-slate-900 text-lg"><i class="fa-solid fa-xmark"></i></button>
         </div>
 
-        <!-- Free Shipping Progress Bar -->
         <div class="py-4 border-b border-stone-100 text-xs">
           <div class="flex justify-between font-semibold text-slate-700 mb-1.5">
             <span id="shippingText">Add $150.00 for Free Express Shipping</span>
@@ -535,9 +444,9 @@
           <p class="text-xs text-slate-500 leading-relaxed">Handcrafted luxury couture fabric designed for supreme elegance and comfort.</p>
 
           <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">Select Size</label>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Select Option</label>
             <div class="flex gap-2 text-xs font-bold">
-              <button class="w-8 h-8 rounded-lg border border-slate-200 hover:border-roseGold hover:text-roseGold">XS</button>
+              <button class="w-8 h-8 rounded-lg border border-slate-200 hover:border-roseGold hover:text-roseGold">Standard</button>
               <button class="w-8 h-8 rounded-lg border border-roseGold bg-roseGold text-white">S</button>
               <button class="w-8 h-8 rounded-lg border border-slate-200 hover:border-roseGold hover:text-roseGold">M</button>
               <button class="w-8 h-8 rounded-lg border border-slate-200 hover:border-roseGold hover:text-roseGold">L</button>
@@ -553,8 +462,96 @@
   </div>
 
   <script>
+    // FULL PRODUCTS DATABASE ACROSS ALL CATEGORIES
+    const PRODUCTS_DB = [
+      // DRESSES
+      { id: 1, category: 'dresses', tag: 'Best Seller', title: 'Aria Floral Midi Dress', price: 130, img: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&auto=format&fit=crop&q=80' },
+      { id: 2, category: 'dresses', tag: 'New Arrival', title: 'Luna Silk Evening Dress', price: 185, img: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop&q=80' },
+      { id: 3, category: 'dresses', tag: 'Luxury', title: 'Valentina Satin Evening Gown', price: 210, img: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80' },
+      { id: 4, category: 'dresses', tag: 'Trending', title: 'Camilla Wrap Summer Dress', price: 140, img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80' },
+
+      // TOPS
+      { id: 5, category: 'tops', tag: 'Best Seller', title: 'Luna Silk Tailored Blouse', price: 85, img: 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80' },
+      { id: 6, category: 'tops', tag: 'Luxury', title: 'Aurelia Cashmere Knit Top', price: 120, img: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600&auto=format&fit=crop&q=80' },
+      { id: 7, category: 'tops', tag: 'New', title: 'Velvet Lace Corset Camisole', price: 75, img: 'https://images.unsplash.com/photo-1551803091-e20673f15770?w=600&auto=format&fit=crop&q=80' },
+
+      // BAGS
+      { id: 8, category: 'bags', tag: 'Handmade', title: 'Parisian Leather Tote Bag', price: 350, img: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=80' },
+      { id: 9, category: 'bags', tag: 'Best Seller', title: 'Royal Gold Chain Shoulder Bag', price: 280, img: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&auto=format&fit=crop&q=80' },
+      { id: 10, category: 'bags', tag: 'Luxury', title: 'Italian Suede Mini Crossbody', price: 195, img: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=80' },
+
+      // SHOES (SANDALS / HEELS)
+      { id: 11, category: 'shoes', tag: 'Couture', title: 'Rose Gold Strappy Sandals', price: 185, img: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=80' },
+      { id: 12, category: 'shoes', tag: 'Best Seller', title: 'Venetian Nude Stiletto Heels', price: 190, img: 'https://images.unsplash.com/photo-1560343090-f0409e92791a?w=600&auto=format&fit=crop&q=80' },
+      { id: 13, category: 'shoes', tag: 'New', title: 'Summer Block Heel Sandals', price: 135, img: 'https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=600&auto=format&fit=crop&q=80' },
+
+      // ACCESSORIES
+      { id: 14, category: 'accessories', tag: 'Silk', title: 'Silk Paisley Head Scarf', price: 45, img: 'https://images.unsplash.com/photo-1606760227091-3dd858d9721d?w=600&auto=format&fit=crop&q=80' },
+      { id: 15, category: 'accessories', tag: 'Designer', title: 'Cat-Eye UV Sunglasses', price: 120, img: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600&auto=format&fit=crop&q=80' },
+
+      // JEWELRY
+      { id: 16, category: 'jewelry', tag: '18k Gold', title: '18k Gold Layered Necklace', price: 145, img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&auto=format&fit=crop&q=80' },
+      { id: 17, category: 'jewelry', tag: 'Pearls', title: 'Freshwater Pearl Drop Earrings', price: 95, img: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&auto=format&fit=crop&q=80' },
+      { id: 18, category: 'jewelry', tag: 'Gold', title: 'Diamond Cut Chain Bracelet', price: 130, img: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&auto=format&fit=crop&q=80' }
+    ];
+
     let cart = [];
     let wishlistCount = 0;
+    let currentCategory = 'all';
+
+    function renderProducts(cat) {
+      currentCategory = cat;
+      const grid = document.getElementById('productGrid');
+      const subTitle = document.getElementById('catalogSubtitle');
+      
+      let filtered = cat === 'all' ? PRODUCTS_DB : PRODUCTS_DB.filter(p => p.category === cat);
+      
+      subTitle.innerText = `Showing ${cat.toUpperCase()} (${filtered.length} Items)`;
+
+      // Active tab styling
+      document.querySelectorAll('.category-tab').forEach(tab => {
+        if (tab.getAttribute('data-cat') === cat) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+
+      let html = '';
+      filtered.forEach(p => {
+        html += `
+          <div class="product-item bg-white rounded-2xl border border-stone-200 overflow-hidden p-4 flex flex-col justify-between group shadow-sm hover:shadow-xl transition-all">
+            <div class="relative">
+              <span class="absolute top-2 left-2 bg-roseGold text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider z-10">${p.tag}</span>
+              <button onclick="toggleWishlist(this)" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-roseGold flex items-center justify-center shadow z-10 transition-colors">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+              <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
+                <img src="${p.img}" onerror="this.src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80'" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <button onclick="openQuickView('${p.title}', '$${p.price.toFixed(2)}', '${p.img}')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
+                  Quick View
+                </button>
+              </div>
+
+              <h3 class="font-semibold text-sm text-slate-900 mb-1">${p.title}</h3>
+              <p class="text-xs font-bold text-slate-800 mb-3">$${p.price.toFixed(2)}</p>
+            </div>
+
+            <button onclick="addToBag('${p.title}', ${p.price}, '${p.img}')" class="w-full bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl shadow transition-all">
+              ADD TO CART
+            </button>
+          </div>
+        `;
+      });
+
+      grid.innerHTML = html;
+    }
+
+    function filterProducts(cat) {
+      renderProducts(cat);
+      document.getElementById('trending').scrollIntoView({behavior: 'smooth'});
+    }
 
     function toggleSearchModal() {
       const sm = document.getElementById('searchModal');
@@ -664,47 +661,6 @@
       closeQuickView();
     }
 
-    function loadMoreProducts() {
-      const grid = document.getElementById('productGrid');
-      const extraProducts = [
-        { name: 'Elysian Wrap Silk Dress', price: 165, img: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop&q=80' },
-        { name: 'Sophia Linen Summer Dress', price: 95, img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80' },
-        { name: 'Valentina Satin Evening Gown', price: 210, img: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80' },
-        { name: 'Camilla Floral Wrap Dress', price: 140, img: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&auto=format&fit=crop&q=80' }
-      ];
-
-      extraProducts.forEach(p => {
-        const div = document.createElement('div');
-        div.className = 'product-item bg-white rounded-2xl border border-stone-200 overflow-hidden p-4 flex flex-col justify-between group shadow-sm hover:shadow-xl transition-all';
-        div.innerHTML = `
-          <div class="relative">
-            <span class="absolute top-2 left-2 bg-slate-900 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider z-10">Trending</span>
-            <button onclick="toggleWishlist(this)" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-roseGold flex items-center justify-center shadow z-10 transition-colors">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
-              <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <button onclick="openQuickView('${p.name}', '$${p.price.toFixed(2)}', '${p.img}')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
-                Quick View
-              </button>
-            </div>
-
-            <h3 class="font-semibold text-sm text-slate-900 mb-1">${p.name}</h3>
-            <p class="text-xs font-bold text-slate-800 mb-3">$${p.price.toFixed(2)}</p>
-          </div>
-
-          <button onclick="addToBag('${p.name}', ${p.price}, '${p.img}')" class="w-full bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl shadow transition-all">
-            ADD TO CART
-          </button>
-        `;
-        grid.appendChild(div);
-      });
-
-      document.getElementById('loadMoreBtn').innerText = 'All Couture Products Loaded';
-      document.getElementById('loadMoreBtn').disabled = true;
-    }
-
     function checkoutBag() {
       if (cart.length === 0) {
         alert('Your shopping bag is empty! Add products first.');
@@ -718,6 +674,11 @@
       e.preventDefault();
       alert('✨ Thank you for subscribing to LUXE & CO.! Check your inbox for your 20% OFF discount code (LUXE20).');
     }
+
+    // Initial render on page load
+    window.onload = function() {
+      renderProducts('all');
+    };
   </script>
 </body>
 </html>
