@@ -103,7 +103,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
 
-        <button onclick="openWishlistToast()" class="text-slate-700 hover:text-roseGold transition-colors text-lg relative" title="Wishlist">
+        <button onclick="alert('Wishlist contains ' + wishlistCount + ' items.')" class="text-slate-700 hover:text-roseGold transition-colors text-lg relative" title="Wishlist">
           <i class="fa-regular fa-heart"></i>
           <span id="wishlistBadge" class="absolute -top-1.5 -right-2 bg-roseGold text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
         </button>
@@ -120,7 +120,7 @@
   </header>
 
   <main>
-    <!-- HERO BANNER (MATCHING REFERENCE HIGH-FASHION DESIGN) -->
+    <!-- HERO BANNER -->
     <section id="hero" class="relative bg-[#FAF6F0] py-16 md:py-24 border-b border-stone-200 overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
@@ -146,7 +146,7 @@
 
         <div class="relative">
           <div class="w-full h-[450px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1000&auto=format&fit=crop&q=80" alt="Luxe & Co Fashion Model" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" />
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1000&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1000&auto=format&fit=crop&q=80'" alt="Luxe & Co Fashion Model" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" />
           </div>
         </div>
 
@@ -165,7 +165,7 @@
         <!-- Category 1: Dresses -->
         <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
           <div class="h-64 sm:h-80 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop&q=80" alt="Dresses" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80'" alt="Dresses" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div class="p-4 text-center bg-white">
             <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">DRESSES</h3>
@@ -175,7 +175,7 @@
         <!-- Category 2: Tops -->
         <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
           <div class="h-64 sm:h-80 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80" alt="Tops" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80'" alt="Tops" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div class="p-4 text-center bg-white">
             <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">TOPS</h3>
@@ -185,7 +185,7 @@
         <!-- Category 3: Bags -->
         <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
           <div class="h-64 sm:h-80 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=80" alt="Bags" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&auto=format&fit=crop&q=80'" alt="Bags" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div class="p-4 text-center bg-white">
             <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">BAGS</h3>
@@ -195,7 +195,7 @@
         <!-- Category 4: Shoes -->
         <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
           <div class="h-64 sm:h-80 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=80" alt="Shoes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1560343090-f0409e92791a?w=600&auto=format&fit=crop&q=80'" alt="Shoes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div class="p-4 text-center bg-white">
             <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">SHOES</h3>
@@ -205,7 +205,7 @@
         <!-- Category 5: Accessories -->
         <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
           <div class="h-64 sm:h-80 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1606760227091-3dd858d9721d?w=600&auto=format&fit=crop&q=80" alt="Accessories" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <img src="https://images.unsplash.com/photo-1606760227091-3dd858d9721d?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&auto=format&fit=crop&q=80'" alt="Accessories" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div class="p-4 text-center bg-white">
             <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">ACCESSORIES</h3>
@@ -215,7 +215,7 @@
         <!-- Category 6: Jewelry -->
         <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
           <div class="h-64 sm:h-80 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&auto=format&fit=crop&q=80" alt="Jewelry" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&auto=format&fit=crop&q=80'" alt="Jewelry" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div class="p-4 text-center bg-white">
             <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">JEWELRY</h3>
@@ -230,8 +230,8 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         
         <div class="flex justify-center gap-4">
-          <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&auto=format&fit=crop&q=80" alt="Summer Sale 1" class="w-1/2 h-72 sm:h-96 object-cover rounded-2xl shadow-md" />
-          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500&auto=format&fit=crop&q=80" alt="Summer Sale 2" class="w-1/2 h-72 sm:h-96 object-cover rounded-2xl shadow-md" />
+          <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&auto=format&fit=crop&q=80'" alt="Summer Sale 1" class="w-1/2 h-72 sm:h-96 object-cover rounded-2xl shadow-md" />
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&auto=format&fit=crop&q=80'" alt="Summer Sale 2" class="w-1/2 h-72 sm:h-96 object-cover rounded-2xl shadow-md" />
         </div>
 
         <div class="text-center md:text-left space-y-4">
@@ -241,7 +241,7 @@
           </h2>
           <p class="text-xs text-slate-600 tracking-wider uppercase font-semibold">Limited Time Offer</p>
           <div>
-            <button onclick="filterCategory('sale')" class="bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-full shadow-md transition-all">
+            <button onclick="document.getElementById('trending').scrollIntoView({behavior: 'smooth'})" class="bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-full shadow-md transition-all">
               SHOP THE SALE
             </button>
           </div>
@@ -268,7 +268,7 @@
             </button>
 
             <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
-              <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&auto=format&fit=crop&q=80" alt="Aria Floral Midi Dress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop&q=80'" alt="Aria Floral Midi Dress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <button onclick="openQuickView('Aria Floral Midi Dress', '$130.00', 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&auto=format&fit=crop&q=80')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
                 Quick View
               </button>
@@ -291,7 +291,7 @@
             </button>
 
             <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
-              <img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80" alt="Luna Silk Blouse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80'" alt="Luna Silk Blouse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <button onclick="openQuickView('Luna Silk Blouse', '$85.00', 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
                 Quick View
               </button>
@@ -315,7 +315,7 @@
             </button>
 
             <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
-              <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80" alt="Luna Floral Midi Dress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80'" alt="Luna Floral Midi Dress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <button onclick="openQuickView('Luna Floral Midi Dress', '$85.00', 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
                 Quick View
               </button>
@@ -338,7 +338,7 @@
             </button>
 
             <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
-              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80" alt="Aria Floral Midi Dress White" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&auto=format&fit=crop&q=80'" alt="Aria Floral Midi Dress White" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <button onclick="openQuickView('Aria Floral Midi Dress White', '$85.00', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
                 Quick View
               </button>
@@ -356,13 +356,13 @@
       </div>
 
       <div class="text-center mt-10">
-        <button onclick="alert('Loaded 12 More High-Fashion Couture Products!')" class="bg-[#F7F3EE] hover:bg-stone-200 text-slate-900 text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-full border border-stone-300 transition-all">
+        <button onclick="loadMoreProducts()" id="loadMoreBtn" class="bg-[#F7F3EE] hover:bg-stone-200 text-slate-900 text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-full border border-stone-300 transition-all">
           Shop All Trending
         </button>
       </div>
     </section>
 
-    <!-- CUSTOMER REVIEWS SECTION (MATCHING REFERENCE DESIGN) -->
+    <!-- CUSTOMER REVIEWS SECTION -->
     <section id="reviews" class="py-16 bg-[#F7F3EE] border-t border-stone-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="font-serif-luxury text-3xl sm:text-4xl font-normal text-slate-900 mb-10">Customer Reviews</h2>
@@ -395,7 +395,7 @@
     </section>
   </main>
 
-  <!-- DARK MINIMAL FOOTER (MATCHING REFERENCE LAYOUT EXACTLY) -->
+  <!-- DARK MINIMAL FOOTER -->
   <footer class="bg-darkCharcoal text-stone-300 pt-16 pb-8 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
       
@@ -464,6 +464,20 @@
       </div>
     </div>
   </footer>
+
+  <!-- SEARCH OVERLAY MODAL -->
+  <div id="searchModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div onclick="toggleSearchModal()" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+    <div class="relative bg-white rounded-3xl p-6 max-w-lg w-full shadow-2xl z-10">
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <h3 class="font-serif-luxury text-xl font-bold text-slate-900">Search LUXE & CO.</h3>
+        <button onclick="toggleSearchModal()" class="text-slate-400 hover:text-slate-900"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="pt-4">
+        <input type="text" placeholder="Search dresses, tops, bags, shoes..." class="w-full p-3 border rounded-xl text-xs focus:outline-none focus:border-roseGold" />
+      </div>
+    </div>
+  </div>
 
   <!-- SLIDE-OVER SHOPPING BAG DRAWER MODAL -->
   <div id="cartDrawer" class="fixed inset-0 z-50 invisible opacity-0 transition-all duration-300">
@@ -540,6 +554,12 @@
   <script>
     let cart = [];
     let wishlistCount = 0;
+
+    function toggleSearchModal() {
+      const sm = document.getElementById('searchModal');
+      sm.classList.toggle('hidden');
+      sm.classList.toggle('flex');
+    }
 
     function toggleCartDrawer() {
       const cd = document.getElementById('cartDrawer');
@@ -641,6 +661,47 @@
     function addQuickViewToBag() {
       addToBag(currentQV.title, currentQV.price, currentQV.img);
       closeQuickView();
+    }
+
+    function loadMoreProducts() {
+      const grid = document.getElementById('productGrid');
+      const extraProducts = [
+        { name: 'Elysian Wrap Silk Dress', price: 165, img: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop&q=80' },
+        { name: 'Sophia Linen Summer Dress', price: 95, img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80' },
+        { name: 'Valentina Satin Evening Gown', price: 210, img: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80' },
+        { name: 'Camilla Floral Wrap Dress', price: 140, img: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&auto=format&fit=crop&q=80' }
+      ];
+
+      extraProducts.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'product-item bg-white rounded-2xl border border-stone-200 overflow-hidden p-4 flex flex-col justify-between group shadow-sm hover:shadow-xl transition-all';
+        div.innerHTML = `
+          <div class="relative">
+            <span class="absolute top-2 left-2 bg-slate-900 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider z-10">Trending</span>
+            <button onclick="toggleWishlist(this)" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-roseGold flex items-center justify-center shadow z-10 transition-colors">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
+              <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <button onclick="openQuickView('${p.name}', '$${p.price.toFixed(2)}', '${p.img}')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
+                Quick View
+              </button>
+            </div>
+
+            <h3 class="font-semibold text-sm text-slate-900 mb-1">${p.name}</h3>
+            <p class="text-xs font-bold text-slate-800 mb-3">$${p.price.toFixed(2)}</p>
+          </div>
+
+          <button onclick="addToBag('${p.name}', ${p.price}, '${p.img}')" class="w-full bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl shadow transition-all">
+            ADD TO CART
+          </button>
+        `;
+        grid.appendChild(div);
+      });
+
+      document.getElementById('loadMoreBtn').innerText = 'All Couture Products Loaded';
+      document.getElementById('loadMoreBtn').disabled = true;
     }
 
     function checkoutBag() {
