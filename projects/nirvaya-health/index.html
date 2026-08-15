@@ -33,24 +33,60 @@
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background-color: #F8FAF9; color: #1E293B; }
+    
     .hero-banner {
       background: linear-gradient(90deg, rgba(16, 92, 107, 0.95) 0%, rgba(21, 117, 136, 0.85) 50%, rgba(16, 92, 107, 0.95) 100%),
                   url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&auto=format&fit=crop&q=80');
       background-size: cover;
       background-position: center;
     }
+
+    /* INFINITE MARQUEE SCROLLING ANIMATION */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 22s linear infinite;
+    }
+
+    .animate-marquee-fast {
+      display: flex;
+      width: max-content;
+      animation: marquee 16s linear infinite;
+    }
+
+    .marquee-container:hover .animate-marquee,
+    .marquee-container:hover .animate-marquee-fast {
+      animation-play-state: paused;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
-  <!-- TOP EMERGENCY RED BAR -->
-  <div class="bg-emergency text-white py-2 px-4 shadow-md sticky top-0 z-50 text-center text-xs md:text-sm font-bold tracking-wide">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <div class="w-full text-center flex items-center justify-center gap-2">
-        <i class="fa-solid fa-phone-volume animate-pulse text-amber-300"></i>
-        <span>EMERGENCY CARE 24/7 • CALL: +1 (800) 555-0199 • AMBULANCE SERVICE • Nirvaya Health</span>
+  <!-- TOP EMERGENCY RED BAR (WITH CONTINUOUS INFINITE TICKER SCROLLING) -->
+  <div class="bg-emergency text-white py-2 shadow-md sticky top-0 z-50 text-xs md:text-sm font-bold tracking-wide overflow-hidden marquee-container">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4">
+      
+      <!-- Scrolling Marquee Text Container -->
+      <div class="overflow-hidden whitespace-nowrap flex-1 mr-4">
+        <div class="animate-marquee-fast flex items-center gap-8">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-phone-volume animate-pulse text-amber-300"></i>
+            <span>EMERGENCY CARE 24/7 • CALL: +1 (800) 555-0199 • AMBULANCE SERVICE • Nirvaya Health • ICU & TRAUMA CENTER READY</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-phone-volume animate-pulse text-amber-300"></i>
+            <span>EMERGENCY CARE 24/7 • CALL: +1 (800) 555-0199 • AMBULANCE SERVICE • Nirvaya Health • ICU & TRAUMA CENTER READY</span>
+          </div>
+        </div>
       </div>
-      <a href="tel:+18005550199" class="hidden sm:flex bg-white text-emergency hover:bg-amber-100 px-3.5 py-1 rounded-full text-xs font-bold transition-all shadow items-center gap-1.5 shrink-0">
+
+      <!-- Right Call Now Button -->
+      <a href="tel:+18005550199" class="hidden sm:flex bg-white text-emergency hover:bg-amber-100 px-4 py-1 rounded-full text-xs font-bold transition-all shadow items-center gap-1.5 shrink-0">
         <i class="fa-solid fa-phone"></i> Call Now
       </a>
     </div>
@@ -107,22 +143,40 @@
       </div>
     </section>
 
-    <!-- TRUST METRICS BAR -->
-    <div class="bg-slate-100 border-b border-slate-200 py-4 text-center text-xs font-bold text-slate-700">
-      <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-center gap-6">
-        <span>50,000+ Happy Patients</span>
-        <span class="text-slate-300">•</span>
-        <span>200+ Specialist Doctors</span>
-        <span class="text-slate-300">•</span>
-        <span>15+ Years Experience</span>
-        <span class="text-slate-300">•</span>
-        <span>24/7 Emergency Services</span>
-        <span class="text-slate-300">•</span>
-        <span>International Locations</span>
+    <!-- TRUST METRICS BAR (WITH CONTINUOUS INFINITE TICKER SCROLLING) -->
+    <div class="bg-slate-100 border-b border-slate-200 py-3.5 overflow-hidden marquee-container text-xs font-bold text-slate-700">
+      <div class="animate-marquee flex items-center gap-8">
+        <!-- Loop Item Group 1 -->
+        <div class="flex items-center gap-6 shrink-0">
+          <span class="flex items-center gap-2"><i class="fa-solid fa-users text-teal-700"></i> 50,000+ Happy Patients</span>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-user-doctor text-teal-700"></i> 200+ Specialist Doctors</span>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-award text-teal-700"></i> 15+ Years Experience</span>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-teal-700"></i> 24/7 Emergency Services</span>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-globe text-teal-700"></i> International Locations</span>
+          <span class="text-slate-300">•</span>
+        </div>
+
+        <!-- Loop Item Group 2 (Duplicate for Seamless Loop) -->
+        <div class="flex items-center gap-6 shrink-0">
+          <span class="flex items-center gap-2"><i class="fa-solid fa-users text-teal-700"></i> 50,000+ Happy Patients</span>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-user-doctor text-teal-700"></i> 200+ Specialist Doctors</span>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-award text-teal-700"></i> 15+ Years Experience</span>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-teal-700"></i> 24/7 Emergency Services</span>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-2"><i class="fa-solid fa-globe text-teal-700"></i> International Locations</span>
+          <span class="text-slate-300">•</span>
+        </div>
       </div>
     </div>
 
-    <!-- SERVICES SECTION (FIXED BUG - RICH DEPARTMENT GRID) -->
+    <!-- SERVICES SECTION -->
     <section id="services" class="py-16 bg-white border-b border-slate-200">
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center max-w-2xl mx-auto mb-12">
@@ -412,7 +466,7 @@
       </div>
     </section>
 
-    <!-- ABOUT US SECTION (FIXED BUG - ACCREDITATIONS & CLINICAL MISSION) -->
+    <!-- ABOUT US SECTION -->
     <section id="about" class="py-16 max-w-7xl mx-auto px-4">
       <div class="bg-gradient-to-r from-slate-900 to-teal-950 text-white rounded-3xl p-8 md:p-12 shadow-xl">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
