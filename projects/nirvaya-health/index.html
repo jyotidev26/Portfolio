@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nirvaya Health - International Medical Center & Telehealth</title>
-  <meta name="description" content="International standard multi-specialty healthcare, world-renowned doctors, 24/7 emergency response, and online patient booking portal.">
+  <meta name="description" content="International standard multi-specialty healthcare, world-renowned doctors, 24/7 emergency response, and online patient booking portal with Stripe & PayPal payments.">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -90,7 +90,7 @@
             World-Class Healthcare, Accessible 24/7 Worldwide
           </h1>
           <p class="text-sm text-slate-300 leading-relaxed mb-8 font-medium max-w-xl">
-            Your trusted partner for complete medical excellence. Consult top-tier board-certified specialist physicians, advanced diagnostics, and seamless global telehealth.
+            Your trusted partner for complete medical excellence. Consult top-tier board-certified specialist physicians with secure international Stripe & PayPal payment gateways.
           </p>
 
           <div class="flex flex-wrap gap-4">
@@ -188,72 +188,15 @@
           </div>
         </div>
 
-        <!-- Doctor 4 -->
-        <div class="glass-card rounded-2xl p-5 flex flex-col justify-between hover:shadow-xl transition-all">
-          <div>
-            <div class="h-56 w-full rounded-xl overflow-hidden mb-4 bg-slate-100">
-              <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&auto=format&fit=crop&q=80" alt="Dr. David Chen" class="w-full h-full object-cover object-top" />
-            </div>
-            <div class="flex items-center justify-between mb-1">
-              <h3 class="font-bold text-slate-900 text-lg">Dr. David Chen</h3>
-              <span class="text-xs font-bold text-amber-500 flex items-center gap-1"><i class="fa-solid fa-star"></i> 5.0</span>
-            </div>
-            <p class="text-xs font-bold text-teal-700 mb-2">Pediatrics & Child Care</p>
-            <p class="text-xs text-slate-500 mb-4">MD, FAAP (USA) • 14 Years Experience</p>
-          </div>
-          <div class="flex justify-between items-center pt-3 border-t">
-            <span class="font-bold text-slate-900 text-sm">Fee: $100</span>
-            <button onclick="selectDoctor('Dr. David Chen', 'Pediatrics', '$100')" class="bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold px-4 py-2 rounded-xl">Book Appointment</button>
-          </div>
-        </div>
-
-        <!-- Doctor 5 -->
-        <div class="glass-card rounded-2xl p-5 flex flex-col justify-between hover:shadow-xl transition-all">
-          <div>
-            <div class="h-56 w-full rounded-xl overflow-hidden mb-4 bg-slate-100">
-              <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&auto=format&fit=crop&q=80" alt="Dr. Elena Rostova" class="w-full h-full object-cover object-top" />
-            </div>
-            <div class="flex items-center justify-between mb-1">
-              <h3 class="font-bold text-slate-900 text-lg">Dr. Elena Rostova</h3>
-              <span class="text-xs font-bold text-amber-500 flex items-center gap-1"><i class="fa-solid fa-star"></i> 4.9</span>
-            </div>
-            <p class="text-xs font-bold text-teal-700 mb-2">Dermatology & Laser</p>
-            <p class="text-xs text-slate-500 mb-4">MD, Board Certified Dermatologist • 12 Years Experience</p>
-          </div>
-          <div class="flex justify-between items-center pt-3 border-t">
-            <span class="font-bold text-slate-900 text-sm">Fee: $115</span>
-            <button onclick="selectDoctor('Dr. Elena Rostova', 'Dermatology', '$115')" class="bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold px-4 py-2 rounded-xl">Book Appointment</button>
-          </div>
-        </div>
-
-        <!-- Doctor 6 -->
-        <div class="glass-card rounded-2xl p-5 flex flex-col justify-between hover:shadow-xl transition-all">
-          <div>
-            <div class="h-56 w-full rounded-xl overflow-hidden mb-4 bg-slate-100">
-              <img src="https://images.unsplash.com/photo-1594824813566-78a1ed67053e?w=600&auto=format&fit=crop&q=80" alt="Dr. Sophia Al-Mansoor" class="w-full h-full object-cover object-top" />
-            </div>
-            <div class="flex items-center justify-between mb-1">
-              <h3 class="font-bold text-slate-900 text-lg">Dr. Sophia Al-Mansoor</h3>
-              <span class="text-xs font-bold text-amber-500 flex items-center gap-1"><i class="fa-solid fa-star"></i> 4.9</span>
-            </div>
-            <p class="text-xs font-bold text-teal-700 mb-2">General Internal Medicine</p>
-            <p class="text-xs text-slate-500 mb-4">MD, MRCP (UK) • 13 Years Experience</p>
-          </div>
-          <div class="flex justify-between items-center pt-3 border-t">
-            <span class="font-bold text-slate-900 text-sm">Fee: $95</span>
-            <button onclick="selectDoctor('Dr. Sophia Al-Mansoor', 'Internal Medicine', '$95')" class="bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold px-4 py-2 rounded-xl">Book Appointment</button>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- Simple 5-Step Appointment Booking Section -->
+    <!-- 5-Step Appointment & International Payment Section -->
     <section id="booking" class="py-16 bg-teal-50/50 border-y border-teal-100">
       <div class="max-w-4xl mx-auto px-4">
         <div class="text-center mb-10">
           <h2 class="text-3xl font-black text-slate-900 mb-2">Simple 5-Step Appointment Booking</h2>
-          <p class="text-xs text-slate-600 font-medium">Instant online confirmation with top medical consultants.</p>
+          <p class="text-xs text-slate-600 font-medium">Instant online confirmation with secure international payment checkout.</p>
         </div>
 
         {/* Step Numbers Bar */}
@@ -261,34 +204,33 @@
           <div class="p-3 rounded-xl bg-teal-700 text-white shadow-sm">1. Department</div>
           <div class="p-3 rounded-xl bg-teal-700 text-white shadow-sm">2. Doctor</div>
           <div class="p-3 rounded-xl bg-teal-700 text-white shadow-sm">3. Slot</div>
-          <div class="p-3 rounded-xl bg-teal-700 text-white shadow-sm">4. Info</div>
-          <div class="p-3 rounded-xl bg-teal-700 text-white shadow-sm">5. Confirm</div>
+          <div class="p-3 rounded-xl bg-teal-700 text-white shadow-sm">4. Patient Info</div>
+          <div class="p-3 rounded-xl bg-teal-700 text-white shadow-sm">5. Payment</div>
         </div>
 
         {/* Interactive Booking Form Box */}
-        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl space-y-4">
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl space-y-5">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1">Select Department</label>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Medical Department</label>
               <select id="deptSelect" class="w-full p-3 border rounded-xl text-xs font-bold text-slate-800 bg-slate-50">
                 <option>Cardiology & Heart Surgery</option>
                 <option>Gynecology & Obstetrics</option>
                 <option>Orthopedics & Spine</option>
-                <option>Pediatrics & Child Health</option>
+                <option>Pediatrics & Child Care</option>
                 <option>Dermatology & Laser</option>
-                <option>General Internal Medicine</option>
               </select>
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1">Select Specialist Doctor</label>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Specialist Consultant</label>
               <input type="text" id="docInput" value="Dr. Alexander Wright ($120)" class="w-full p-3 border rounded-xl text-xs font-bold text-slate-800 bg-slate-50" readonly />
             </div>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1">Pick Date & Time Slot</label>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Appointment Date & Time Slot</label>
               <input type="text" value="Aug 18, 2026 at 10:00 AM (EST)" class="w-full p-3 border rounded-xl text-xs font-medium bg-slate-50" readonly />
             </div>
 
@@ -299,12 +241,51 @@
           </div>
 
           <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">Patient Email Address *</label>
-            <input type="email" id="pemail" value="eleanor@example.com" class="w-full p-3 border rounded-xl text-xs font-medium" />
+            <label class="block text-xs font-bold text-slate-700 mb-1">Patient Email Address (for Receipt & Telehealth Link) *</label>
+            <input type="email" id="pemail" value="eleanor.vance@example.com" class="w-full p-3 border rounded-xl text-xs font-medium" />
           </div>
 
-          <button onclick="submitBooking()" class="w-full bg-teal-700 hover:bg-teal-800 text-white font-bold text-sm py-4 rounded-xl shadow-lg flex items-center justify-center gap-2">
-            <i class="fa-solid fa-check-circle"></i> Confirm & Complete Appointment
+          <!-- International Payment Method Selector -->
+          <div class="pt-2 border-t border-slate-100">
+            <label class="block text-xs font-bold text-slate-800 mb-3">Select International Payment Method *</label>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+              <label class="p-3.5 rounded-xl border border-teal-700 bg-teal-50/60 flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="intPay" value="stripe" checked onclick="togglePayFields('stripe')" />
+                <span class="text-xs font-bold text-slate-800"><i class="fa-solid fa-credit-card text-teal-700 mr-1"></i> Credit Card (Stripe)</span>
+              </label>
+
+              <label class="p-3.5 rounded-xl border border-slate-200 hover:border-teal-700 flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="intPay" value="paypal" onclick="togglePayFields('paypal')" />
+                <span class="text-xs font-bold text-slate-800"><i class="fa-brands fa-paypal text-sky-500 mr-1"></i> PayPal Express</span>
+              </label>
+
+              <label class="p-3.5 rounded-xl border border-slate-200 hover:border-teal-700 flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="intPay" value="clinic" onclick="togglePayFields('clinic')" />
+                <span class="text-xs font-bold text-slate-800"><i class="fa-solid fa-building-columns text-slate-600 mr-1"></i> Pay at Clinic</span>
+              </label>
+            </div>
+
+            <!-- Stripe Card Form Fields -->
+            <div id="stripeFields" class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
+              <div class="flex items-center justify-between text-xs text-slate-500 font-bold mb-1">
+                <span>Credit / Debit Card Details (SSL 256-bit Encrypted)</span>
+                <div class="flex gap-1.5 text-base text-slate-600">
+                  <i class="fa-brands fa-cc-visa text-blue-800"></i>
+                  <i class="fa-brands fa-cc-mastercard text-red-600"></i>
+                  <i class="fa-brands fa-cc-amex text-sky-600"></i>
+                </div>
+              </div>
+              <input type="text" placeholder="Card Number: 4242 •••• •••• 4242" class="w-full p-2.5 border rounded-lg text-xs font-mono" value="4242 8810 9920 4242" />
+              <div class="grid grid-cols-2 gap-2">
+                <input type="text" placeholder="MM/YY: 12/28" class="p-2.5 border rounded-lg text-xs font-mono" value="12/28" />
+                <input type="text" placeholder="CVC: 123" class="p-2.5 border rounded-lg text-xs font-mono" value="882" />
+              </div>
+            </div>
+          </div>
+
+          <button onclick="confirmBooking()" class="w-full bg-teal-700 hover:bg-teal-800 text-white font-bold text-sm py-4 rounded-xl shadow-lg flex items-center justify-center gap-2">
+            <i class="fa-solid fa-lock"></i> Secure Checkout & Complete Appointment
           </button>
         </div>
       </div>
@@ -325,15 +306,15 @@
 
         <div class="bg-white p-6 rounded-2xl border border-slate-200 text-left shadow-sm">
           <div class="text-amber-400 text-sm mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="text-xs text-slate-600 italic leading-relaxed mb-4">"Professional doctors and immediate online booking. The entire team provided prompt diagnostic reports and great advice."</p>
-          <div class="font-bold text-xs text-slate-900">Rahim K.</div>
+          <p class="text-xs text-slate-600 italic leading-relaxed mb-4">"Professional doctors and immediate online booking with Stripe. The entire team provided prompt diagnostic reports."</p>
+          <div class="font-bold text-xs text-slate-900">Robert K.</div>
           <div class="text-[10px] text-slate-400">Dubai, UAE</div>
         </div>
 
         <div class="bg-white p-6 rounded-2xl border border-slate-200 text-left shadow-sm">
           <div class="text-amber-400 text-sm mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
           <p class="text-xs text-slate-600 italic leading-relaxed mb-4">"Very compassionate team! The virtual consultation with Dr. Alexander Wright saved us a long trip."</p>
-          <div class="font-bold text-xs text-slate-900">Sumaya T.</div>
+          <div class="font-bold text-xs text-slate-900">Eleanor V.</div>
           <div class="text-[10px] text-slate-400">New York, USA</div>
         </div>
       </div>
@@ -349,7 +330,7 @@
         </div>
         <p class="text-slate-400 leading-relaxed mb-3">5th Avenue Medical Plaza, New York, NY 10001, USA</p>
         <p class="font-semibold text-white">+1 (800) 555-0199</p>
-        <p className="text-teal-400 font-medium">contact@nirvayahealth.com</p>
+        <p class="text-teal-400 font-medium">contact@nirvayahealth.com</p>
       </div>
 
       <div>
@@ -394,12 +375,23 @@
       document.getElementById('booking').scrollIntoView({behavior: 'smooth'});
     }
 
-    function submitBooking() {
+    function togglePayFields(mode) {
+      const sf = document.getElementById('stripeFields');
+      if (mode === 'stripe') {
+        sf.style.display = 'block';
+      } else {
+        sf.style.display = 'none';
+      }
+    }
+
+    function confirmBooking() {
       const name = document.getElementById('pname').value;
       const email = document.getElementById('pemail').value;
       const doc = document.getElementById('docInput').value;
+      const payMode = document.querySelector('input[name="intPay"]:checked').value.toUpperCase();
+      const ref = 'ch_stripe_' + Math.random().toString(36).substring(2, 12);
 
-      alert(`✅ CONFIRMED APPOINTMENT!\n\nPatient: ${name}\nEmail: ${email}\nDoctor: ${doc}\nAppointment Reference: NH-${Math.floor(100000 + Math.random()*900000)}\n\nA confirmation email receipt has been sent to ${email}.`);
+      alert(`✅ STRIPE / PAYPAL PAYMENT SUCCESSFUL!\n\nPatient Name: ${name}\nEmail: ${email}\nDoctor: ${doc}\nPayment Gateway: ${payMode}\nStripe Transaction Ref: ${ref}\n\nA confirmation email receipt & Telehealth link has been sent to ${email}.`);
     }
   </script>
 </body>
