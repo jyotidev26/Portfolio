@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nirvaya Health - Care You Can Trust | Multi-Specialty Clinic Dhaka</title>
+  <meta name="description" content="Next.js 14 App Router, Supabase, Tailwind CSS Healthcare & Appointment Booking Web Application.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal: { 700: '#0F766E', 800: '#115e59' },
+            sky: { 400: '#38BDF8' },
+            emergency: '#DC2626'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body { font-family: 'Inter', 'Noto Sans Bengali', sans-serif; background-color: #FAFAF9; color: #1E293B; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- Sticky 24/7 Emergency Bar -->
+  <div class="bg-emergency text-white py-2 px-4 shadow-md sticky top-0 z-50">
+    <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs md:text-sm font-semibold">
+      <div class="max-w-7xl mx-auto flex items-center justify-between w-full">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-shield-halved animate-pulse text-amber-300"></i>
+          <span>24/7 Emergency Helpline:</span>
+          <span class="bg-white/20 px-2 py-0.5 rounded text-white font-mono font-bold">+880 1700-000000</span>
+        </div>
+        <a href="tel:+8801700000000" class="bg-white text-emergency hover:bg-amber-100 px-3 py-1 rounded-full text-xs font-bold transition-all shadow flex items-center gap-1.5">
+          <i class="fa-solid fa-phone"></i> Call Now
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navbar -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-[37px] z-40">
+    <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-700 to-sky-400 flex items-center justify-center text-white font-black text-xl shadow-md">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+        <div>
+          <span class="text-xl font-black text-slate-800 tracking-tight block leading-none">Nirvaya <span class="text-teal-700">Health</span></span>
+          <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest block mt-1">Care You Can Trust</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <span class="bg-emerald-100 text-emerald-800 text-xs font-extrabold px-3 py-1 rounded-full border border-emerald-200">Next.js 14 App Router</span>
+        <button onclick="alert('5-Step Appointment Booking Engine System Ready!')" class="bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md flex items-center gap-2">
+          <i class="fa-solid fa-calendar-check"></i> Book Appointment
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="max-w-7xl mx-auto px-4 py-12 flex-1">
+    <div class="bg-gradient-to-br from-teal-900 via-slate-900 to-teal-950 text-white rounded-3xl p-8 md:p-14 shadow-2xl relative overflow-hidden mb-12">
+      <div class="max-w-2xl relative z-10">
+        <span class="bg-teal-500/20 text-teal-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full border border-teal-500/30 uppercase tracking-widest mb-4 inline-block">
+          Modern Medical Center in Banani, Dhaka
+        </span>
+        <h1 class="text-3xl md:text-5xl font-black mb-4 leading-tight">World-Class Healthcare, Close to Home in Dhaka</h1>
+        <p className="text-sm text-slate-300 leading-relaxed mb-8 font-medium">
+          Multi-specialty outpatient medical clinic built with Next.js 14, Supabase PostgreSQL database, TypeScript, Tailwind CSS, dual EN/BN i18n support, and ready-to-wire bKash & Nagad MFS payment gateway stubs.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <button onclick="document.getElementById('bookingWizard').scrollIntoView({behavior: 'smooth'})" class="bg-teal-700 hover:bg-teal-800 text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg flex items-center gap-2">
+            <i class="fa-solid fa-calendar-check"></i> Start 5-Step Appointment Booking
+          </button>
+          <a href="#doctors" class="bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-6 py-3.5 rounded-xl border border-white/20 flex items-center gap-2">
+            <i class="fa-solid fa-user-doctor"></i> Explore 6 Specialist Doctors
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust Bar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 text-center">
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+        <div class="text-2xl font-black text-teal-700 mb-1">16+ Years</div>
+        <p class="text-xs text-slate-500 font-semibold">Clinical Experience</p>
+      </div>
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+        <div class="text-2xl font-black text-emerald-600 mb-1">50,000+</div>
+        <p class="text-xs text-slate-500 font-semibold">Patients Served</p>
+      </div>
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+        <div class="text-2xl font-black text-sky-500 mb-1">40+ Doctors</div>
+        <p class="text-xs text-slate-500 font-semibold">Senior Consultants</p>
+      </div>
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+        <div class="text-2xl font-black text-amber-500 mb-1">BMDC & ISO</div>
+        <p class="text-xs text-slate-500 font-semibold">Accredited Quality</p>
+      </div>
+    </div>
+
+    <!-- Doctors Grid -->
+    <div id="doctors" class="mb-16">
+      <h2 class="text-2xl font-black text-slate-900 mb-6">Our Specialist Doctors</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden p-5">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&auto=format&fit=crop&q=80" alt="Dr Tariq" class="w-full h-48 object-cover rounded-xl mb-4" />
+          <h3 class="font-bold text-slate-900 text-lg">Dr. Tariq Rahman (ড. তারিক রহমান)</h3>
+          <p class="text-xs font-bold text-teal-700 mb-1">Cardiology (হৃদরোগ)</p>
+          <p class="text-xs text-slate-500 mb-3">MBBS, FCPS (Cardiology), MD (USA) • 16 Yrs Exp</p>
+          <div class="flex justify-between items-center pt-3 border-t">
+            <span class="font-bold text-teal-800 text-sm">Fee: ৳1500</span>
+            <button onclick="alert('Booking Dr. Tariq Rahman')" class="bg-teal-700 text-white text-xs font-bold px-3.5 py-2 rounded-xl">Book Now</button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden p-5">
+          <img src="https://images.unsplash.com/photo-1594824813566-78a1ed67053e?w=600&auto=format&fit=crop&q=80" alt="Dr Nusrat" class="w-full h-48 object-cover rounded-xl mb-4" />
+          <h3 class="font-bold text-slate-900 text-lg">Dr. Nusrat Jahan (ড. নুসরাত জাহান)</h3>
+          <p class="text-xs font-bold text-teal-700 mb-1">Dermatology (চর্ম ও যৌনরোগ)</p>
+          <p class="text-xs text-slate-500 mb-3">MBBS, DDV (London), FCPS • 12 Yrs Exp</p>
+          <div class="flex justify-between items-center pt-3 border-t">
+            <span class="font-bold text-teal-800 text-sm">Fee: ৳1200</span>
+            <button onclick="alert('Booking Dr. Nusrat Jahan')" class="bg-teal-700 text-white text-xs font-bold px-3.5 py-2 rounded-xl">Book Now</button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden p-5">
+          <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&auto=format&fit=crop&q=80" alt="Dr Mahmudul" class="w-full h-48 object-cover rounded-xl mb-4" />
+          <h3 class="font-bold text-slate-900 text-lg">Dr. Mahmudul Hasan (ড. মাহমুদুল হাসান)</h3>
+          <p class="text-xs font-bold text-teal-700 mb-1">Pediatrics (শিশু রোগ)</p>
+          <p class="text-xs text-slate-500 mb-3">MBBS, DCH, MD (Pediatrics) • 14 Yrs Exp</p>
+          <div class="flex justify-between items-center pt-3 border-t">
+            <span class="font-bold text-teal-800 text-sm">Fee: ৳1200</span>
+            <button onclick="alert('Booking Dr. Mahmudul Hasan')" class="bg-teal-700 text-white text-xs font-bold px-3.5 py-2 rounded-xl">Book Now</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Booking Wizard Container -->
+    <div id="bookingWizard" class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-2xl font-black text-slate-900 mb-2">Instant Appointment & Payment Engine</h2>
+      <p class="text-xs text-slate-500 mb-6">Select doctor, date slot, enter Bangladesh phone format (+880), and choose bKash, Nagad, or Pay at Clinic</p>
+      
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 text-left space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Patient Full Name</label>
+          <input type="text" id="pname" class="w-full p-2.5 border rounded-xl text-xs font-medium" value="Mohammad Ali" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Bangladesh Phone Number (+880)</label>
+          <input type="text" id="pphone" class="w-full p-2.5 border rounded-xl text-xs font-medium" value="+880 1711223344" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Payment Method</label>
+          <select id="pmethod" class="w-full p-2.5 border rounded-xl text-xs font-bold text-slate-800">
+            <option value="bkash">bKash Mobile Payment (৳1500)</option>
+            <option value="nagad">Nagad Mobile Payment (৳1500)</option>
+            <option value="clinic" selected>Pay at Clinic (Cash on Arrival)</option>
+          </select>
+        </div>
+
+        <button onclick="alert('✅ Appointment Confirmed! ID: NH-948201. A confirmation SMS has been sent to +880 1711223344.')" class="w-full bg-teal-700 hover:bg-teal-800 text-white font-bold text-sm py-3 rounded-xl shadow-md">
+          Confirm Appointment Now
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-8 border-t text-center text-xs">
+    <div class="max-w-7xl mx-auto px-4">
+      <p>© 2026 <strong>Nirvaya Health Medical Center</strong>. Built by <strong>JyotiTech</strong> (Jyoti Prakash Chakma - Zend Certified PHP Engineer).</p>
+    </div>
+  </footer>
+
+</body>
+</html>
