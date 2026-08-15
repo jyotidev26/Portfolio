@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXE & CO. | Luxury Ladies Fashion & Couture</title>
+  <meta name="description" content="Discover high-fashion women's dresses, luxury silk tops, designer handbags, accessories, and shoes at LUXE & CO. Worldwide express shipping.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            roseGold: '#C88D79',
+            roseGoldDark: '#B87B67',
+            nudeBg: '#FDFBF7',
+            nudeCard: '#F7F3EE',
+            darkCharcoal: '#1A1A1A'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background-color: #FAFAFA; color: #1A1A1A; }
+    .font-serif-luxury { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+    /* Infinite Marquee Scrolling */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 25s linear infinite;
+    }
+    .marquee-box:hover .animate-marquee { animation-play-state: paused; }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #F1F1F1; }
+    ::-webkit-scrollbar-thumb { background: #C88D79; border-radius: 3px; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+  <!-- TOP PROMO TICKER (SCROLLING ANNOUNCEMENT BAR) -->
+  <div class="bg-[#F7F3EE] text-slate-800 py-2 border-b border-stone-200 text-xs font-semibold tracking-widest uppercase overflow-hidden marquee-box">
+    <div class="animate-marquee flex items-center gap-12">
+      <div class="flex items-center gap-8">
+        <span>✨ FREE EXPRESS WORLDWIDE SHIPPING ON ORDERS OVER $150</span>
+        <span>•</span>
+        <span>🛍️ USE CODE <strong class="text-roseGold">"LUXE20"</strong> FOR 20% OFF YOUR FIRST ORDER</span>
+        <span>•</span>
+        <span>💎 NEW HIGH-SUMMER COUTURE COLLECTION JUST ARRIVED</span>
+        <span>•</span>
+      </div>
+      <div class="flex items-center gap-8">
+        <span>✨ FREE EXPRESS WORLDWIDE SHIPPING ON ORDERS OVER $150</span>
+        <span>•</span>
+        <span>🛍️ USE CODE <strong class="text-roseGold">"LUXE20"</strong> FOR 20% OFF YOUR FIRST ORDER</span>
+        <span>•</span>
+        <span>💎 NEW HIGH-SUMMER COUTURE COLLECTION JUST ARRIVED</span>
+        <span>•</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LUXURY MINIMAL NAVBAR -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-stone-200 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2 group">
+        <span class="font-serif-luxury text-2xl sm:text-3xl font-bold tracking-wider text-slate-900 group-hover:text-roseGold transition-colors">
+          LUXE & CO.
+        </span>
+      </a>
+
+      <!-- Center Menu Links -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-widest uppercase text-slate-700">
+        <a href="#hero" class="hover:text-roseGold transition-colors">Now In</a>
+        <a href="#categories" class="hover:text-roseGold transition-colors">Collections</a>
+        <a href="#trending" class="hover:text-roseGold transition-colors">Dresses</a>
+        <a href="#sale" class="text-roseGold font-bold hover:text-slate-900 transition-colors">Sale</a>
+        <a href="#reviews" class="hover:text-roseGold transition-colors">Reviews</a>
+      </nav>
+
+      <!-- Right Header Actions (Search, Wishlist, Cart Drawer) -->
+      <div class="flex items-center gap-5">
+        <button onclick="toggleSearchModal()" class="text-slate-700 hover:text-roseGold transition-colors text-lg" title="Search Store">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <button onclick="openWishlistToast()" class="text-slate-700 hover:text-roseGold transition-colors text-lg relative" title="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span id="wishlistBadge" class="absolute -top-1.5 -right-2 bg-roseGold text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </button>
+
+        <!-- Cart Drawer Button -->
+        <button onclick="toggleCartDrawer()" class="bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold px-4 py-2.5 rounded-full shadow-sm flex items-center gap-2 transition-all">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="hidden sm:inline">Bag</span>
+          <span id="cartBadge" class="bg-white text-roseGold text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-inner">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO BANNER (MATCHING REFERENCE HIGH-FASHION DESIGN) -->
+    <section id="hero" class="relative bg-[#FAF6F0] py-16 md:py-24 border-b border-stone-200 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <div class="text-left space-y-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-roseGold bg-roseGold/10 px-4 py-1.5 rounded-full border border-roseGold/20">
+            High-Summer Couture 2026
+          </span>
+
+          <h1 class="font-serif-luxury text-4xl sm:text-6xl lg:text-7xl font-light text-slate-900 leading-[1.1]">
+            ELEVATE YOUR<br/><strong class="font-normal italic">EVERYDAY STYLE</strong>
+          </h1>
+
+          <p class="text-xs sm:text-sm text-slate-600 font-normal max-w-md leading-relaxed tracking-wide">
+            Discover our new arrival collection of handcrafted silk dresses, tailored linen blouses, and luxury designer accessories crafted for timeless elegance.
+          </p>
+
+          <div>
+            <a href="#trending" class="inline-block bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-full shadow-lg shadow-roseGold/20 transition-all hover:scale-105">
+              SHOP NOW
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="w-full h-[450px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1000&auto=format&fit=crop&q=80" alt="Luxe & Co Fashion Model" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRODUCT CATEGORY GRID (6 CARDS MATCHING REFERENCE LAYOUT) -->
+    <section id="categories" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl font-normal text-slate-900">Product Category Grid</h2>
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-widest mt-1">Explore Collections</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        
+        <!-- Category 1: Dresses -->
+        <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
+          <div class="h-64 sm:h-80 w-full overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop&q=80" alt="Dresses" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          </div>
+          <div class="p-4 text-center bg-white">
+            <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">DRESSES</h3>
+          </div>
+        </a>
+
+        <!-- Category 2: Tops -->
+        <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
+          <div class="h-64 sm:h-80 w-full overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80" alt="Tops" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          </div>
+          <div class="p-4 text-center bg-white">
+            <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">TOPS</h3>
+          </div>
+        </a>
+
+        <!-- Category 3: Bags -->
+        <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
+          <div class="h-64 sm:h-80 w-full overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=80" alt="Bags" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          </div>
+          <div class="p-4 text-center bg-white">
+            <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">BAGS</h3>
+          </div>
+        </a>
+
+        <!-- Category 4: Shoes -->
+        <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
+          <div class="h-64 sm:h-80 w-full overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=80" alt="Shoes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          </div>
+          <div class="p-4 text-center bg-white">
+            <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">SHOES</h3>
+          </div>
+        </a>
+
+        <!-- Category 5: Accessories -->
+        <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
+          <div class="h-64 sm:h-80 w-full overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1606760227091-3dd858d9721d?w=600&auto=format&fit=crop&q=80" alt="Accessories" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          </div>
+          <div class="p-4 text-center bg-white">
+            <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">ACCESSORIES</h3>
+          </div>
+        </a>
+
+        <!-- Category 6: Jewelry -->
+        <a href="#trending" class="group relative rounded-2xl overflow-hidden shadow-sm border border-stone-200 bg-white block">
+          <div class="h-64 sm:h-80 w-full overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&auto=format&fit=crop&q=80" alt="Jewelry" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          </div>
+          <div class="p-4 text-center bg-white">
+            <h3 class="font-semibold text-xs sm:text-sm uppercase tracking-widest text-slate-900 group-hover:text-roseGold transition-colors">JEWELRY</h3>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- SUMMER SALE BANNER (MATCHING REFERENCE DESIGN) -->
+    <section id="sale" class="py-12 bg-[#FAF4F0] border-y border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        
+        <div class="flex justify-center gap-4">
+          <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&auto=format&fit=crop&q=80" alt="Summer Sale 1" class="w-1/2 h-72 sm:h-96 object-cover rounded-2xl shadow-md" />
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500&auto=format&fit=crop&q=80" alt="Summer Sale 2" class="w-1/2 h-72 sm:h-96 object-cover rounded-2xl shadow-md" />
+        </div>
+
+        <div class="text-center md:text-left space-y-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-roseGold">Exclusive Promotion</span>
+          <h2 class="font-serif-luxury text-4xl sm:text-5xl font-light text-slate-900">
+            SUMMER SALES<br/><strong class="font-normal">UP TO 50% OFF</strong>
+          </h2>
+          <p class="text-xs text-slate-600 tracking-wider uppercase font-semibold">Limited Time Offer</p>
+          <div>
+            <button onclick="filterCategory('sale')" class="bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-full shadow-md transition-all">
+              SHOP THE SALE
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRENDING CLOTHING COLLECTION (PRODUCT CARDS MATCHING REFERENCE) -->
+    <section id="trending" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl font-normal text-slate-900">Trending Clothing Collection</h2>
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-widest mt-1">Handpicked Best Sellers</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="productGrid">
+        
+        <!-- Product 1 -->
+        <div class="product-item bg-white rounded-2xl border border-stone-200 overflow-hidden p-4 flex flex-col justify-between group shadow-sm hover:shadow-xl transition-all">
+          <div class="relative">
+            <span class="absolute top-2 left-2 bg-roseGold text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider z-10">Best Seller</span>
+            <button onclick="toggleWishlist(this)" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-roseGold flex items-center justify-center shadow z-10 transition-colors">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
+              <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&auto=format&fit=crop&q=80" alt="Aria Floral Midi Dress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <button onclick="openQuickView('Aria Floral Midi Dress', '$130.00', 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&auto=format&fit=crop&q=80')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
+                Quick View
+              </button>
+            </div>
+
+            <h3 class="font-semibold text-sm text-slate-900 mb-1">Aria Floral Midi Dress</h3>
+            <p class="text-xs font-bold text-slate-800 mb-3">$130.00</p>
+          </div>
+
+          <button onclick="addToBag('Aria Floral Midi Dress', 130, 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&auto=format&fit=crop&q=80')" class="w-full bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl shadow transition-all">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-item bg-white rounded-2xl border border-stone-200 overflow-hidden p-4 flex flex-col justify-between group shadow-sm hover:shadow-xl transition-all">
+          <div class="relative">
+            <button onclick="toggleWishlist(this)" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-roseGold flex items-center justify-center shadow z-10 transition-colors">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
+              <img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80" alt="Luna Silk Blouse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <button onclick="openQuickView('Luna Silk Blouse', '$85.00', 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
+                Quick View
+              </button>
+            </div>
+
+            <h3 class="font-semibold text-sm text-slate-900 mb-1">Luna Silk Blouse</h3>
+            <p class="text-xs font-bold text-slate-800 mb-3">$85.00</p>
+          </div>
+
+          <button onclick="addToBag('Luna Silk Blouse', 85, 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&auto=format&fit=crop&q=80')" class="w-full bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl shadow transition-all">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-item bg-white rounded-2xl border border-stone-200 overflow-hidden p-4 flex flex-col justify-between group shadow-sm hover:shadow-xl transition-all">
+          <div class="relative">
+            <span class="absolute top-2 left-2 bg-emerald-700 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider z-10">New Arrival</span>
+            <button onclick="toggleWishlist(this)" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-roseGold flex items-center justify-center shadow z-10 transition-colors">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
+              <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80" alt="Luna Floral Midi Dress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <button onclick="openQuickView('Luna Floral Midi Dress', '$85.00', 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
+                Quick View
+              </button>
+            </div>
+
+            <h3 class="font-semibold text-sm text-slate-900 mb-1">Luna Floral Midi Dress</h3>
+            <p class="text-xs font-bold text-slate-800 mb-3">$85.00</p>
+          </div>
+
+          <button onclick="addToBag('Luna Floral Midi Dress', 85, 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&auto=format&fit=crop&q=80')" class="w-full bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl shadow transition-all">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-item bg-white rounded-2xl border border-stone-200 overflow-hidden p-4 flex flex-col justify-between group shadow-sm hover:shadow-xl transition-all">
+          <div class="relative">
+            <button onclick="toggleWishlist(this)" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-roseGold flex items-center justify-center shadow z-10 transition-colors">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <div class="h-72 w-full overflow-hidden rounded-xl mb-4 bg-stone-100 relative">
+              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80" alt="Aria Floral Midi Dress White" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <button onclick="openQuickView('Aria Floral Midi Dress White', '$85.00', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80')" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity">
+                Quick View
+              </button>
+            </div>
+
+            <h3 class="font-semibold text-sm text-slate-900 mb-1">Aria Floral Midi Dress White</h3>
+            <p class="text-xs font-bold text-slate-800 mb-3">$85.00</p>
+          </div>
+
+          <button onclick="addToBag('Aria Floral Midi Dress White', 85, 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80')" class="w-full bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl shadow transition-all">
+            ADD TO CART
+          </button>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-10">
+        <button onclick="alert('Loaded 12 More High-Fashion Couture Products!')" class="bg-[#F7F3EE] hover:bg-stone-200 text-slate-900 text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-full border border-stone-300 transition-all">
+          Shop All Trending
+        </button>
+      </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS SECTION (MATCHING REFERENCE DESIGN) -->
+    <section id="reviews" class="py-16 bg-[#F7F3EE] border-t border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl font-normal text-slate-900 mb-10">Customer Reviews</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 text-center space-y-3">
+            <div class="text-amber-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <h3 class="font-semibold text-sm text-slate-900">Amazing quality!</h3>
+            <p class="text-xs text-slate-500 font-medium">Baren</p>
+            <p class="text-[11px] text-slate-400 uppercase tracking-widest">Customer</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 text-center space-y-3">
+            <div class="text-amber-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <h3 class="font-semibold text-sm text-slate-900">Perfect fit.</h3>
+            <p class="text-xs text-slate-500 font-medium">Kenria</p>
+            <p class="text-[11px] text-slate-400 uppercase tracking-widest">Name</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 text-center space-y-3">
+            <div class="text-amber-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <h3 class="font-semibold text-sm text-slate-900">Perfect fit.</h3>
+            <p class="text-xs text-slate-500 font-medium">Katah</p>
+            <p class="text-[11px] text-slate-400 uppercase tracking-widest">Customer</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- DARK MINIMAL FOOTER (MATCHING REFERENCE LAYOUT EXACTLY) -->
+  <footer class="bg-darkCharcoal text-stone-300 pt-16 pb-8 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      
+      <!-- Column 1: SHOP -->
+      <div>
+        <h4 class="font-bold text-white uppercase tracking-widest mb-4">SHOP</h4>
+        <ul class="space-y-2 text-stone-400">
+          <li><a href="#hero" class="hover:text-white transition-colors">New Arrivals</a></li>
+          <li><a href="#trending" class="hover:text-white transition-colors">Dresses</a></li>
+          <li><a href="#categories" class="hover:text-white transition-colors">Tops</a></li>
+          <li><a href="#trending" class="hover:text-white transition-colors">Wear Wing</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2: HELP -->
+      <div>
+        <h4 class="font-bold text-white uppercase tracking-widest mb-4">HELP</h4>
+        <ul class="space-y-2 text-stone-400">
+          <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Shipping</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Accessories</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Returns</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: ACCOUNT -->
+      <div>
+        <h4 class="font-bold text-white uppercase tracking-widest mb-4">ACCOUNT</h4>
+        <ul class="space-y-2 text-stone-400">
+          <li><a href="#" class="hover:text-white transition-colors">Login</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">My Orders</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Stay in Style Newsletter & Socials -->
+      <div>
+        <h4 class="font-bold text-white uppercase tracking-widest mb-4">Stay in Style</h4>
+        <form onsubmit="subscribeNewsletter(event)" class="flex mb-6">
+          <input type="email" required placeholder="Stay in Style (Email)" class="px-4 py-2.5 bg-stone-800 text-white border border-stone-700 rounded-l-lg text-xs w-full focus:outline-none focus:border-roseGold" />
+          <button type="submit" class="bg-roseGold hover:bg-roseGoldDark text-white px-4 py-2.5 rounded-r-lg font-bold transition-colors">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </form>
+
+        <div class="flex items-center gap-4 text-stone-400 text-base">
+          <a href="#" class="hover:text-roseGold transition-colors"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="hover:text-roseGold transition-colors"><i class="fa-brands fa-pinterest"></i></a>
+          <a href="#" class="hover:text-roseGold transition-colors"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Payment Badges & Copyright -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500">
+      <div class="flex items-center gap-3 text-xl">
+        <i class="fa-brands fa-cc-visa text-white"></i>
+        <i class="fa-brands fa-cc-mastercard text-white"></i>
+        <i class="fa-brands fa-paypal text-white"></i>
+        <i class="fa-brands fa-apple-pay text-white"></i>
+        <i class="fa-brands fa-cc-amex text-white"></i>
+      </div>
+      <div>
+        Copyright © 2026 LUXE & CO. All Rights Reserved. Built by <strong>JyotiTech</strong> (Jyoti Prakash Chakma - Zend Certified PHP Engineer).
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDE-OVER SHOPPING BAG DRAWER MODAL -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 invisible opacity-0 transition-all duration-300">
+    <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col justify-between p-6 overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-stone-200">
+          <h3 class="font-serif-luxury text-2xl font-bold text-slate-900">Your Shopping Bag</h3>
+          <button onclick="toggleCartDrawer()" class="text-slate-500 hover:text-slate-900 text-lg"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <!-- Free Shipping Progress Bar -->
+        <div class="py-4 border-b border-stone-100 text-xs">
+          <div class="flex justify-between font-semibold text-slate-700 mb-1.5">
+            <span id="shippingText">Add $150.00 for Free Express Shipping</span>
+            <span id="shippingPercent">0%</span>
+          </div>
+          <div class="w-full h-2 bg-stone-100 rounded-full overflow-hidden">
+            <div id="shippingBar" class="h-full bg-roseGold transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <div id="cartItemsList" class="py-4 space-y-4">
+          <div class="text-center py-8 text-xs text-slate-400 font-medium">Your shopping bag is currently empty.</div>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-stone-200 space-y-3">
+        <div class="flex justify-between font-bold text-slate-900 text-sm">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">$0.00</span>
+        </div>
+
+        <button onclick="checkoutBag()" class="w-full bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-widest py-4 rounded-xl shadow-lg transition-all">
+          Proceed to Checkout (Stripe & PayPal)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK VIEW PRODUCT MODAL -->
+  <div id="quickViewModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div onclick="closeQuickView()" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+    <div class="relative bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full shadow-2xl border border-stone-200 z-10 space-y-4">
+      <button onclick="closeQuickView()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-900 text-lg"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+        <div class="h-72 w-full rounded-2xl overflow-hidden bg-stone-100">
+          <img id="qvImage" src="" alt="Product Image" class="w-full h-full object-cover" />
+        </div>
+        <div class="space-y-3">
+          <h3 id="qvTitle" class="font-serif-luxury text-2xl font-bold text-slate-900">Product Title</h3>
+          <p id="qvPrice" class="text-base font-bold text-roseGold">$0.00</p>
+          <p class="text-xs text-slate-500 leading-relaxed">Handcrafted luxury couture fabric designed for supreme elegance and comfort.</p>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Select Size</label>
+            <div class="flex gap-2 text-xs font-bold">
+              <button class="w-8 h-8 rounded-lg border border-slate-200 hover:border-roseGold hover:text-roseGold">XS</button>
+              <button class="w-8 h-8 rounded-lg border border-roseGold bg-roseGold text-white">S</button>
+              <button class="w-8 h-8 rounded-lg border border-slate-200 hover:border-roseGold hover:text-roseGold">M</button>
+              <button class="w-8 h-8 rounded-lg border border-slate-200 hover:border-roseGold hover:text-roseGold">L</button>
+            </div>
+          </div>
+
+          <button onclick="addQuickViewToBag()" class="w-full bg-roseGold hover:bg-roseGoldDark text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl shadow">
+            Add to Bag
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let cart = [];
+    let wishlistCount = 0;
+
+    function toggleCartDrawer() {
+      const cd = document.getElementById('cartDrawer');
+      if (cd.classList.contains('invisible')) {
+        cd.classList.remove('invisible', 'opacity-0');
+      } else {
+        cd.classList.add('invisible', 'opacity-0');
+      }
+    }
+
+    function addToBag(title, price, img) {
+      cart.push({ title, price, img });
+      updateCartUI();
+      toggleCartDrawer();
+    }
+
+    function removeFromBag(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      document.getElementById('cartBadge').innerText = cart.length;
+      const list = document.getElementById('cartItemsList');
+      const subtotalEl = document.getElementById('cartSubtotal');
+      const bar = document.getElementById('shippingBar');
+      const percentEl = document.getElementById('shippingPercent');
+      const textEl = document.getElementById('shippingText');
+
+      if (cart.length === 0) {
+        list.innerHTML = `<div class="text-center py-8 text-xs text-slate-400 font-medium">Your shopping bag is currently empty.</div>`;
+        subtotalEl.innerText = '$0.00';
+        bar.style.width = '0%';
+        percentEl.innerText = '0%';
+        textEl.innerText = 'Add $150.00 for Free Express Shipping';
+        return;
+      }
+
+      let subtotal = 0;
+      let html = '';
+      cart.forEach((item, i) => {
+        subtotal += item.price;
+        html += `
+          <div class="flex items-center justify-between gap-3 p-3 bg-stone-50 rounded-xl border border-stone-200">
+            <img src="${item.img}" class="w-14 h-14 object-cover rounded-lg" />
+            <div class="flex-1 text-xs">
+              <h4 class="font-bold text-slate-900">${item.title}</h4>
+              <p class="text-roseGold font-semibold">$${item.price.toFixed(2)}</p>
+            </div>
+            <button onclick="removeFromBag(${i})" class="text-slate-400 hover:text-rose-600 text-sm"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        `;
+      });
+
+      list.innerHTML = html;
+      subtotalEl.innerText = `$${subtotal.toFixed(2)}`;
+
+      const pct = Math.min(100, Math.round((subtotal / 150) * 100));
+      bar.style.width = `${pct}%`;
+      percentEl.innerText = `${pct}%`;
+
+      if (subtotal >= 150) {
+        textEl.innerText = '🎉 Congratulations! You unlocked Free Express Shipping!';
+      } else {
+        const remaining = (150 - subtotal).toFixed(2);
+        textEl.innerText = `Add $${remaining} more for Free Express Shipping`;
+      }
+    }
+
+    function toggleWishlist(btn) {
+      const icon = btn.querySelector('i');
+      if (icon.classList.contains('fa-regular')) {
+        icon.classList.remove('fa-regular');
+        icon.classList.add('fa-solid', 'text-roseGold');
+        wishlistCount++;
+      } else {
+        icon.classList.remove('fa-solid', 'text-roseGold');
+        icon.classList.add('fa-regular');
+        wishlistCount = Math.max(0, wishlistCount - 1);
+      }
+      document.getElementById('wishlistBadge').innerText = wishlistCount;
+    }
+
+    let currentQV = {};
+    function openQuickView(title, price, img) {
+      currentQV = { title, price: parseFloat(price.replace('$', '')), img };
+      document.getElementById('qvTitle').innerText = title;
+      document.getElementById('qvPrice').innerText = price;
+      document.getElementById('qvImage').src = img;
+      document.getElementById('quickViewModal').classList.remove('hidden');
+      document.getElementById('quickViewModal').classList.add('flex');
+    }
+
+    function closeQuickView() {
+      document.getElementById('quickViewModal').classList.add('hidden');
+      document.getElementById('quickViewModal').classList.remove('flex');
+    }
+
+    function addQuickViewToBag() {
+      addToBag(currentQV.title, currentQV.price, currentQV.img);
+      closeQuickView();
+    }
+
+    function checkoutBag() {
+      if (cart.length === 0) {
+        alert('Your shopping bag is empty! Add products first.');
+        return;
+      }
+      const total = document.getElementById('cartSubtotal').innerText;
+      alert(`🛍️ STRIPE / PAYPAL CHECKOUT INITIATED!\n\nSubtotal: ${total}\nItems: ${cart.length}\n\nRedirecting to Secure Payment Gateway...`);
+    }
+
+    function subscribeNewsletter(e) {
+      e.preventDefault();
+      alert('✨ Thank you for subscribing to LUXE & CO.! Check your inbox for your 20% OFF discount code (LUXE20).');
+    }
+  </script>
+</body>
+</html>
